@@ -18,3 +18,12 @@
 .progress-span {
     width: 40%;
 }
+
+.home-icon {
+    height: 50px;
+    width: auto;
+}
+ul {
+    text-align: left;
+    margin-right: 5px;
+}

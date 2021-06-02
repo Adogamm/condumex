@@ -10,7 +10,7 @@
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="styles/monitor-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Roles y privilegios</title>
+    <title>Reporte de paros</title>
 </head>
 <body>
 
@@ -22,11 +22,11 @@
           <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="#">Monitor de piso</a>
             <a class="nav-item nav-link disabled" href="#">|</a>
-            <a class="nav-item nav-link" href="recetas.html">Recetas</a>
+            <a class="nav-item nav-link" href="#">Recetas</a>
             <a class="nav-item nav-link disabled" href="#">|</a>
             <a class="nav-item nav-link" href="analisis-disponibilidad.html">Analisis de disponibilidad</a>
             <a class="nav-item nav-link disabled" href="#">|</a>
-            <a class="nav-item nav-link" href="#">Bitacora de eventos</a>
+            <a class="nav-item nav-link" href="bitacora-eventos.html">Bitacora de eventos</a>
             <a class="nav-item nav-link disabled" href="#">|</a>
             <a class="nav-item nav-link" href="maestros.html">Maestros</a>
           </div>
@@ -37,39 +37,77 @@
         </ul>
     </nav>
     <img src="images/condumex_logo.png" alt="condumex logo" class="navbar-icon mt-1">
-    <h3 class="text-center title">Roles y privilegios</h3>
-    <div class="btn-group my-4 mx-4" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-outline-secondary">Nuevo</button>
-        <button type="button" class="btn btn-outline-secondary">Eliminar</button>
-        <button type="button" class="btn btn-outline-secondary">Modificar</button>
-    </div>
+    <h3 class="text-center title">Reporte de paros</h3>
+
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-2 my-5 mx-2">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Area</option>
+                    <option value="1">Estirado grueso</option>
+                    <option value="2">Estirado fino</option>
+                    <option value="3">Termo plasticos</option>
+                    <option value="4">Termo fijos</option>
+                    <option value="5">Irradiado</option>
+                    <option value="6">Reunido</option>
+                </select>
+            </div>
+        
+        
+            <div class="col-lg-2 my-5 mx-2">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Maquina</option>
+                    <option value="1">TF-01</option>
+                    <option value="2">TF-02</option>
+                    <option value="3">TF-03</option>
+                    <option value="4">TF-04</option>
+                    <option value="5">TF-05</option>
+                    <option value="6">TF-06</option>
+                    <option value="7">TF-07</option>
+                    <option value="8">TF-08</option>
+                </select>
+            </div>
+
+
+            <div class="col-lg-2 my-5 mx-2">
+                <input type="date" name="date" id="date" class="form-control">
+            </div>
+
+            <div class="col-lg-2 my-5 mx-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 mx-1">
+                            <img src="images/filtro.png" alt="Filtrado" class="bitacora-icon">
+                        </div>
+                        <div class="col-lg-5 mx-1">
+                            <a href="#">
+                                <img src="images/csv.png" alt="descarga-csv" class="bitacora-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <button class="btn btn-outline-secondary">Modificar</button>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-outline-secondary">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 my-5">
                 <table class="table table-striped">
                     <tr>
-                        <th>Id</th>
+                        <th>Id paro</th>
                         <th>Descripción</th>
-                        <th>Rol</th>
-                        <th>Fecha de creación</th>
                     </tr>
                     <tr>
-                        <td>4440</td>
-                        <td>Hugo Sanchez Perez</td>
-                        <td>Administrador</td>
-                        <td>29/Nov/2019</td>
-                    </tr>
-                    <tr>
-                        <td>1350</td>
-                        <td>Luis Gonzalez</td>
-                        <td>Supervisor Matto</td>
-                        <td>29/Nov/2019</td>
-                    </tr>
-                    <tr>
-                        <td>0999</td>
-                        <td>Juan Perez</td>
-                        <td>Operador</td>
-                        <td>01/Ene/2010</td>
+                        <td>101</td>
+                        <td>Avería maquína</td>
                     </tr>
                 </table>
             </div>

@@ -35,3 +35,10 @@ ul {
     display: block;
     margin: 0 100px;
 }
+
+.bitacora-icon {
+    height: 30px;
+    width: auto;
+    display: block;
+    margin: auto;
+}

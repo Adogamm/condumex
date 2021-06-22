@@ -72,52 +72,6 @@ $query1 = mysqli_query($conexion,$select_avg);
                   </div>
             </div>
             <?php } ?>
-
-            <!-- <div class="col-lg-5 mt-3 text-end">
-                <a href="#">Estirado fino</a>
-            </div>
-            <div class="col-lg-5 mt-3">
-                <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" id="estirado-fino">40%</div>
-                  </div>
-            </div>
-
-            <div class="col-lg-5 mt-3 text-end">
-                <a href="#">Termo plasticos</a>
-            </div>
-            <div class="col-lg-5 mt-3">
-                <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="termo-plastico">80%</div>
-                  </div>
-            </div>
-
-            <div class="col-lg-5 mt-3 text-end">
-                <a href="monitor-piso-details.html">Termo fijos</a>
-            </div>
-            <div class="col-lg-5 mt-3">
-                <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="termo-fijo">80%</div>
-                  </div>
-            </div>
-
-            <div class="col-lg-5 mt-3 text-end">
-                <a href="#">Irradiado</a>
-            </div>
-            <div class="col-lg-5 mt-3">
-                <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="irradiado">30%</div>
-                  </div>
-            </div>
-
-            <div class="col-lg-5 mt-3 text-end">
-                <a href="#">Reunido</a>
-            </div>
-            <div class="col-lg-5 mt-3">
-                <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="reunido">80%</div>
-                  </div>
-            </div> -->
-
         </div>
     </div>
 

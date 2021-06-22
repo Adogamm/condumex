@@ -1,9 +1,9 @@
 <?php 
 include 'databaseconnect/conection.php';
-$select = "SELECT DISTINCT TIPO_MAQUINA FROM MAQUINAS;";
+$select = "SELECT DISTINCT TIPO_MAQUINA FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
 $query = mysqli_query($conexion,$select);
 
-$select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
+$select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
 $query1 = mysqli_query($conexion,$select_avg);
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ $query1 = mysqli_query($conexion,$select_avg);
         <div class="row">
             <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
             <div class="col-lg-5 mt-5 text-end">
-                <a href="#"><?php echo $maquinas['TIPO_MAQUINA'] ?></a>
+                <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>"><?php echo $maquinas['TIPO_MAQUINA'] ?></a>
             </div>
             
             <div class="col-lg-5 mt-5">

@@ -1,5 +1,14 @@
+<?php
+  include 'databaseconnect/conection.php';
+  $tipo_maquina=$_GET['tipo_maquina'];
+  $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+  $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+  $query = mysqli_query($conexion,$select);
+  $query1 = mysqli_query($conexion,$select_avg);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +27,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mr-auto">
-        <a class="nav-item nav-link" href="monitor-piso.html">Monitor de piso</a>
+        <a class="nav-item nav-link" href="monitor-piso.php">Monitor de piso</a>
         <a class="nav-item nav-link disabled" href="#">|</a>
         <a class="nav-item nav-link" href="recetas.html">Recetas</a>
         <a class="nav-item nav-link disabled" href="#">|</a>
@@ -51,11 +60,13 @@
       <div class="row">
 
         <div class="col-lg-2 mt-3">
-          <a href="#">Termo fijos</a>
+          <a href="#"><?php echo $tipo_maquina ?></a>
         </div>
         <div class="col-lg-3 mt-3">
           <div class="progress" style="height: 25px;">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="termo-fijo">80%</div>
+            <?php while($avg = mysqli_fetch_assoc($query1)){ ?>
+              <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $avg['RENDIMIENTO']?>%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="termo-fijo"><?php echo $avg['RENDIMIENTO']?></div>
+            <?php } ?>
             </div>
         </div>
         <div class="col-lg-6 d-flex flex-row justify-content-end">
@@ -65,10 +76,10 @@
         </div>
       </div>
 
-
       <div class="row mt-5">
+        <?php while($maquina = mysqli_fetch_assoc($query)){ ?>
         <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-01</a>
+          <a href="#"><?php echo $maquina['MAQUINA']; ?></a>
           <div class="container">
             <div class="row">
               <div class="col-lg-12 bg-success text-start text-white pt-3">
@@ -85,7 +96,10 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 my-3 text-center">
+        <?php } ?>
+
+
+        <!-- <div class="col-lg-3 my-3 text-center">
           <a href="#">TF-02</a>
           <div class="container">
             <div class="row">
@@ -214,7 +228,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

@@ -1,3 +1,11 @@
+<?php 
+include 'databaseconnect/conection.php';
+$select = "SELECT DISTINCT TIPO_MAQUINA FROM MAQUINAS;";
+$query = mysqli_query($conexion,$select);
+
+$select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
+$query1 = mysqli_query($conexion,$select_avg);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,17 +61,19 @@
 
     <div class="container">
         <div class="row">
-
+            <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
             <div class="col-lg-5 mt-5 text-end">
-                <a href="#">Estirado grueso</a>
+                <a href="#"><?php echo $maquinas['TIPO_MAQUINA'] ?></a>
             </div>
+            
             <div class="col-lg-5 mt-5">
                 <div class="progress" style="height: 25px;">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 99.9%;" aria-valuenow="99.9" aria-valuemin="0" aria-valuemax="100" id="estirado-grueso">99.9%</div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $porcentaje['RENDIMIENTO']; ?>%;" aria-valuenow="<?php echo $porcentaje['RENDIMIENTO'];?>" aria-valuemin="0" aria-valuemax="100" id="estirado-grueso"><?php echo $porcentaje['RENDIMIENTO']; ?> %</div>
                   </div>
             </div>
+            <?php } ?>
 
-            <div class="col-lg-5 mt-3 text-end">
+            <!-- <div class="col-lg-5 mt-3 text-end">
                 <a href="#">Estirado fino</a>
             </div>
             <div class="col-lg-5 mt-3">
@@ -106,7 +116,7 @@
                 <div class="progress" style="height: 25px;">
                     <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="reunido">80%</div>
                   </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

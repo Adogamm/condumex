@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="col-lg-6 d-flex flex-row justify-content-end">
-          <a href="monitor-piso.html">
+          <a href="monitor-piso.php">
             <img src="images/home.png" alt="inicio" class="home-icon">
           </a>
         </div>
@@ -84,151 +84,19 @@
             <div class="row">
               <div class="col-lg-12 bg-success text-start text-white pt-3">
                 <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
+                  <li>Rendimiento: <?php echo $maquina['RENDIMIENTO']; ?> %</li>
+                  <li>Velocidad: <?php echo $maquina['VELOCIDAD']; ?></li>
+                  <li>Ultimo paro: <?php echo $maquina['ULTIMOPARO']; ?></li>
+                  <li>Evento: <?php echo $maquina['EVENTO']; ?></li>
+                  <li>Paro actual:<?php echo $maquina['PAROACTUAL']; ?></li>
+                  <li>Evento actual: <?php echo $maquina['EVENTOACTUAL']; ?></li>
+                  <li>OE:<?php echo $maquina['OE']; ?></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <?php } ?>
-
-
-        <!-- <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-02</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-warning text-start pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 my-3 text-center">
-          <a href="monitor-maquina.html">TF-03</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-danger text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-04</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-success text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-05</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-success text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-06</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-success text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-07</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-success text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 my-3 text-center">
-          <a href="#">TF-08</a>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 bg-success text-start text-white pt-3">
-                <ul class="p-3">
-                  <li>Rendimiento: 50%</li>
-                  <li>Velocidad: 100km/h</li>
-                  <li>Ultimo paro: 20 min</li>
-                  <li>Evento: Paro por cambio de mallas.</li>
-                  <li>Paro actual:</li>
-                  <li>Evento actual</li>
-                  <li>OE:</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 

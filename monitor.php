@@ -29,25 +29,25 @@ $query1 = mysqli_query($conexion,$select_avg);
         </div>
         <ul class="nav_list">
             <li>
-                <a href="monitor.php">
+                <a href="monitor.php" class="pr-2 mt-2">
                     <i class='bx bx-grid-alt' ></i>
                     <span class="link-name">Monitor de piso</span>
                 </a>
             </li>
             <li>
-                <a href="recetas.html">
+                <a href="recetas.html" class="pr-2 mt-2">
                     <i class='bx bx-book-bookmark'></i>
                     <span class="link-name">Recetas</span>
                 </a>
             </li>
             <li>
-                <a href="analisis-disponibilidad.html">
+                <a href="analisis-disponibilidad.html" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Analisis disponibilidad</span>
                 </a>
             </li>
             <li>
-                <a href="bitacora-eventos.html">
+                <a href="bitacora-eventos.html" class="pr-2 mt-2">
                     <i class='bx bx-calendar-event'></i>
                     <span class="link-name">Bitacora de eventos</span>
                 </a>
@@ -58,8 +58,11 @@ $query1 = mysqli_query($conexion,$select_avg);
                     <span class="link-name">Maestros</span>
                 </a>
             </li>
+
+            
+            <!-- TODO SOLO SI LA SESIÓN PERTENECE A UN USUARIO -->
             <li>
-                <a href="#">
+                <a href="#" class="pr-2 mt-2">
                     <i class='bx bx-user' ></i>
                     <span class="link-name">Gestión de usuarios</span>
                 </a>
@@ -83,6 +86,8 @@ $query1 = mysqli_query($conexion,$select_avg);
         </div>
     </div>
 
+
+    <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
         <h3 class="text-center title">Monitor de piso</h3>
         <div class="container">

@@ -93,16 +93,53 @@
       <h3 class="text-center title">Monitor de piso</h3>
       <div class="container">
         <div class="row">
-          <div class="col-lg-2 mt-3">
-            <a href="#"><?php echo $tipo_maquina ?></a>
-          </div>
-          <div class="col-lg-3 mt-3">
-            <div class="progress" style="height: 25px;">
-              <?php while($avg = mysqli_fetch_assoc($query1)){ ?>
-                <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $avg['RENDIMIENTO']?>%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="termo-fijo"><?php echo $avg['RENDIMIENTO']?></div>
+
+
+
+
+          <div class="card ml-4">
+            <div class="card-body">
+            <?php while($avg = mysqli_fetch_assoc($query1)){ ?>
+              <canvas
+                data-value="<?php echo $avg['RENDIMIENTO']; ?>"
+                data-type="radial-gauge"
+                data-width="200"
+                data-height="100"
+                data-units="OEM"
+                data-min-value="0"
+                data-start-angle="90"
+                data-ticks-angle="180"
+                data-value-box="false"
+                data-max-value="100"
+                data-major-ticks="0"
+                data-minor-ticks="2"
+                data-stroke-ticks="true"
+                data-highlights='[
+                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                ]'
+                data-color-plate="#fff"
+                data-border-shadow-width="0"
+                data-borders="false"
+                data-needle-type="arrow"
+                data-needle-width="2"
+                data-needle-circle-size="7"
+                data-needle-circle-outer="true"
+                data-needle-circle-inner="false"
+                data-animation-duration="1500"
+                data-animation-rule="linear"
+                class="d-block mx-auto my-2"
+              ></canvas>
+              <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
               <?php } ?>
-              </div>
+            </div>
           </div>
+
+
+
+
+          <div class="col-lg-3 mt-3"></div>
           <div class="col-lg-6 d-flex flex-row justify-content-end">
             <a href="monitor-piso.php">
               <img src="images/home.png" alt="inicio" class="home-icon">
@@ -110,24 +147,23 @@
           </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-2">
           <?php while($maquina = mysqli_fetch_assoc($query)){ ?>
-          <div class="col-lg-3 my-3 text-center">
-            <a href="#"><?php echo $maquina['MAQUINA']; ?></a>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 bg-success text-start text-white pt-3">
-                  <ul class="p-3">
-                    <li>Rendimiento: <?php echo $maquina['RENDIMIENTO']; ?> %</li>
-                    <li>Velocidad: <?php echo $maquina['VELOCIDAD']; ?></li>
-                    <li>Ultimo paro: <?php echo $maquina['ULTIMOPARO']; ?></li>
-                    <li>Evento: <?php echo $maquina['EVENTO']; ?></li>
-                    <li>Paro actual:<?php echo $maquina['PAROACTUAL']; ?></li>
-                    <li>Evento actual: <?php echo $maquina['EVENTOACTUAL']; ?></li>
-                    <li>OE:<?php echo $maquina['OE']; ?></li>
-                  </ul>
-                </div>
+          <div class="col-lg-4 my-3 text-center">
+            <div class="card">
+              <div class="card-header">
+                <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
+                <h6 class="text-center"><?php echo $maquina['MAQUINA']; ?></h6>
               </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rendimiento: <?php echo $maquina['RENDIMIENTO']; ?> %</li>
+                <li class="list-group-item">Velocidad: <?php echo $maquina['VELOCIDAD']; ?></li>
+                <li class="list-group-item">Ultimo paro: <?php echo $maquina['ULTIMOPARO']; ?></li>
+                <li class="list-group-item">Paro actual: <?php echo $maquina['PAROACTUAL']; ?></li>
+                <li class="list-group-item">Evento: <?php echo $maquina['EVENTO']; ?></li>
+                <li class="list-group-item">Evento actual: <?php echo $maquina['EVENTOACTUAL']; ?></li>
+                <li class="list-group-item">OE:<?php echo $maquina['OE']; ?></li>
+              </ul>
             </div>
           </div>
           <?php } ?>
@@ -138,6 +174,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/gauge.min.js"></script>
     <script src="js/monitor.js"></script>
   </body>
 </html>

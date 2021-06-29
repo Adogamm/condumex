@@ -98,7 +98,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                             <canvas
-                                data-value="100"
+                                data-value="<?php echo $porcentaje['RENDIMIENTO']; ?>"
                                 data-type="radial-gauge"
                                 data-width="150"
                                 data-height="150"
@@ -107,15 +107,14 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-start-angle="90"
                                 data-ticks-angle="180"
                                 data-value-box="false"
-                                data-max-value="220"
+                                data-max-value="100"
                                 data-major-ticks="0"
                                 data-minor-ticks="2"
                                 data-stroke-ticks="true"
                                 data-highlights='[
-                                    {"from": 0, "to": 40, "color": "rgba(200, 50, 50, .75)"},
-                                    {"from": 41, "to": 65, "color": "rgba(240, 233, 29, .94)"},
-                                    {"from": 66, "to": 140, "color": "rgba(25, 250, 94, .98)"},
-                                    {"from": 141, "to": 220, "color": "rgba(19, 142, 13, .56)"}
+                                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
                                 ]'
                                 data-color-plate="#fff"
                                 data-border-shadow-width="0"
@@ -129,7 +128,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-animation-rule="linear"
                                 class="d-block mx-auto my-2"
                             ></canvas>
-                            <a href="#" class="btn btn-warning text-white d-block mx-auto">Revisar detalles</a>
+                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Revisar detalles</a>
                         </div>
                     </div>
                 </div>

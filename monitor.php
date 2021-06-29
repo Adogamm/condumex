@@ -89,28 +89,60 @@ $query1 = mysqli_query($conexion,$select_avg);
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
-        <h3 class="text-center title">Monitor de piso</h3>
-        <div class="container">
+        <h3 class="text-center title mt-4">Monitor de piso</h3>
+        <div class="container my-3">
             <div class="row">
-                <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
-                <div class="col-lg-5 mt-5 text-end">
-                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>"><?php echo $maquinas['TIPO_MAQUINA'] ?></a>
+            <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
+                <div class="col-lg-3 mx-3 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
+                            <canvas
+                                data-value="100"
+                                data-type="radial-gauge"
+                                data-width="150"
+                                data-height="150"
+                                data-units="OEM"
+                                data-min-value="0"
+                                data-start-angle="90"
+                                data-ticks-angle="180"
+                                data-value-box="false"
+                                data-max-value="220"
+                                data-major-ticks="0"
+                                data-minor-ticks="2"
+                                data-stroke-ticks="true"
+                                data-highlights='[
+                                    {"from": 0, "to": 40, "color": "rgba(200, 50, 50, .75)"},
+                                    {"from": 41, "to": 65, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 66, "to": 140, "color": "rgba(25, 250, 94, .98)"},
+                                    {"from": 141, "to": 220, "color": "rgba(19, 142, 13, .56)"}
+                                ]'
+                                data-color-plate="#fff"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-needle-type="arrow"
+                                data-needle-width="2"
+                                data-needle-circle-size="7"
+                                data-needle-circle-outer="true"
+                                data-needle-circle-inner="false"
+                                data-animation-duration="1500"
+                                data-animation-rule="linear"
+                                class="d-block mx-auto my-2"
+                            ></canvas>
+                            <a href="#" class="btn btn-warning text-white d-block mx-auto">Revisar detalles</a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="col-lg-5 mt-5">
-                    <div class="progress" style="height: 25px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $porcentaje['RENDIMIENTO']; ?>%;" aria-valuenow="<?php echo $porcentaje['RENDIMIENTO'];?>" aria-valuemin="0" aria-valuemax="100" id="estirado-grueso"><?php echo $porcentaje['RENDIMIENTO']; ?> %</div>
-                      </div>
-                </div>
-                <?php } ?>
+            <?php } ?>
             </div>
         </div>
     </div>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/monitor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/monitor.js"></script>
+    <script src="js/gauge.min.js"></script>
 </body>
 </html>

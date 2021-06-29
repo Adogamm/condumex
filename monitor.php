@@ -93,7 +93,7 @@ $query1 = mysqli_query($conexion,$select_avg);
         <div class="container my-3">
             <div class="row">
             <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
-                <div class="col-lg-3 mx-3 mt-4">
+                <div class="col-lg-4 d-block mx-auto mt-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>

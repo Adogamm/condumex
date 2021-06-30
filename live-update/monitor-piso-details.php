@@ -22,7 +22,7 @@
         $oe = $row["OE"];
  ?>
 
-        <div class="col-lg-4 my-3 text-center">
+        <div class="col-lg-4 my-3 text-center d-block mx-auto">
             <div class="card">
                 <div class="card-header">
                     <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">

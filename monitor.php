@@ -43,7 +43,7 @@ $query1 = mysqli_query($conexion,$select_avg);
             <li>
                 <a href="analisis-disponibilidad.html" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
-                    <span class="link-name">Analisis disponibilidad</span>
+                    <span class="link-name">Estadísticas</span>
                 </a>
             </li>
             <li>
@@ -92,6 +92,10 @@ $query1 = mysqli_query($conexion,$select_avg);
         <h3 class="text-center title mt-4">Monitor de piso</h3>
         <div class="container my-3">
             <div class="row">
+
+            <div class="col-lg-7">
+                <div class="container">
+                    <div class="row">
             <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
                 <div class="col-lg-4 d-block mx-auto mt-3">
                     <div class="card">
@@ -128,11 +132,32 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-animation-rule="linear"
                                 class="d-block mx-auto my-2"
                             ></canvas>
-                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Revisar detalles</a>
+                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">OEE</a>
                         </div>
                     </div>
                 </div>
             <?php } ?>
+            </div>
+            </div>
+            </div>
+
+            <div class="col-lg-5 mt-3">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Área</th>
+                            <th>Nombre de línea</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <div class="row mt-2">
+        <div class="my-2">
           <div id="link_wrapper"></div>
         </div>
       </div>

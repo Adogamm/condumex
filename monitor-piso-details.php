@@ -1,9 +1,8 @@
 <?php
   include 'databaseconnect/conection.php';
-  $tipo_maquina=$_GET['tipo_maquina'];
-  $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+  $tipo_maquina = $_GET['tipo_maquina'];
+  setcookie('Prueba',$tipo_maquina,time()+3600);
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
-  $query = mysqli_query($conexion,$select);
   $query1 = mysqli_query($conexion,$select_avg);
 ?>
 
@@ -21,6 +20,8 @@
     <title>Monitor piso</title>
 </head>
 <body>
+
+<!-- SIDEBAR -->
 
 <div class="sidebar">
         <div class="logo-container">
@@ -86,13 +87,14 @@
             </div>
         </div>
     </div>
-    
 
     <!-- CONTENIDO DE LA PAGINA -->
     <div class="home-content">
       <h3 class="text-center title">Monitor de piso</h3>
       <div class="container">
         <div class="row">
+
+        
 
 
 
@@ -148,25 +150,7 @@
         </div>
 
         <div class="row mt-2">
-          <?php while($maquina = mysqli_fetch_assoc($query)){ ?>
-          <div class="col-lg-4 my-3 text-center">
-            <div class="card">
-              <div class="card-header">
-                <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
-                <h6 class="text-center"><?php echo $maquina['MAQUINA']; ?></h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Rendimiento: <?php echo $maquina['RENDIMIENTO']; ?> %</li>
-                <li class="list-group-item">Velocidad: <?php echo $maquina['VELOCIDAD']; ?></li>
-                <li class="list-group-item">Ultimo paro: <?php echo $maquina['ULTIMOPARO']; ?></li>
-                <li class="list-group-item">Paro actual: <?php echo $maquina['PAROACTUAL']; ?></li>
-                <li class="list-group-item">Evento: <?php echo $maquina['EVENTO']; ?></li>
-                <li class="list-group-item">Evento actual: <?php echo $maquina['EVENTOACTUAL']; ?></li>
-                <li class="list-group-item">OE:<?php echo $maquina['OE']; ?></li>
-              </ul>
-            </div>
-          </div>
-          <?php } ?>
+          <div id="link_wrapper"></div>
         </div>
       </div>
     </div>
@@ -178,3 +162,5 @@
     <script src="js/monitor.js"></script>
   </body>
 </html>
+
+<script src="js/live.js"></script>

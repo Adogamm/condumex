@@ -41,7 +41,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                 </a>
             </li>
             <li>
-                <a href="analisis-disponibilidad.html" class="pr-2 mt-2">
+                <a href="estadisticas.html" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Estadísticas</span>
                 </a>

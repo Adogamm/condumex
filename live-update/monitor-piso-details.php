@@ -3,8 +3,6 @@
     $tipo_maquina = $_COOKIE['Prueba'];
 ?>
 
-
-
 <div class="container">
     <div class="row">
             <?php 
@@ -22,24 +20,24 @@
         $oe = $row["OE"];
  ?>
 
+
         <div class="col-lg-4 my-3 text-center d-block mx-auto">
             <div class="card">
                 <div class="card-header">
                     <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
                     <h6 class="text-center"><?php echo $maquina?></h6>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?php echo $maquina; ?></li>
-                    <li class="list-group-item"><?php echo $rendimiento; ?></li>
-                    <li class="list-group-item"><?php echo $velocidad; ?></li>
-                    <li class="list-group-item"><?php echo $paro; ?></li>
-                    <li class="list-group-item"><?php echo $evento; ?></li>
-                    <li class="list-group-item"><?php echo $paroactual; ?></li>
-                    <li class="list-group-item"><?php echo $eventoactual; ?></li>
-                    <li class="list-group-item"><?php echo $oe; ?></li>
-                </ul>
+                <div class="card-body">
+                    <h6>Rendimiento</h6>
+                    <div class="progress" style="height: 25px;">
+                        <div class="progress-bar" role="progressbar" style="width: <?php echo $rendimiento; ?>%;" aria-valuenow="99.9" aria-valuemin="0" aria-valuemax="100" id="progress-bar"><?php echo $rendimiento; ?> %</div>
+                    </div>
+                    <a href="monitor-maquina.html?maquina=<?php echo $maquina?>" class="btn btn-warning d-block mx-auto mt-4 text-white">OEE</a>
+                </div>
             </div>
         </div>
 <?php } ?>
     </div>
 </div>
+
+<input type="number" name="" id="porcentaje" value="10">

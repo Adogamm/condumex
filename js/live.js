@@ -13,5 +13,5 @@ function loadXMLDoc() {
       loadXMLDoc();
       // 1sec
   },1000);
-  
-  window.onload = loadXMLDoc;
+
+window.onload = loadXMLDoc;

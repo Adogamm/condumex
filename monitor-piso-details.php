@@ -2,7 +2,9 @@
   include 'databaseconnect/conection.php';
   $tipo_maquina = $_GET['tipo_maquina'];
   setcookie('Prueba',$tipo_maquina,time()+3600);
+  $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+  $query = mysqli_query($conexion, $select);
   $query1 = mysqli_query($conexion,$select_avg);
 ?>
 
@@ -150,10 +152,11 @@
         </div>
 
         <div class="my-2">
-          <div id="link_wrapper"></div>
+            <div id="link_wrapper">
         </div>
       </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -161,6 +164,13 @@
     <script src="js/gauge.min.js"></script>
     <script src="js/monitor.js"></script>
   </body>
+<script src="js/live.js"></script>
 </html>
 
-<script src="js/live.js"></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", function(event){
+        var Porcentaje = document.getElementById("porcentaje").value;
+        console.log(Porcentaje);
+    });
+</script>
+

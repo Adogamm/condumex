@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <h6>Rendimiento</h6>
                     <div class="progress" style="height: 25px;">
-                        <div class="progress-bar" role="progressbar" style="width: <?php echo $rendimiento; ?>%;" aria-valuenow="99.9" aria-valuemin="0" aria-valuemax="100" id="progress-bar<?php echo $maquina ?>"><?php echo $rendimiento; ?> %</div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $rendimiento; ?>%; min-width: 7%;" id="progress-bar<?php echo $maquina ?>"><span><?php echo $rendimiento; ?>%</span></div>
                     </div>
                     <a href="monitor-maquina.html?maquina=<?php echo $maquina?>" class="btn btn-warning d-block mx-auto mt-4 text-white">OEE</a>
                 </div>
@@ -46,7 +46,7 @@
             ProgressBar.classList.toggle('bg-danger');
         } else if (rendimiento >= 11 && rendimiento <= 50){
             ProgressBar.classList.toggle('bg-warning');
-        } else {
+        } else if (rendimiento >= 51){
             ProgressBar.classList.toggle('bg-success');
         }
         " hidden>

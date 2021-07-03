@@ -156,6 +156,7 @@
         </div>
       </div>
     </div>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -167,10 +168,8 @@
 <script src="js/live.js"></script>
 </html>
 
-<script defer>
-    document.addEventListener("DOMContentLoaded", function(event){
-        var Porcentaje = document.getElementById("porcentaje").value;
-        console.log(Porcentaje);
-    });
+<script>
+    var Porcentaje = document.getElementById("porcentaje");
+    console.log(Porcentaje);
 </script>
 

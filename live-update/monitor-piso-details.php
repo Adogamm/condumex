@@ -40,4 +40,21 @@
     </div>
 </div>
 
-<input type="number" name="" id="porcentaje" value="10">
+<input type="number" name="" id="rendimiento" value="<?php echo $rendimiento; ?>" hidden>
+
+
+
+
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
+var rendimiento =  document.getElementById('rendimiento').value;
+console.log(rendimiento);
+var ProgressBar = document.getElementById('progress-bar');
+if(rendimiento < 11){
+    ProgressBar.classList.toggle('bg-danger');
+} else if (rendimiento >= 11 && rendimiento <= 50){
+    ProgressBar.classList.toggle('bg-warning');
+} else {
+    ProgressBar.classList.toggle('bg-success');
+}
+" hidden>
+

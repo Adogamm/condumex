@@ -25,7 +25,7 @@
 
 <!-- SIDEBAR -->
 
-<div class="sidebar">
+    <div class="sidebar">
         <div class="logo-container">
             <!-- <img src="images/logo.png" alt="Your Logo" class="logo"> -->
             <img src="images/condumex_logo.png" alt="condumex logo" class="logo">
@@ -38,16 +38,16 @@
                     <span class="link-name">Monitor de piso</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="recetas.html" class="pr-2 mt-2">
                     <i class='bx bx-book-bookmark'></i>
                     <span class="link-name">Recetas</span>
                 </a>
-            </li>
+            </li> -->
             <li>
-                <a href="analisis-disponibilidad.html" class="pr-2 mt-2">
+                <a href="estadisticas.html" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
-                    <span class="link-name">Analisis disponibilidad</span>
+                    <span class="link-name">Estadisticas</span>
                 </a>
             </li>
             <li>
@@ -56,17 +56,15 @@
                     <span class="link-name">Bitacora de eventos</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="maestros.html">
                     <i class='bx bx-wrench'></i>
                     <span class="link-name">Maestros</span>
                 </a>
-            </li>
-
-            
+            </li> -->
             <!-- TODO SOLO SI LA SESIÓN PERTENECE A UN USUARIO -->
             <li>
-                <a href="#" class="pr-2 mt-2">
+                <a href="administracion-usuarios.html" class="pr-2 mt-2">
                     <i class='bx bx-user' ></i>
                     <span class="link-name">Gestión de usuarios</span>
                 </a>

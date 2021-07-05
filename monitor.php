@@ -34,16 +34,16 @@ $query1 = mysqli_query($conexion,$select_avg);
                     <span class="link-name">Monitor de piso</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="recetas.html" class="pr-2 mt-2">
                     <i class='bx bx-book-bookmark'></i>
                     <span class="link-name">Recetas</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="estadisticas.html" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
-                    <span class="link-name">Estadísticas</span>
+                    <span class="link-name">Estadisticas</span>
                 </a>
             </li>
             <li>
@@ -52,17 +52,15 @@ $query1 = mysqli_query($conexion,$select_avg);
                     <span class="link-name">Bitacora de eventos</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="maestros.html">
                     <i class='bx bx-wrench'></i>
                     <span class="link-name">Maestros</span>
                 </a>
-            </li>
-
-            
+            </li> -->
             <!-- TODO SOLO SI LA SESIÓN PERTENECE A UN USUARIO -->
             <li>
-                <a href="#" class="pr-2 mt-2">
+                <a href="administracion-usuarios.html" class="pr-2 mt-2">
                     <i class='bx bx-user' ></i>
                     <span class="link-name">Gestión de usuarios</span>
                 </a>

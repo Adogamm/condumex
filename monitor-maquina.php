@@ -3,7 +3,7 @@
     $maquina = $_GET['maquina'];
 
 
-    $select = "SELECT * FROM MAQUINAS WHERE 'MAQUINA' = $maquina";
+    $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
     $resultado = mysqli_query($conexion,$select);
     $row = mysqli_fetch_assoc($resultado);
 
@@ -103,7 +103,7 @@
                 </a>
             </div>
             <div class="col-lg-4 mt-3">
-                <h4 class="text-center">Monitor de máquina: <?php echo $maquina ?></h4>
+                <h4 class="text-center">Monitor de máquina: <?php echo $row['MAQUINA']; ?></h4>
             </div>
             <div class="col-lg-3">
                 <select class="form-control my-2 mx-1">
@@ -129,9 +129,10 @@
                         <h6 class="text-center"><i class='bx bx-info-circle'></i> Información</h6>
                     </div>
                     <div class="card-body text-center">
-                        <p>Área: </p>
-                        <p class="my-5">Maquina: <?php echo $maquina; ?></p>
-                        <p class="my-3">Más información: Sin información para mostrar</p>
+                        <p>Área: <?php echo $row['TIPO_MAQUINA'] ?></p>
+                        <p>Línea: <?php echo $maquina; ?></p>
+                        <p class="my-4">Fecha: <?php echo date("m/d/y"); ?></p>
+                        <p class="my-4">Hora: <?php echo date("H:i"); ?></p>
                     </div>
                 </div>
             </div>

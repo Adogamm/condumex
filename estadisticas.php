@@ -34,7 +34,7 @@
                 </a>
             </li> -->
             <li>
-                <a href="estadisticas.html" class="pr-2 mt-2">
+                <a href="estadisticas.php" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Estadisticas</span>
                 </a>
@@ -79,9 +79,23 @@
 
   <!-- CONTENIDO DE LA PAGINA -->
   <div class="home-content">
-    <h3 class="text-center title">Estadísticas</h3>
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
+                    <p class="text-left">
+                        <i class='bx bx-arrow-back'></i>
+                        <span class="ml-1"> Regresar</span>
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <h3 class="text-center title">Estadísticas</h3>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -91,20 +105,23 @@
                         <div class="col-lg-12">
                             <div class="container mt-4">
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <h4 class="text-center">Gráficas por área</h4>
-                                    </div>
                                     <div class="col-lg-12 d-block mx-auto">
-                                        <select class="form-control my-2">
-                                            <option value="null">-- Seleccionar máquina --</option>
-                                            <optgroup label="Irradiado">
+                                        <form action="#" class="form-inline">
+                                            <select class="form-control my-2 mx-1">
+                                                <option value="null">-- Seleccionar Área --</option>
+                                                <option value="Irradiado">Irradiado</option>
+                                                <option value="Repase">Repase</option>
+                                                <option value="Termo fijo">Termo fijo</option>
+                                                <option value="Termo plástico">Termo plástico</option>
+                                                <option value="Tubulado">Tubulado</option>
+                                            </select>
+                                            <select class="form-control my-2 mx-1">
+                                                <option value="null">-- Seleccionar Máquina --</option>
                                                 <option value="LIR601">LIR601</option>
-                                            </optgroup>
-                                            <optgroup label="Repase">
+
                                                 <option value="LRP601">LRP601</option>
                                                 <option value="LRP602">LRP602</option>
-                                            </optgroup>
-                                            <optgroup label="Termo fijo">
+                                            
                                                 <option value="LAF601">LAF601</option>
                                                 <option value="LAF602">LAF602</option>
                                                 <option value="LAF603">LAF603</option>
@@ -112,8 +129,7 @@
                                                 <option value="LAF605">LAF605</option>
                                                 <option value="LAF606">LAF606</option>
                                                 <option value="LAF607">LAF607</option>
-                                            </optgroup>
-                                            <optgroup label="Termo plástico">
+                                            
                                                 <option value="LAF601">LAF601</option>
                                                 <option value="LAF602">LAF602</option>
                                                 <option value="LAF603">LAF603</option>
@@ -125,20 +141,53 @@
                                                 <option value="LAF609">LAF609</option>
                                                 <option value="LAF610">LAF620</option>
                                                 <option value="LAF611">LAF611</option>
-                                            </optgroup>
-                                            <optgroup label="Tubulado">
+                                            
                                                 <option value="LAF601">LAF601</option>
-                                            </optgroup>
-                                        </select>
+                                            </select>
+                                            <select class="form-control my-2 mx-1">
+                                                <option value="null">-- Seleccionar Variables --</option>
+                                                <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                                <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                                <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                                <option value="fallas-superficie">Fallas de superficie</option>
+                                                <option value="preset_length">Preset_length</option>
+                                                <option value="spool-change">Cambio de bobina (spool change)</option>
+                                                <option value="last-spool">Velocidad de operación</option>
+                                                <option value="last-spool">Concentricidad</option>
+                                                <option value="last-spool">Horómetro</option>
+                                            </select>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 d-block mx-auto">
+                        <div class="col-lg-5 d-block mx-auto mt-2">
                             <canvas id="grafica-lineas" width="30%" height="30%"></canvas>
                         </div>
                         <div class="col-lg-5 d-block mx-auto">
-                            <canvas id="grafica-barras" width="30%" height="30%"></canvas>
+                            <table class="table table-striped mt-4">
+                                <tr>
+                                    <th>Ítem</th>
+                                    <th>Variable</th>
+                                    <th>Valor</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

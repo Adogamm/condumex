@@ -45,7 +45,7 @@
                 </a>
             </li> -->
             <li>
-                <a href="estadisticas.html" class="pr-2 mt-2">
+                <a href="estadisticas.php" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Estadisticas</span>
                 </a>
@@ -90,16 +90,25 @@
 
     <!-- CONTENIDO DE LA PAGINA -->
     <div class="home-content">
-      <h3 class="text-center title">Monitor de piso</h3>
-      <div class="container">
+
+    <div class="container">
         <div class="row">
+            <div class="col-lg-4 mt-4">
+                <a href="monitor.php" class="text-dark" style="text-decoration: none;">
+                    <p class="text-left">
+                        <i class='bx bx-arrow-back'></i>
+                        <span class="ml-1"> Regresar</span>
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <h3 class="text-center title">Monitor piso</h3>
+            </div>
+        </div>
+    </div>
 
-        
-
-
-
-
-          <div class="card ml-4">
+      <div class="container">
+        <div class="row"><div class="card ml-4">
             <div class="card-body">
             <?php while($avg = mysqli_fetch_assoc($query1)){ ?>
               <canvas

@@ -41,7 +41,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                 </a>
             </li> -->
             <li>
-                <a href="estadisticas.html" class="pr-2 mt-2">
+                <a href="estadisticas.php" class="pr-2 mt-2">
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Estadisticas</span>
                 </a>
@@ -104,7 +104,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-type="radial-gauge"
                                 data-width="150"
                                 data-height="150"
-                                data-units="OEM"
+                                data-units="OEE"
                                 data-min-value="0"
                                 data-start-angle="90"
                                 data-ticks-angle="180"
@@ -130,7 +130,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-animation-rule="linear"
                                 class="d-block mx-auto my-2"
                             ></canvas>
-                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">OEE</a>
+                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Detalles</a>
                         </div>
                     </div>
                 </div>

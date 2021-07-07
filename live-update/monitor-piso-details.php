@@ -32,7 +32,7 @@
                     <div class="progress" style="height: 25px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $rendimiento; ?>%; min-width: 7%;" id="progress-bar<?php echo $maquina ?>"><span><?php echo $rendimiento; ?>%</span></div>
                     </div>
-                    <a href="monitor-maquina.php?maquina=<?php echo $maquina?>" class="btn btn-warning d-block mx-auto mt-4 text-white">OEE</a>
+                    <a href="monitor-maquina.php?maquina=<?php echo $maquina?>" class="btn btn-warning d-block mx-auto mt-4 text-white">Detalles</a>
                 </div>
             </div>
         </div>

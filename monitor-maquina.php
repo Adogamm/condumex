@@ -38,7 +38,7 @@
             </a>
         </li> -->
         <li>
-            <a href="estadisticas.html" class="pr-2 mt-2">
+            <a href="estadisticas.php" class="pr-2 mt-2">
                 <i class='bx bx-line-chart'></i>
                 <span class="link-name">Estadisticas</span>
             </a>

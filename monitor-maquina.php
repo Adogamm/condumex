@@ -1,6 +1,13 @@
 <?php
     include('databaseconnect/conection.php');
     $maquina = $_GET['maquina'];
+
+
+    $select = "SELECT * FROM MAQUINAS WHERE 'MAQUINA' = $maquina";
+    $resultado = mysqli_query($conexion,$select);
+    $row = mysqli_fetch_assoc($resultado);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,6 +129,7 @@
                         <h6 class="text-center"><i class='bx bx-info-circle'></i> Información</h6>
                     </div>
                     <div class="card-body text-center">
+                        <p>Área: </p>
                         <p class="my-5">Maquina: <?php echo $maquina; ?></p>
                         <p class="my-3">Más información: Sin información para mostrar</p>
                     </div>
@@ -313,7 +321,6 @@
                     </div>
                 </div>
             </div>
-
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

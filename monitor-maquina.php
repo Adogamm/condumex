@@ -86,7 +86,24 @@
   <div class="home-content">
     <div class="container mt-4">
 
-    <h4 class="text-center">Monitor de máquina: <?php echo $maquina ?></h4>
+    
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
+                    <p class="text-left">
+                        <i class='bx bx-arrow-back'></i>
+                        <span class="ml-1"> Regresar</span>
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="text-center">Monitor de máquina: <?php echo $maquina ?></h4>
+            </div>
+        </div>
+    </div>
 
         <div class="row">
             <div class="col-lg-3 my-2">

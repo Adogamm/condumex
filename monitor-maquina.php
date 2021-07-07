@@ -87,7 +87,7 @@
     <div class="container mt-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-3">
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
                     <p class="text-left">
                         <i class='bx bx-arrow-back'></i>
@@ -95,8 +95,22 @@
                     </p>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mt-3">
                 <h4 class="text-center">Monitor de máquina: <?php echo $maquina ?></h4>
+            </div>
+            <div class="col-lg-3">
+                <select class="form-control my-2 mx-1">
+                    <option value="null">-- Seleccionar Variables --</option>
+                    <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                    <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                    <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                    <option value="fallas-superficie">Fallas de superficie</option>
+                    <option value="preset_length">Preset_length</option>
+                    <option value="spool-change">Cambio de bobina (spool change)</option>
+                    <option value="last-spool">Velocidad de operación</option>
+                    <option value="last-spool">Concentricidad</option>
+                    <option value="last-spool">Horómetro</option>
+                </select>
             </div>
         </div>
     </div>
@@ -299,7 +313,6 @@
                     </div>
                 </div>
             </div>
-
 
 
 

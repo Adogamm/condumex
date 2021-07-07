@@ -100,7 +100,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                             <canvas
-                                data-value="<?php echo $porcentaje['RENDIMIENTO']; ?>"
+                                data-value="0"
                                 data-type="radial-gauge"
                                 data-width="150"
                                 data-height="150"
@@ -129,7 +129,17 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-animation-duration="1500"
                                 data-animation-rule="linear"
                                 class="d-block mx-auto my-2"
+                                id="medidor<?php echo $maquinas['TIPO_MAQUINA'] ?>"
                             ></canvas>
+
+                            <script>
+                                var number<?php echo $maquinas['TIPO_MAQUINA'] ?> = 0;
+                                    setInterval(function() {
+                                        number<?php echo $maquinas['TIPO_MAQUINA'] ?> = Math.floor(Math.random()*100);
+                                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA'] ?>);
+                                    }, 1000);
+                            </script>
+
                             <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Detalles</a>
                         </div>
                     </div>

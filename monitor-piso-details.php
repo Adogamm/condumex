@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -141,7 +141,19 @@
                 data-animation-duration="1500"
                 data-animation-rule="linear"
                 class="d-block mx-auto my-2"
+                id="medidor"
               ></canvas>
+
+
+            <script>
+                var number = 0;
+                    setInterval(function() {
+                        number = Math.floor(Math.random()*100);
+                        $("#medidor").attr("data-value",number);
+                    }, 1000);
+            </script>
+
+
               <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
               <?php } ?>
             </div>
@@ -159,7 +171,55 @@
         </div>
 
         <div class="my-2">
-            <div id="link_wrapper">
+            <!-- <div id="link_wrapper"> -->
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <?php while($maquina = mysqli_fetch_assoc($query)){  ?>
+                    <div class="col-lg-4 my-3 text-center d-block mx-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
+                                <h6 class="text-center mt-2"><?php echo $maquina['MAQUINA'] ?></h6>
+                            </div>
+                        <div class="card-body">
+                            <h6>Rendimiento</h6>
+                            <div class="progress">
+                                <div id="progress<?php echo $maquina['MAQUINA'] ?>" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0% min-width: 25%"><span>0%</span></div>
+                            </div>
+
+                            <script>
+                                var barra<?php echo $maquina['MAQUINA']; ?> = document.getElementById("progress<?php echo $maquina['MAQUINA'] ?>")
+                                var number1 = 0;
+                                setInterval(function() {
+                                    number1 = Math.floor(Math.random()*100);
+                                    $("#progress<?php echo $maquina['MAQUINA'] ?>").css("width",number1+"%").attr("aria-valuenow",number1).text(number1+"%");
+                                    if(number >= 0 && number <= 10){
+                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-danger");
+                                    } else if(number >= 21 && number <= 50){
+                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-warning");
+                                    } else if(number >= 51 && number <= 100){
+                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-success");
+                                    }
+                                }, 1000);
+                            </script>
+
+                            <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>" class="btn btn-warning d-block mx-auto mt-4 text-white">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+
+
+
+
+
+
         </div>
       </div>
     </div>

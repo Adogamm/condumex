@@ -1,6 +1,6 @@
 <?php 
 include 'databaseconnect/conection.php';
-$select = "SELECT DISTINCT TIPO_MAQUINA FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
+$select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
 $query = mysqli_query($conexion,$select);
 
 $select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
@@ -129,14 +129,14 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-animation-duration="1500"
                                 data-animation-rule="linear"
                                 class="d-block mx-auto my-2"
-                                id="medidor<?php echo $maquinas['TIPO_MAQUINA'] ?>"
+                                id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"
                             ></canvas>
 
                             <script>
-                                var number<?php echo $maquinas['TIPO_MAQUINA'] ?> = 0;
+                                var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
                                     setInterval(function() {
-                                        number<?php echo $maquinas['TIPO_MAQUINA'] ?> = Math.floor(Math.random()*100);
-                                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA'] ?>);
+                                        number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
+                                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
                                     }, 1000);
                             </script>
 

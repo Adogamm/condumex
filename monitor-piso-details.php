@@ -90,7 +90,6 @@
 
     <!-- CONTENIDO DE LA PAGINA -->
     <div class="home-content">
-
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mt-4">
@@ -106,7 +105,6 @@
             </div>
         </div>
     </div>
-
       <div class="container">
         <div class="row"><div class="card ml-4">
             <div class="card-body">
@@ -116,7 +114,7 @@
                 data-type="radial-gauge"
                 data-width="200"
                 data-height="100"
-                data-units="OEM"
+                data-units="OEE"
                 data-min-value="0"
                 data-start-angle="90"
                 data-ticks-angle="180"
@@ -138,13 +136,13 @@
                 data-needle-circle-size="7"
                 data-needle-circle-outer="true"
                 data-needle-circle-inner="false"
-                data-animation-duration="1500"
+                data-animation-duration="1000"
                 data-animation-rule="linear"
                 class="d-block mx-auto my-2"
                 id="medidor"
               ></canvas>
 
-
+<!-- Actualizar los medidores con valores aleatorios -->
             <script>
                 var number = 0;
                     setInterval(function() {
@@ -152,16 +150,10 @@
                         $("#medidor").attr("data-value",number);
                     }, 1000);
             </script>
-
-
               <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
               <?php } ?>
             </div>
           </div>
-
-
-
-
           <div class="col-lg-3 mt-3"></div>
           <div class="col-lg-6 d-flex flex-row justify-content-end">
             <a href="monitor-piso.php">
@@ -169,14 +161,8 @@
             </a>
           </div>
         </div>
-
         <div class="my-2">
-            <!-- <div id="link_wrapper"> -->
-
-
-
-
-        <div class="container">
+            <div class="container">
             <div class="row">
                 <?php while($maquina = mysqli_fetch_assoc($query)){  ?>
                     <div class="col-lg-4 my-3 text-center d-block mx-auto">
@@ -186,27 +172,39 @@
                                 <h6 class="text-center mt-2"><?php echo $maquina['MAQUINA'] ?></h6>
                             </div>
                         <div class="card-body">
-                            <h6>Rendimiento</h6>
-                            <div class="progress">
-                                <div id="progress<?php echo $maquina['MAQUINA'] ?>" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0% min-width: 25%"><span>0%</span></div>
-                            </div>
-
-                            <script>
-                                var barra<?php echo $maquina['MAQUINA']; ?> = document.getElementById("progress<?php echo $maquina['MAQUINA'] ?>")
-                                var number1 = 0;
-                                setInterval(function() {
-                                    number1 = Math.floor(Math.random()*100);
-                                    $("#progress<?php echo $maquina['MAQUINA'] ?>").css("width",number1+"%").attr("aria-valuenow",number1).text(number1+"%");
-                                    if(number >= 0 && number <= 10){
-                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-danger");
-                                    } else if(number >= 21 && number <= 50){
-                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-warning");
-                                    } else if(number >= 51 && number <= 100){
-                                        barra<?php echo $maquina['MAQUINA']; ?>.classList.toggle("bg-success");
-                                    }
-                                }, 1000);
-                            </script>
-
+                            <h6 id="text<?php echo $maquina['MAQUINA'] ?>"></h6>
+                                <canvas
+                                    data-value="<?php echo $maquina['RENDIMIENTO'] ?>"
+                                    data-type="radial-gauge"
+                                    data-width="150"
+                                    data-height="150"
+                                    data-units="OEE"
+                                    data-min-value="0"
+                                    data-start-angle="90"
+                                    data-ticks-angle="180"
+                                    data-value-box="false"
+                                    data-max-value="100"
+                                    data-major-ticks="0,25,50,75,100"
+                                    data-minor-ticks="4"
+                                    data-stroke-ticks="true"
+                                    data-highlights='[
+                                        {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                        {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                        {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                    ]'
+                                    data-color-plate="#fff"
+                                    data-border-shadow-width="0"
+                                    data-borders="false"
+                                    data-needle-type="arrow"
+                                    data-needle-width="2"
+                                    data-needle-circle-size="7"
+                                    data-needle-circle-outer="true"
+                                    data-needle-circle-inner="false"
+                                    data-animation-duration="1000"
+                                    data-animation-rule="linear"
+                                    class="d-block mx-auto my-2"
+                                    id="medidor<?php echo $maquina['MAQUINA']; ?>"
+                                ></canvas>
                             <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>" class="btn btn-warning d-block mx-auto mt-4 text-white">Detalles</a>
                         </div>
                     </div>
@@ -215,17 +213,12 @@
             </div>
         </div>
 
-
-
-
-
-
         </div>
       </div>
     </div>
-    
 
-
+    <!-- Carga de información desde JS -->
+    <div id="link_wrapper">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -234,9 +227,4 @@
   </body>
 <script src="js/live.js"></script>
 </html>
-
-<script>
-    var Porcentaje = document.getElementById("porcentaje");
-    console.log(Porcentaje);
-</script>
 

@@ -122,6 +122,272 @@
         </div>
     </div>
 
+
+
+
+
+    <div class="row">
+        <div class="col-lg-12 my-2">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class='bx bx-info-circle'></i> Información
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="card-body text-center">
+                                <p>Área: <?php echo $row['TIPO_MAQUINA'] ?><br>
+                                Línea: <?php echo $maquina; ?><br>
+                                Fecha: <?php echo date("m/d/y"); ?><br>
+                                Hora: <?php echo date("H:i"); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class='bx bx-timer'></i> Tiempo muerto
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body text-center">
+                            <p>Tiempo muerto: 0.23 mins</p>
+                            <p>Tiempo ciclo: 12.43 mins</p>
+                        </div>
+                        </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class='bx bx-chevron-right-circle'></i> OEE
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                        <canvas
+                            data-value="0"
+                            data-type="radial-gauge"
+                            data-width="150"
+                            data-height="150"
+                            data-units="OEE"
+                            data-min-value="0"
+                            data-start-angle="90"
+                            data-ticks-angle="180"
+                            data-value-box="false"
+                            data-max-value="100"
+                            data-major-ticks="0,25,50,75,100"
+                            data-minor-ticks="4"
+                            data-stroke-ticks="true"
+                            data-highlights='[
+                                {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                            ]'
+                            data-color-plate="#fff"
+                            data-border-shadow-width="0"
+                            data-borders="false"
+                            data-needle-type="arrow"
+                            data-needle-width="2"
+                            data-needle-circle-size="7"
+                            data-needle-circle-outer="true"
+                            data-needle-circle-inner="false"
+                            data-animation-duration="1000"
+                            data-animation-rule="linear"
+                            class="d-block mx-auto my-2"
+                            id="medidor"
+                        ></canvas>
+                        <div class="card-body-text text-center">
+                            <p>Alarmas: Ninguno<br>
+                            Último fallo: Ninguno<br>
+                            <?php echo date("D M j G:i:s T Y"); ?></p><br>
+                            <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <i class='bx bx-comment-check'></i> Disponibilidad
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                        <canvas
+                            data-value="0"
+                            data-type="radial-gauge"
+                            data-width="150"
+                            data-height="150"
+                            data-units="OEE"
+                            data-min-value="0"
+                            data-start-angle="90"
+                            data-ticks-angle="180"
+                            data-value-box="false"
+                            data-max-value="100"
+                            data-major-ticks="0,25,50,75,100"
+                            data-minor-ticks="4"
+                            data-stroke-ticks="true"
+                            data-highlights='[
+                                {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                            ]'
+                            data-color-plate="#fff"
+                            data-border-shadow-width="0"
+                            data-borders="false"
+                            data-needle-type="arrow"
+                            data-needle-width="2"
+                            data-needle-circle-size="7"
+                            data-needle-circle-outer="true"
+                            data-needle-circle-inner="false"
+                            data-animation-duration="1000"
+                            data-animation-rule="linear"
+                            class="d-block mx-auto my-2"
+                            id="medidor"
+                        ></canvas>
+                        <div class="card-body-text text-center">
+                            <p>Tiempo operativo: 43.12 mins<br>
+                            Tiempo disponible: 56.10 mins</p><br>
+                            <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <i class='bx bx-tachometer'></i> Rendimiento
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            <canvas
+                                data-value="0"
+                                data-type="radial-gauge"
+                                data-width="150"
+                                data-height="150"
+                                data-units="OEE"
+                                data-min-value="0"
+                                data-start-angle="90"
+                                data-ticks-angle="180"
+                                data-value-box="false"
+                                data-max-value="100"
+                                data-major-ticks="0,25,50,75,100"
+                                data-minor-ticks="4"
+                                data-stroke-ticks="true"
+                                data-highlights='[
+                                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                ]'
+                                data-color-plate="#fff"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-needle-type="arrow"
+                                data-needle-width="2"
+                                data-needle-circle-size="7"
+                                data-needle-circle-outer="true"
+                                data-needle-circle-inner="false"
+                                data-animation-duration="1000"
+                                data-animation-rule="linear"
+                                class="d-block mx-auto my-2"
+                                id="medidor"
+                            ></canvas>
+                            <div class="card-body-text text-center">
+                                <p>Producción real: 256 pzs.<br>
+                                Producción prevista: 280 pzs.</p><br>
+                                <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <i class='bx bx-badge-check'></i> Calidad
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            <canvas
+                                data-value="0"
+                                data-type="radial-gauge"
+                                data-width="150"
+                                data-height="150"
+                                data-units="OEE"
+                                data-min-value="0"
+                                data-start-angle="90"
+                                data-ticks-angle="180"
+                                data-value-box="false"
+                                data-max-value="100"
+                                data-major-ticks="0,25,50,75,100"
+                                data-minor-ticks="4"
+                                data-stroke-ticks="true"
+                                data-highlights='[
+                                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                ]'
+                                data-color-plate="#fff"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-needle-type="arrow"
+                                data-needle-width="2"
+                                data-needle-circle-size="7"
+                                data-needle-circle-outer="true"
+                                data-needle-circle-inner="false"
+                                data-animation-duration="1000"
+                                data-animation-rule="linear"
+                                class="d-block mx-auto my-2"
+                                id="medidor"
+                            ></canvas>
+                            <div class="card-body-text text-center">
+                                <p>Producción real: 226 pzs.<br>
+                                Producción OK: 226 pzs.</p><br>
+                                <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <hr class="my-5 border shadow"s>
         <div class="row">
             <div class="col-lg-3 my-2">
                 <div class="card">
@@ -268,8 +534,8 @@
                                 </script>
                                 </div>
                                 <div class="col-lg-7 text-left my-1">
-                                    <p class="my-4">Producción real: <br>256 pzs.</p>
-                                    <p class="my-4">Producción prevista: <br>280 pzs.</p>
+                                    <p class="my-4">Producción real: 256 pzs.<br>
+                                    <p class="my-4">Producción prevista: 280 pzs.</p><br>
                                 </div>
                             </div>
                         </div>
@@ -328,5 +594,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/monitor.js"></script>
+    <script src="js/gauge.min.js"></script>
   </body>
 </html>

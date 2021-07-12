@@ -428,24 +428,38 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-5">
-                                <div class="progress" style="height: 25px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progress" style="width: 0%; min-width: 25%;" id="progress-bar"><span>0%</span></div>
-                                </div>
-                                <script>
-                                    var barra = document.getElementById("progress");
-                                    var number = 0
-                                    setInterval(function() {
-                                        number = Math.floor(Math.random()*100);
-                                        $("#progress").css("width",number+"%").attr("aria-valuenow",number).text(number+"%");
-                                        if(number >= 0 && number <= 10){
-                                           barra.classList.toggle("bg-danger");
-                                        } else if(number >= 21 && number <= 50){
-                                            barra.classList.toggle("bg-warning");
-                                        } else if(number >= 51 && number <= 100){
-                                            barra.classList.toggle("bg-success");
-                                        }
-                                    }, 2500);
-                                </script>
+                                <canvas
+                                data-value="0"
+                                data-type="radial-gauge"
+                                data-width="150"
+                                data-height="150"
+                                data-units="OEE"
+                                data-min-value="0"
+                                data-start-angle="90"
+                                data-ticks-angle="180"
+                                data-value-box="false"
+                                data-max-value="100"
+                                data-major-ticks="0,25,50,75,100"
+                                data-minor-ticks="4"
+                                data-stroke-ticks="true"
+                                data-highlights='[
+                                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                ]'
+                                data-color-plate="#fff"
+                                data-border-shadow-width="0"
+                                data-borders="false"
+                                data-needle-type="arrow"
+                                data-needle-width="2"
+                                data-needle-circle-size="7"
+                                data-needle-circle-outer="true"
+                                data-needle-circle-inner="false"
+                                data-animation-duration="1000"
+                                data-animation-rule="linear"
+                                class="d-block mx-auto my-2"
+                                id="medidor"
+                            ></canvas>
                                 </div>
                                 <div class="col-lg-6 text-left">
                                     <p>Alarmas: Ninguno</p>
@@ -479,22 +493,43 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-5">
-
-                                <div class="progress my-4" style="height: 25px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progress1" style="width: 0%; min-width: 25%;" id="progress-bar"><span>0%</span></div>
+                                <div class="col-lg-12">
+                                    <canvas
+                                        data-value="0"
+                                        data-type="radial-gauge"
+                                        data-width="150"
+                                        data-height="150"
+                                        data-units="OEE"
+                                        data-min-value="0"
+                                        data-start-angle="90"
+                                        data-ticks-angle="180"
+                                        data-value-box="false"
+                                        data-max-value="100"
+                                        data-major-ticks="0,25,50,75,100"
+                                        data-minor-ticks="4"
+                                        data-stroke-ticks="true"
+                                        data-highlights='[
+                                            {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                            {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                            {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                        ]'
+                                        data-color-plate="#fff"
+                                        data-border-shadow-width="0"
+                                        data-borders="false"
+                                        data-needle-type="arrow"
+                                        data-needle-width="2"
+                                        data-needle-circle-size="7"
+                                        data-needle-circle-outer="true"
+                                        data-needle-circle-inner="false"
+                                        data-animation-duration="1000"
+                                        data-animation-rule="linear"
+                                        class="d-block mx-auto my-2"
+                                        id="medidor"
+                                    ></canvas>
                                 </div>
-                                <script>
-                                    var number1 = 0;
-                                    setInterval(function() {
-                                        number1 = Math.floor(Math.random()*100);
-                                        $("#progress1").css("width",number1+"%").attr("aria-valuenow",number1).text(number1+"%");
-                                    }, 2500);
-                                </script>
-                                </div>
-                                <div class="col-lg-6 text-left">
-                                    <p>Tiempo operativo: <br>43.12 mins</p>
-                                    <p>Tiempo disponible: <br>56.10 mins</p>
+                                <div class="col-lg-12 text-center">
+                                    <p>Tiempo operativo: 43.12 mins<br>
+                                    Tiempo disponible: 56.10 mins</p>
                                 </div>
                             </div>
                         </div>
@@ -521,21 +556,43 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-5">
-                                <div class="progress my-4" style="height: 25px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progress2" style="width: 0%; min-width: 25%;" id="progress-bar"><span>0%</span></div>
+                                <div class="col-lg-12">
+                                    <canvas
+                                        data-value="0"
+                                        data-type="radial-gauge"
+                                        data-width="150"
+                                        data-height="150"
+                                        data-units="OEE"
+                                        data-min-value="0"
+                                        data-start-angle="90"
+                                        data-ticks-angle="180"
+                                        data-value-box="false"
+                                        data-max-value="100"
+                                        data-major-ticks="0,25,50,75,100"
+                                        data-minor-ticks="4"
+                                        data-stroke-ticks="true"
+                                        data-highlights='[
+                                            {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                            {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                            {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                        ]'
+                                        data-color-plate="#fff"
+                                        data-border-shadow-width="0"
+                                        data-borders="false"
+                                        data-needle-type="arrow"
+                                        data-needle-width="2"
+                                        data-needle-circle-size="7"
+                                        data-needle-circle-outer="true"
+                                        data-needle-circle-inner="false"
+                                        data-animation-duration="1000"
+                                        data-animation-rule="linear"
+                                        class="d-block mx-auto my-2"
+                                        id="medidor"
+                                    ></canvas>
                                 </div>
-                                <script>
-                                    var number2 = 0
-                                    setInterval(function() {
-                                        number2 = Math.floor(Math.random()*100);
-                                        $("#progress2").css("width",number2+"%").attr("aria-valuenow",number2).text(number2+"%");
-                                    }, 2500);
-                                </script>
-                                </div>
-                                <div class="col-lg-7 text-left my-1">
-                                    <p class="my-4">Producción real: 256 pzs.<br>
-                                    <p class="my-4">Producción prevista: 280 pzs.</p><br>
+                                <div class="col-lg-12 text-center">
+                                    <p>Producción real: 256 pzs.<br>
+                                    Producción prevista: 280 pzs.</p>
                                 </div>
                             </div>
                         </div>
@@ -564,21 +621,43 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-5">
-                                <div class="progress my-4" style="height: 25px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progress3" style="width: 0%; min-width: 25%;" id="progress-bar"><span>0%</span></div>
+                            <div class="col-lg-12">
+                                    <canvas
+                                        data-value="0"
+                                        data-type="radial-gauge"
+                                        data-width="150"
+                                        data-height="150"
+                                        data-units="OEE"
+                                        data-min-value="0"
+                                        data-start-angle="90"
+                                        data-ticks-angle="180"
+                                        data-value-box="false"
+                                        data-max-value="100"
+                                        data-major-ticks="0,25,50,75,100"
+                                        data-minor-ticks="4"
+                                        data-stroke-ticks="true"
+                                        data-highlights='[
+                                            {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
+                                            {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                            {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                        ]'
+                                        data-color-plate="#fff"
+                                        data-border-shadow-width="0"
+                                        data-borders="false"
+                                        data-needle-type="arrow"
+                                        data-needle-width="2"
+                                        data-needle-circle-size="7"
+                                        data-needle-circle-outer="true"
+                                        data-needle-circle-inner="false"
+                                        data-animation-duration="1000"
+                                        data-animation-rule="linear"
+                                        class="d-block mx-auto my-2"
+                                        id="medidor"
+                                    ></canvas>
                                 </div>
-                                <script>
-                                    var number3 = 0
-                                    setInterval(function() {
-                                        number3 = Math.floor(Math.random()*100);
-                                        $("#progress3").css("width",number3+"%").attr("aria-valuenow",number3).text(number3+"%");
-                                    }, 2500);
-                                </script>
-                                </div>
-                                <div class="col-lg-6 text-left my-1">
-                                    <p class="my-4">Producción real: <br>226 pzs.</p>
-                                    <p class="my-4">Producción OK: <br>226 pzs.</p>
+                                <div class="col-lg-12 text-center">
+                                    <p>Producción real: 226 pzs.<br>
+                                    Producción OK: 226 pzs.</p>
                                 </div>
                             </div>
                         </div>

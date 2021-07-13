@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/styles-monitor.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Analisis de disponibilidad</title>
 </head>
 <body>
@@ -108,15 +108,41 @@
                                     <div class="col-lg-12 d-block mx-auto">
                                         <form name="selector_datos" action="#" class="form-inline">
                                             <select class="form-control my-2 mx-1">
-                                                <option value="0">-- Seleccionar Área --</option>
-                                                <option value="1">Irradiado</option>
-                                                <option value="2">Repase</option>
-                                                <option value="3">Termo fijo</option>
-                                                <option value="4">Termo plástico</option>
-                                                <option value="5">Tubulado</option>
+                                                <option value="null">-- Seleccionar Área --</option>
+                                                <option value="Irradiado">Irradiado</option>
+                                                <option value="Repase">Repase</option>
+                                                <option value="Termo fijo">Termo fijo</option>
+                                                <option value="Termo plástico">Termo plástico</option>
+                                                <option value="Tubulado">Tubulado</option>
                                             </select>
-                                            <select class="form-control my-2 mx-1" name="opt">
+                                            <select class="form-control my-2 mx-1" disabled>
                                                 <option value="null">-- Seleccionar Máquina --</option>
+                                                <option value="LIR601">LIR601</option>
+
+                                                <option value="LRP601">LRP601</option>
+                                                <option value="LRP602">LRP602</option>
+                                            
+                                                <option value="LAF601">LAF601</option>
+                                                <option value="LAF602">LAF602</option>
+                                                <option value="LAF603">LAF603</option>
+                                                <option value="LAF604">LAF604</option>
+                                                <option value="LAF605">LAF605</option>
+                                                <option value="LAF606">LAF606</option>
+                                                <option value="LAF607">LAF607</option>
+                                            
+                                                <option value="LAF601">LAF601</option>
+                                                <option value="LAF602">LAF602</option>
+                                                <option value="LAF603">LAF603</option>
+                                                <option value="LAF604">LAF604</option>
+                                                <option value="LAF605">LAF605</option>
+                                                <option value="LAF606">LAF606</option>
+                                                <option value="LAF607">LAF607</option>
+                                                <option value="LAF608">LAF608</option>
+                                                <option value="LAF609">LAF609</option>
+                                                <option value="LAF610">LAF620</option>
+                                                <option value="LAF611">LAF611</option>
+                                            
+                                                <option value="LAF601">LAF601</option>
                                             </select>
                                             <select class="form-control my-2 mx-1" disabled>
                                                 <option value="null">-- Seleccionar Variables --</option>

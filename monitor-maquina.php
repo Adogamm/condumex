@@ -459,6 +459,13 @@
                                 class="d-block mx-auto my-2"
                                 id="medidor"
                             ></canvas>
+                            <script>
+                                var number = 0;
+                                    setInterval(function() {
+                                        number= Math.floor(Math.random()*100);
+                                        $("#medidor").attr("data-value",number);
+                                    }, 1000);
+                            </script>
                                 </div>
                                 <div class="col-lg-6 text-left">
                                     <p>Alarmas: Ninguno</p>
@@ -523,8 +530,15 @@
                                         data-animation-duration="1000"
                                         data-animation-rule="linear"
                                         class="d-block mx-auto my-2"
-                                        id="medidor"
+                                        id="medidor1"
                                     ></canvas>
+                                    <script>
+                                        var number1 = 0;
+                                        setInterval(function() {
+                                            number1 = Math.floor(Math.random()*100);
+                                            $("#medidor1").attr("data-value",number1);
+                                        }, 1000);
+                                    </script>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <p>Tiempo operativo: 43.12 mins<br>
@@ -586,8 +600,15 @@
                                         data-animation-duration="1000"
                                         data-animation-rule="linear"
                                         class="d-block mx-auto my-2"
-                                        id="medidor"
+                                        id="medidor2"
                                     ></canvas>
+                                    <script>
+                                        var number2 = 0;
+                                        setInterval(function() {
+                                            number2 = Math.floor(Math.random()*100);
+                                            $("#medidor2").attr("data-value",number2);
+                                        }, 1000);
+                                    </script>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <p>Producción real: 256 pzs.<br>
@@ -651,8 +672,15 @@
                                         data-animation-duration="1000"
                                         data-animation-rule="linear"
                                         class="d-block mx-auto my-2"
-                                        id="medidor"
+                                        id="medidor3"
                                     ></canvas>
+                                    <script>
+                                        var number3 = 0;
+                                        setInterval(function() {
+                                            number3 = Math.floor(Math.random()*100);
+                                            $("#medidor3").attr("data-value",number3);
+                                        }, 1000);
+                                    </script>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <p>Producción real: 226 pzs.<br>

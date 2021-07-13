@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="container mt-4">
+                            <div class="container mt-2">
                                 <div class="row">
                                     <div class="col-lg-12 d-block mx-auto">
                                         <form name="selector_datos" action="#" class="form-inline">
@@ -115,7 +115,7 @@
                                                 <option value="Termo plástico">Termo plástico</option>
                                                 <option value="Tubulado">Tubulado</option>
                                             </select>
-                                            <select class="form-control my-2 mx-1" disabled>
+                                            <select class="form-control my-2 mx-1">
                                                 <option value="null">-- Seleccionar Máquina --</option>
                                                 <option value="LIR601">LIR601</option>
 
@@ -144,7 +144,7 @@
                                             
                                                 <option value="LAF601">LAF601</option>
                                             </select>
-                                            <select class="form-control my-2 mx-1" disabled>
+                                            <select class="form-control my-2 mx-1">
                                                 <option value="null">-- Seleccionar Variables --</option>
                                                 <option value="estado-enrollador">Obtención del estado del enrollador</option>
                                                 <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
@@ -156,6 +156,24 @@
                                                 <option value="last-spool">Concentricidad</option>
                                                 <option value="last-spool">Horómetro</option>
                                             </select>
+
+                                            <div class="form-group row">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                                <div class="col-sm-7">
+                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mx-4">
+                                                <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                                <div class="col-sm-7">
+                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                                </div>
+                                            </div>
+
+                                            
+                                            
+
                                         </form>
                                     </div>
                                 </div>
@@ -170,8 +188,10 @@
                                     <th>Ítem</th>
                                     <th>Variable</th>
                                     <th>Valor</th>
-                                    <th>Fecha</th>
-                                    <th>Hora</th>
+                                    <th>Fecha inicio</th>
+                                    <th>Hora inicio</th>
+                                    <th>Fecha fin</th>
+                                    <th>Hora fin</th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -179,8 +199,12 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

@@ -126,7 +126,7 @@
 
 
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-lg-12 my-2">
             <div id="accordion">
                 <div class="card">
@@ -382,12 +382,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
 
-        <hr class="my-5 border shadow"s>
         <div class="row">
             <div class="col-lg-3 my-2">
                 <div class="card">

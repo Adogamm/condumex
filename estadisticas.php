@@ -107,7 +107,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 d-block mx-auto">
                                         <form name="selector_datos" action="#" class="form-inline">
-                                            <select class="form-control my-2 mx-1">
+                                            <select class="form-control my-2 mx-1" name="area" id="area">
                                                 <option value="null">-- Seleccionar Área --</option>
                                                 <option value="Irradiado">Irradiado</option>
                                                 <option value="Repase">Repase</option>
@@ -115,34 +115,8 @@
                                                 <option value="Termo plástico">Termo plástico</option>
                                                 <option value="Tubulado">Tubulado</option>
                                             </select>
-                                            <select class="form-control my-2 mx-1">
+                                            <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
                                                 <option value="null">-- Seleccionar Máquina --</option>
-                                                <option value="LIR601">LIR601</option>
-
-                                                <option value="LRP601">LRP601</option>
-                                                <option value="LRP602">LRP602</option>
-                                            
-                                                <option value="LAF601">LAF601</option>
-                                                <option value="LAF602">LAF602</option>
-                                                <option value="LAF603">LAF603</option>
-                                                <option value="LAF604">LAF604</option>
-                                                <option value="LAF605">LAF605</option>
-                                                <option value="LAF606">LAF606</option>
-                                                <option value="LAF607">LAF607</option>
-                                            
-                                                <option value="LAF601">LAF601</option>
-                                                <option value="LAF602">LAF602</option>
-                                                <option value="LAF603">LAF603</option>
-                                                <option value="LAF604">LAF604</option>
-                                                <option value="LAF605">LAF605</option>
-                                                <option value="LAF606">LAF606</option>
-                                                <option value="LAF607">LAF607</option>
-                                                <option value="LAF608">LAF608</option>
-                                                <option value="LAF609">LAF609</option>
-                                                <option value="LAF610">LAF620</option>
-                                                <option value="LAF611">LAF611</option>
-                                            
-                                                <option value="LAF601">LAF601</option>
                                             </select>
                                             <select class="form-control my-2 mx-1">
                                                 <option value="null">-- Seleccionar Variables --</option>
@@ -224,5 +198,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/select.js"></script>
 </body>
 </html>

@@ -106,7 +106,8 @@
                 <h4 class="text-center">Monitor de máquina: <?php echo $row['MAQUINA']; ?></h4>
             </div>
             <div class="col-lg-3">
-                <select class="form-control my-2 mx-1">
+                <a href="variables.php?maquina=<?php echo $maquina ?>" class="d-block text-white  my-3 mx-auto btn btn-warning">Variables</a>
+                <!-- <select class="form-control my-2 mx-1">
                     <option value="null">-- Seleccionar Variables --</option>
                     <option value="estado-enrollador">Obtención del estado del enrollador</option>
                     <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
@@ -117,7 +118,7 @@
                     <option value="last-spool">Velocidad de operación</option>
                     <option value="last-spool">Concentricidad</option>
                     <option value="last-spool">Horómetro</option>
-                </select>
+                </select> -->
             </div>
         </div>
     </div>

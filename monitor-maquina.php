@@ -4,8 +4,8 @@
 
 
     $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
-    $resultado = mysqli_query($conexion,$select);
-    $row = mysqli_fetch_assoc($resultado);
+    $resultado = sqlsrv_query($conexion,$select);
+    $row = sqlsrv_fetch_array($resultado);
 
 
 ?>

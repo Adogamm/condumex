@@ -4,8 +4,8 @@
   setcookie('Prueba',$tipo_maquina,time()+3600);
   $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
-  $query = mysqli_query($conexion, $select);
-  $query1 = mysqli_query($conexion,$select_avg);
+  $query = sqlsrv_query($conexion, $select);
+  $query1 = sqlsrv_query($conexion,$select_avg);
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +108,7 @@
       <div class="container">
         <div class="row"><div class="card ml-4">
             <div class="card-body">
-            <?php while($avg = mysqli_fetch_assoc($query1)){ ?>
+            <?php while($avg = sqlsrv_fetch_array($query1)){ ?>
               <canvas
                 data-value="<?php echo $avg['RENDIMIENTO']; ?>"
                 data-type="radial-gauge"
@@ -164,7 +164,7 @@
         <div class="my-2">
             <div class="container">
             <div class="row">
-                <?php while($maquina = mysqli_fetch_assoc($query)){  ?>
+                <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
                     <div class="col-lg-4 my-3 text-center d-block mx-auto">
                         <div class="card">
                             <div class="card-header">
@@ -200,7 +200,7 @@
                                     data-needle-circle-size="7"
                                     data-needle-circle-outer="true"
                                     data-needle-circle-inner="false"
-                                    data-animation-duration="1000"
+                                    data-animation-duration="900"
                                     data-animation-rule="linear"
                                     class="d-block mx-auto my-2"
                                     id="medidor<?php echo $maquina['MAQUINA']; ?>"

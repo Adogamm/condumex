@@ -1,10 +1,10 @@
 <?php 
 include 'databaseconnect/conection.php';
-$select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA;";
-$query = mysqli_query($conexion,$select);
+$select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN;";
+$query = sqlsrv_query($conexion,$select);
 
 $select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
-$query1 = mysqli_query($conexion,$select_avg);
+$query1 = sqlsrv_query($conexion,$select_avg);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -94,7 +94,7 @@ $query1 = mysqli_query($conexion,$select_avg);
             <div class="col-lg-7">
                 <div class="container">
                     <div class="row">
-            <?php while($maquinas = mysqli_fetch_assoc($query) AND $porcentaje = mysqli_fetch_assoc($query1)){ ?>
+            <?php while($maquinas = sqlsrv_fetch_array($query) AND $porcentaje = sqlsrv_fetch_array($query1)){ ?>
                 <div class="col-lg-4 d-block mx-auto mt-3">
                     <div class="card">
                         <div class="card-body">

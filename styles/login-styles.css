@@ -15,7 +15,7 @@ body {
     background-image: url(../images/backgrounds/circuit.png);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: inherit;
 }
 
 /* Contenedor principal */
@@ -27,6 +27,12 @@ body {
     margin: auto;
     display: flex;
     border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /* Conetenedor del login */
@@ -188,6 +194,10 @@ input[type=submit]:hover {
 .organization a:hover{
     color: white;
     font-weight: 400;
+}
+
+.vertical-center {
+    margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);
 }
 
 /* RESPONSIVE */

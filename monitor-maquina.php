@@ -408,11 +408,10 @@
                     <div class="card-header">
                         <h6 class="text-center"><i class='bx bx-timer'></i> Tiempo muerto</h6>
                     </div>
-                    <div class="card-body my-5">
-                        <div class="card-text my-2">
-                            <p>Tiempo muerto: 0.23 mins</p>
-                        </div>
-                        <div class="card-text my-2">
+                    <div class="card-body my-3">
+                        <div class="card-text my-3">
+                            <p>Tiempo muerto: 0.23 mins<br>
+                            <p>Tiempo perdido: 2.03 mins<br>
                             <p>Tiempo ciclo: 12.43 mins</p>
                         </div>
                     </div>
@@ -475,9 +474,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
                     </div>
                 </div>
             </div>
@@ -548,9 +544,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
-                    </div>
                 </div>
             </div>
 
@@ -617,9 +610,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
                     </div>
                 </div>
             </div>
@@ -689,9 +679,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-center">Actualizado hasta: <?php echo date("m.d.y"); ?></p>
                     </div>
                 </div>
             </div>

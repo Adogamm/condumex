@@ -12,6 +12,11 @@
 }
 
 body {
+    padding: 45px;
+    background-image: url(../images/backgrounds/circuit.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: inherit;
     position: relative;
     min-height: 100vh;
     width: 100%;

@@ -92,7 +92,7 @@
     <div class="home-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 mt-4">
+            <div class="col-lg-4 mt-3">
                 <a href="monitor.php" class="text-dark" style="text-decoration: none;">
                     <p class="text-left">
                         <i class='bx bx-arrow-back'></i>
@@ -138,7 +138,7 @@
                 data-needle-circle-inner="false"
                 data-animation-duration="1000"
                 data-animation-rule="linear"
-                class="d-block mx-auto my-2"
+                class="d-block mx-auto"
                 id="medidor"
               ></canvas>
 
@@ -154,22 +154,17 @@
               <?php } ?>
             </div>
           </div>
-          <div class="col-lg-3 mt-3"></div>
-          <div class="col-lg-6 d-flex flex-row justify-content-end">
-            <a href="monitor-piso.php">
-              <img src="images/home.png" alt="inicio" class="home-icon">
-            </a>
-          </div>
+          <div class="col-lg-3"></div>
         </div>
-        <div class="my-2">
+        <div>
             <div class="container">
             <div class="row">
                 <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
-                    <div class="col-lg-4 my-3 text-center d-block mx-auto">
-                        <div class="card">
+                    <div class="col-lg-4 text-center d-block mx-auto">
+                        <div class="card my-2">
                             <div class="card-header">
                                 <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
-                                <h6 class="text-center mt-2"><?php echo $maquina['MAQUINA'] ?></h6>
+                                <h6 class="text-center"><?php echo $maquina['MAQUINA'] ?></h6>
                             </div>
                         <div class="card-body">
                             <h6 id="text<?php echo $maquina['MAQUINA'] ?>"></h6>
@@ -202,7 +197,7 @@
                                     data-needle-circle-inner="false"
                                     data-animation-duration="900"
                                     data-animation-rule="linear"
-                                    class="d-block mx-auto my-2"
+                                    class="d-block mx-auto"
                                     id="medidor<?php echo $maquina['MAQUINA']; ?>"
                                 ></canvas>
                             <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>" class="btn btn-warning d-block mx-auto mt-4 text-white">Detalles</a>

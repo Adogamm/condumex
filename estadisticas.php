@@ -106,86 +106,103 @@
                             <div class="container mt-2">
                                 <div class="row">
                                     <div class="col-lg-12 d-block mx-auto">
-                                        <form name="selector_datos" action="#" class="form-inline">
-                                            <select class="form-control my-2 mx-1" name="area" id="area">
-                                                <option value="null">-- Seleccionar Área --</option>
-                                                <option value="Irradiado">Irradiado</option>
-                                                <option value="Repase">Repase</option>
-                                                <option value="Termo fijo">Termo fijo</option>
-                                                <option value="Termo plástico">Termo plástico</option>
-                                                <option value="Tubulado">Tubulado</option>
-                                            </select>
-                                            <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
-                                                <option value="null">-- Seleccionar Máquina --</option>
-                                            </select>
-                                            <select class="form-control my-2 mx-1">
-                                                <option value="null">-- Seleccionar Variables --</option>
-                                                <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                                <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                                <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                                <option value="fallas-superficie">Fallas de superficie</option>
-                                                <option value="preset_length">Preset_length</option>
-                                                <option value="spool-change">Cambio de bobina (spool change)</option>
-                                                <option value="last-spool">Velocidad de operación</option>
-                                                <option value="last-spool">Concentricidad</option>
-                                                <option value="last-spool">Horómetro</option>
-                                            </select>
-
-                                            <div class="form-group row">
-                                                <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
-                                                <div class="col-sm-7">
-                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                        <form name="selector_datos" action="#" class="d-block mx-auto">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <select class="form-control" name="area" id="area">
+                                                            <option value="null">-- Seleccionar Área --</option>
+                                                            <option value="Irradiado">Irradiado</option>
+                                                            <option value="Repase">Repase</option>
+                                                            <option value="Termo fijo">Termo fijo</option>
+                                                            <option value="Termo plástico">Termo plástico</option>
+                                                            <option value="Tubulado">Tubulado</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <select class="form-control"  name="maquina" id="maquina">
+                                                            <option value="null">-- Seleccionar Máquina --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <select class="form-control">
+                                                            <option value="null">-- Seleccionar Variables --</option>
+                                                            <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                                            <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                                            <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                                            <option value="fallas-superficie">Fallas de superficie</option>
+                                                            <option value="preset_length">Preset_length</option>
+                                                            <option value="spool-change">Cambio de bobina (spool change)</option>
+                                                            <option value="last-spool">Velocidad de operación</option>
+                                                            <option value="last-spool">Concentricidad</option>
+                                                            <option value="last-spool">Horómetro</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-4 my-2 d-block mx-auto">
+                                                        <div class="form-group row">
+                                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                                            <div class="col-sm-7">
+                                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 my-2 d-block mx-auto">
+                                                        <div class="form-group row">
+                                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                                            <div class="col-sm-7">
+                                                            <input type="date" name="" id="" class="form-control my-2">
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div class="form-group row mx-4">
-                                                <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
-                                                <div class="col-sm-7">
-                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
-                                                </div>
-                                            </div>
-
-                                            
-                                            
-
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-lg-5 d-block mx-auto mt-2">
-                            <canvas id="grafica-lineas" width="30%" height="30%"></canvas>
+                            <div class="card">
+                                <div class="card-body">
+                                    <canvas id="grafica-lineas" width="30%" height="30%"></canvas>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-5 d-block mx-auto">
-                            <table class="table table-striped mt-4">
-                                <tr>
-                                    <th>Ítem</th>
-                                    <th>Variable</th>
-                                    <th>Valor</th>
-                                    <th>Fecha inicio</th>
-                                    <th>Hora inicio</th>
-                                    <th>Fecha fin</th>
-                                    <th>Hora fin</th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>
+                        <div class="col-lg-7">
+                            <div class="card my-2">
+                                <div class="card-body">
+                                    <table class="table table-striped mt-4">
+                                        <tr>
+                                            <th>Ítem</th>
+                                            <th>Variable</th>
+                                            <th>Valor</th>
+                                            <th>Fecha inicio</th>
+                                            <th>Hora inicio</th>
+                                            <th>Fecha fin</th>
+                                            <th>Hora fin</th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

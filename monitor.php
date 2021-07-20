@@ -87,7 +87,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
-        <h3 class="text-center title mt-4">Monitor de piso</h3>
+        <h3 class="text-center title mt-1">Monitor de piso</h3>
         <div class="container my-3">
             <div class="row">
 
@@ -150,22 +150,30 @@ $query1 = sqlsrv_query($conexion,$select_avg);
             </div>
 
             <div class="col-lg-5 mt-3">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Área</th>
-                            <th>Nombre de línea</th>
-                            <th>Fecha</th>
-                            <th>Hora</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Área</th>
+                                    <th>Nombre de línea</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

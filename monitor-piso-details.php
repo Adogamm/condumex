@@ -18,14 +18,14 @@
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles/styles-monitor.css">
+    <link rel="stylesheet" href="styles/styles-monitor copy.css">
     <title>Monitor piso</title>
 </head>
 <body>
 
 <!-- SIDEBAR -->
 
-    <div class="sidebar">
+<div class="sidebar">
         <div class="logo-container">
             <!-- <img src="images/logo.png" alt="Your Logo" class="logo"> -->
             <img src="images/condumex_logo.png" alt="condumex logo" class="logo">
@@ -37,6 +37,7 @@
                     <i class='bx bx-grid-alt' ></i>
                     <span class="link-name">Monitor de piso</span>
                 </a>
+                <span class="tooltip">Monitor de piso</span>
             </li>
             <!-- <li>
                 <a href="recetas.html" class="pr-2 mt-2">
@@ -49,12 +50,14 @@
                     <i class='bx bx-line-chart'></i>
                     <span class="link-name">Estadisticas</span>
                 </a>
+                <span class="tooltip">Estadisticas</span>
             </li>
             <li>
                 <a href="bitacora-eventos.html" class="pr-2 mt-2">
                     <i class='bx bx-calendar-event'></i>
                     <span class="link-name">Bitacora de eventos</span>
                 </a>
+                <span class="tooltip">Bitacora de eventos</span>
             </li>
             <!-- <li>
                 <a href="maestros.html">
@@ -68,6 +71,7 @@
                     <i class='bx bx-user' ></i>
                     <span class="link-name">Gestión de usuarios</span>
                 </a>
+                <span class="tooltip">Gestión de usuarios</span>
             </li>
         </ul>
         <div class="profile-content">

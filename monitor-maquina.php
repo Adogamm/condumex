@@ -20,73 +20,77 @@
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles/styles-monitor.css">
+    <link rel="stylesheet" href="styles/styles-monitor copy.css">
     <title>Monitor de maquína</title>
 </head>
 <body>
 
-  <div class="sidebar">
-    <div class="logo-container">
-        <!-- <img src="images/logo.png" alt="Your Logo" class="logo"> -->
-        <img src="images/condumex_logo.png" alt="condumex logo" class="logo">
-        <i class='bx bx-menu' id="btn"></i>
-    </div>
-    <ul class="nav_list">
-        <li>
-            <a href="monitor.php" class="pr-2 mt-2">
-                <i class='bx bx-grid-alt' ></i>
-                <span class="link-name">Monitor de piso</span>
-            </a>
-        </li>
-        <!-- <li>
-            <a href="recetas.html" class="pr-2 mt-2">
-                <i class='bx bx-book-bookmark'></i>
-                <span class="link-name">Recetas</span>
-            </a>
-        </li> -->
-        <li>
-            <a href="estadisticas.php" class="pr-2 mt-2">
-                <i class='bx bx-line-chart'></i>
-                <span class="link-name">Estadisticas</span>
-            </a>
-        </li>
-        <li>
-            <a href="bitacora-eventos.html" class="pr-2 mt-2">
-                <i class='bx bx-calendar-event'></i>
-                <span class="link-name">Bitacora de eventos</span>
-            </a>
-        </li>
-        <!-- <li>
-            <a href="maestros.html">
-                <i class='bx bx-wrench'></i>
-                <span class="link-name">Maestros</span>
-            </a>
-        </li> -->
-        <!-- TODO SOLO SI LA SESIÓN PERTENECE A UN USUARIO -->
-        <li>
-            <a href="administracion-usuarios.html" class="pr-2 mt-2">
-                <i class='bx bx-user' ></i>
-                <span class="link-name">Gestión de usuarios</span>
-            </a>
-        </li>
-    </ul>
-    <div class="profile-content">
-        <div class="profile">
-            <div class="profile-details">
-                <img src="images/avatar.png" alt="Profile image">
-                <div class="name_job">
-                    <div class="name">
-                        Juan Sánchez
-                    </div>
-                    <div class="job">
-                        Administrador
+<div class="sidebar">
+        <div class="logo-container">
+            <!-- <img src="images/logo.png" alt="Your Logo" class="logo"> -->
+            <img src="images/condumex_logo.png" alt="condumex logo" class="logo">
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="monitor.php" class="pr-2 mt-2">
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="link-name">Monitor de piso</span>
+                </a>
+                <span class="tooltip">Monitor de piso</span>
+            </li>
+            <!-- <li>
+                <a href="recetas.html" class="pr-2 mt-2">
+                    <i class='bx bx-book-bookmark'></i>
+                    <span class="link-name">Recetas</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="estadisticas.php" class="pr-2 mt-2">
+                    <i class='bx bx-line-chart'></i>
+                    <span class="link-name">Estadisticas</span>
+                </a>
+                <span class="tooltip">Estadisticas</span>
+            </li>
+            <li>
+                <a href="bitacora-eventos.html" class="pr-2 mt-2">
+                    <i class='bx bx-calendar-event'></i>
+                    <span class="link-name">Bitacora de eventos</span>
+                </a>
+                <span class="tooltip">Bitacora de eventos</span>
+            </li>
+            <!-- <li>
+                <a href="maestros.html">
+                    <i class='bx bx-wrench'></i>
+                    <span class="link-name">Maestros</span>
+                </a>
+            </li> -->
+            <!-- TODO SOLO SI LA SESIÓN PERTENECE A UN USUARIO -->
+            <li>
+                <a href="administracion-usuarios.html" class="pr-2 mt-2">
+                    <i class='bx bx-user' ></i>
+                    <span class="link-name">Gestión de usuarios</span>
+                </a>
+                <span class="tooltip">Gestión de usuarios</span>
+            </li>
+        </ul>
+        <div class="profile-content">
+            <div class="profile">
+                <div class="profile-details">
+                    <img src="images/avatar.png" alt="Profile image">
+                    <div class="name_job">
+                        <div class="name">
+                            Juan Sánchez
+                        </div>
+                        <div class="job">
+                            Administrador
+                        </div>
                     </div>
                 </div>
+                <i class='bx bx-exit' id="log-out"></i>
             </div>
-            <i class='bx bx-exit' id="log-out"></i>
         </div>
     </div>
-  </div>
     
 
   <!-- CONTENIDO DE LA PAGINA -->

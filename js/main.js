@@ -24,9 +24,9 @@ var graficalineas=new Chart(graficalineascontexto,{
       },
       data:[9.5,9.5,9.5,9.5],
       pointRadius: 0,
-      borderColor: ['rgb(245, 10, 10, 0.5)',],
+      borderColor: ['rgb(245, 10, 10, 0.3)',],
       backgroundColor:[
-        'rgb(245, 10, 10, 0.5)',
+        'rgb(245, 10, 10, 0.3)',
       ]
     },{
       label: "Óptimo",
@@ -39,9 +39,9 @@ var graficalineas=new Chart(graficalineascontexto,{
       },
       data:[8.5,8.5,8.5,8.5],
       pointRadius: 0,
-      borderColor: ['rgb(10, 245, 10, 0.5)',],
+      borderColor: ['rgb(10, 245, 10, 0.3)',],
       backgroundColor:[
-        'rgb(10, 245, 10, 0.5)',
+        'rgb(10, 245, 10, 0.3)',
       ]
     },
     {
@@ -55,9 +55,9 @@ var graficalineas=new Chart(graficalineascontexto,{
       },
       data:[7.5,7.5,7.5,7.5],
       pointRadius: 0,
-      borderColor: ['rgb(255, 245, 10, 0.5)',],
+      borderColor: ['rgb(255, 245, 10, 0.4)',],
       backgroundColor:[
-        'rgb(255, 245, 10, 0.5)',
+        'rgb(255, 245, 10, 0.4)',
       ]
     }
   ]

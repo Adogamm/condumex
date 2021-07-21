@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/styles-monitor copy.css">
-    <title>Analisis de disponibilidad</title>
+    <title>Estadísticas</title>
 </head>
 <body>
 
@@ -108,12 +108,15 @@
                     <div class="row">
 
                     <!-- FORMULARIO -->
-                        <div class="col-lg-4 d-block mx-auto">
+                        <div class="col-lg-5 d-block mx-auto">
                             <div class="container mt-2">
                                 <div class="row">
                                     <div class="col-lg-12 d-block mx-auto">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body my-2">
+                                                <h6 class="text-center">
+                                                    Ingresa los datos que requieras
+                                                </h6>
                                                 <form name="selector_datos" action="#" class="d-block mx-auto">
                                                     <div class="container">
                                                         <div class="row">
@@ -146,11 +149,32 @@
                                                                     <option value="last-spool">Horómetro</option>
                                                                 </select>
                                                             </div>
+                                                            <div class="col-lg-12 my-1">
+                                                                <select class="form-control">
+                                                                    <option value="null">-- Día de la semana --</option>
+                                                                    <option value="Lunes">Lunes</option>
+                                                                    <option value="Martes">Martes</option>
+                                                                    <option value="Miercoles">Miercoles</option>
+                                                                    <option value="Jueves">Jueves</option>
+                                                                    <option value="Viernes">Viernes</option>
+                                                                    <option value="Sabado">Sabado</option>
+                                                                    <option value="Domingo">Domingo</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-12 my-1">
+                                                                <select class="form-control">
+                                                                    <option value="null">-- Seleccionar Turno --</option>
+                                                                    <option value="Turno-1">Turno 1</option>
+                                                                    <option value="Turno-2">Turno 2</option>
+                                                                    <option value="Turno-3">Turno 3</option>
+                                                                </select>
+                                                            </div>
+
                                                             <div class="col-lg-12 my-1 d-block mx-auto">
                                                                 <div class="form-group row">
                                                                     <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
                                                                     <div class="col-sm-7">
-                                                                    <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                                                    <input type="date" name="" id="" class="form-control mx-1">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -158,7 +182,7 @@
                                                                 <div class="form-group row">
                                                                     <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
                                                                     <div class="col-sm-7">
-                                                                    <input type="date" name="" id="" class="form-control my-2">
+                                                                    <input type="date" name="" id="" class="form-control">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -173,7 +197,7 @@
                         </div>
                         
                         <!-- GRAFICA -->
-                        <div class="col-lg-4 d-block mx-auto mt-2">
+                        <div class="col-lg-5 d-block mx-auto mt-2">
                             <div class="card">
                                 <div class="card-body">
                                     <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
@@ -182,7 +206,7 @@
                         </div>
 
                         <!-- TABLA -->
-                        <div class="col-lg-7 d-block mx-auto">
+                        <div class="col-lg-7 d-block my-2 mx-auto">
                             <div class="card my-2">
                                 <div class="card-body">
                                     <table class="table table-striped mt-4">

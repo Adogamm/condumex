@@ -20,7 +20,7 @@
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="styles/styles-monitor copy.css">
+    <link rel="stylesheet" href="styles/styles-monitor.css">
     <title>Monitor de maquína</title>
 </head>
 <body>

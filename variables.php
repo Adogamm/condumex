@@ -92,7 +92,7 @@ $query1 = mysqli_query($conexion,$select_avg);
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
-        <h3 class="text-center">Variables</h3>
+        <h1 class="text-center">CTP'S</h1>
 
         <div class="container">
             <div class="row">

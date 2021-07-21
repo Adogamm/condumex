@@ -16,7 +16,7 @@ $query1 = mysqli_query($conexion,$select_avg);
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles/styles-monitor copy.css">
+    <link rel="stylesheet" href="styles/styles-monitor.css">
     <title>Monitor piso</title>
 </head>
 <body>
@@ -91,36 +91,33 @@ $query1 = mysqli_query($conexion,$select_avg);
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
-        <h3 class="text-center title mt-1">Monitor de piso</h3>
-        <div class="container my-3">
+        <h1 class="text-center title mt-1">MONITOR DE PISO</h1>
+        <div class="container my-1">
             <div class="row">
 
             <div class="col-lg-7">
                 <div class="container">
                     <div class="row">
             <?php while($maquinas = mysqli_fetch_array($query) AND $porcentaje = mysqli_fetch_array($query1)){ ?>
-                <div class="col-lg-4 d-block mx-auto mt-3">
+                <div class="col-lg-5 mt-1">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                             <canvas
-                                data-value="0"
+                                data-value="100"
                                 data-type="radial-gauge"
                                 data-width="150"
                                 data-height="150"
-                                data-units="OEE"
+                                data-units="Km/h"
                                 data-min-value="0"
-                                data-start-angle="90"
-                                data-ticks-angle="180"
-                                data-value-box="false"
                                 data-max-value="100"
-                                data-major-ticks="0"
+                                data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
                                 data-minor-ticks="2"
                                 data-stroke-ticks="true"
                                 data-highlights='[
                                     {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
-                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
-                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                    {"from": 20, "to": 50, "color": "rgba(240, 233, 29, .94)"},
+                                    {"from": 50, "to": 100, "color": "rgba(19, 142, 13, .56)"}
                                 ]'
                                 data-color-plate="#fff"
                                 data-border-shadow-width="0"
@@ -130,9 +127,9 @@ $query1 = mysqli_query($conexion,$select_avg);
                                 data-needle-circle-size="7"
                                 data-needle-circle-outer="true"
                                 data-needle-circle-inner="false"
-                                data-animation-duration="1500"
+                                data-animation-duration="900"
                                 data-animation-rule="linear"
-                                class="d-block mx-auto my-2"
+                                class="d-block mx-auto"
                                 id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"
                             ></canvas>
 
@@ -153,7 +150,7 @@ $query1 = mysqli_query($conexion,$select_avg);
             </div>
             </div>
 
-            <div class="col-lg-5 mt-3">
+            <div class="col-lg-5 mt-1">
                     <div class="card">
                         <div class="card-body">
                             <table class="table table-striped">

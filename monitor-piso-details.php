@@ -105,7 +105,7 @@
                 </a>
             </div>
             <div class="col-lg-4">
-                <h3 class="text-center title">Monitor piso</h3>
+                <h1 class="text-center title">MONITOR DE PISO</h1>
             </div>
         </div>
     </div>

@@ -96,7 +96,7 @@
                 </a>
             </div>
             <div class="col-lg-4">
-                <h3 class="text-center title">Estadísticas</h3>
+                <h1 class="text-center title">Estadísticas</h1>
             </div>
         </div>
     </div>

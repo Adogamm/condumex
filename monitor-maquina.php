@@ -106,8 +106,8 @@
                     </p>
                 </a>
             </div>
-            <div class="col-lg-4 mt-3">
-                <h4 class="text-center">Monitor de máquina: <?php echo $row['MAQUINA']; ?></h4>
+            <div class="col-lg-5 mt-3">
+                <h3>MONITOR DE MÁQUINA: <?php echo $row['MAQUINA']; ?></h3>
             </div>
             <div class="col-lg-3">
                 <a href="variables.php?maquina=<?php echo $maquina ?>" class="d-block text-white  my-3 mx-auto btn btn-warning">Variables</a>

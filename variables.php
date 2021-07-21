@@ -17,6 +17,7 @@ $query1 = mysqli_query($conexion,$select_avg);
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/styles-monitor.css">
+    <link rel="stylesheet" href="styles/switch.css">
     <title>Monitor piso</title>
 </head>
 <body>
@@ -87,93 +88,16 @@ $query1 = mysqli_query($conexion,$select_avg);
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">
-        <h3 class="text-center title mt-1">Monitor de piso</h3>
-        <div class="container my-3">
+        <h3 class="text-center">Variables</h3>
+
+        <div class="container">
             <div class="row">
-
-            <div class="col-lg-7">
-                <div class="container">
-                    <div class="row">
-            <?php while($maquinas = mysqli_fetch_array($query) AND $porcentaje = mysqli_fetch_array($query1)){ ?>
-                <div class="col-lg-4 d-block mx-auto mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
-                            <canvas
-                                data-value="0"
-                                data-type="radial-gauge"
-                                data-width="150"
-                                data-height="150"
-                                data-units="OEE"
-                                data-min-value="0"
-                                data-start-angle="90"
-                                data-ticks-angle="180"
-                                data-value-box="false"
-                                data-max-value="100"
-                                data-major-ticks="0"
-                                data-minor-ticks="2"
-                                data-stroke-ticks="true"
-                                data-highlights='[
-                                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
-                                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
-                                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
-                                ]'
-                                data-color-plate="#fff"
-                                data-border-shadow-width="0"
-                                data-borders="false"
-                                data-needle-type="arrow"
-                                data-needle-width="2"
-                                data-needle-circle-size="7"
-                                data-needle-circle-outer="true"
-                                data-needle-circle-inner="false"
-                                data-animation-duration="1500"
-                                data-animation-rule="linear"
-                                class="d-block mx-auto my-2"
-                                id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"
-                            ></canvas>
-
-                            <script>
-                                var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
-                                    setInterval(function() {
-                                        number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
-                                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
-                                    }, 1000);
-                            </script>
-
-                            <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Detalles</a>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="swtich-container">
+                        <input type="checkbox" id="switch">
+                        <label for="switch" class="lbl"></label>
                     </div>
                 </div>
-            <?php } ?>
-            </div>
-            </div>
-            </div>
-
-            <div class="col-lg-5 mt-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <table class="table table-striped">
-                                <tr>
-                                    <th>Área</th>
-                                    <th>Nombre de línea</th>
-                                    <th>Fecha</th>
-                                    <th>Hora</th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
             </div>
         </div>
     </div>

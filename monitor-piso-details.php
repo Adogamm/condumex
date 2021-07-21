@@ -4,8 +4,8 @@
   setcookie('Prueba',$tipo_maquina,time()+3600);
   $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
-  $query = sqlsrv_query($conexion, $select);
-  $query1 = sqlsrv_query($conexion,$select_avg);
+  $query = mysqli_query($conexion, $select);
+  $query1 = mysqli_query($conexion,$select_avg);
 ?>
 
 <!DOCTYPE html>
@@ -105,61 +105,42 @@
             </div>
         </div>
     </div>
-      <div class="container">
-        <div class="row"><div class="card ml-4">
-            <div class="card-body">
-            <?php while($avg = sqlsrv_fetch_array($query1)){ ?>
-              <canvas
-                data-value="<?php echo $avg['RENDIMIENTO']; ?>"
-                data-type="radial-gauge"
-                data-width="200"
-                data-height="100"
-                data-units="OEE"
-                data-min-value="0"
-                data-start-angle="90"
-                data-ticks-angle="180"
-                data-value-box="false"
-                data-max-value="100"
-                data-major-ticks="0"
-                data-minor-ticks="2"
-                data-stroke-ticks="true"
-                data-highlights='[
-                    {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
-                    {"from": 21, "to": 50, "color": "rgba(240, 233, 29, .94)"},
-                    {"from": 51, "to": 100, "color": "rgba(19, 142, 13, .56)"}
-                ]'
-                data-color-plate="#fff"
-                data-border-shadow-width="0"
-                data-borders="false"
-                data-needle-type="arrow"
-                data-needle-width="2"
-                data-needle-circle-size="7"
-                data-needle-circle-outer="true"
-                data-needle-circle-inner="false"
-                data-animation-duration="1000"
-                data-animation-rule="linear"
-                class="d-block mx-auto"
-                id="medidor"
-              ></canvas>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card ml-4">
+                        <div class="card-body">
+                        <?php while($avg = mysqli_fetch_array($query1)){ ?>
+                        <div class="progress my-4">
+                            <div id="medidor" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $avg['RENDIMIENTO'];  ?>?%; min-width: 25%;" aria-valuenow="<?php echo $avg['RENDIMIENTO'];  ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $avg['RENDIMIENTO'];  ?>%</div>
+                        </div>
 
-<!-- Actualizar los medidores con valores aleatorios -->
-            <script>
-                var number = 0;
-                    setInterval(function() {
-                        number = Math.floor(Math.random()*100);
-                        $("#medidor").attr("data-value",number);
-                    }, 1000);
-            </script>
-              <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
-              <?php } ?>
+    <!-- Actualizar los medidores con valores aleatorios -->
+                        <script>
+                            var number = 0;
+                            var barra = document.getElementById("medidor");
+                                setInterval(function() {
+                                    number = Math.floor(Math.random()*100);
+                                    $("#medidor").css("width",number+"%").attr("aria-valuenow",number).text(number+"%");
+                                    if(number >= 0 && number <= 20){
+                                        barra.classList.toggle("bg-danger");
+                                    } else if(number >= 21 && number <= 50){
+                                        barra.classList.toggle("bg-warning");
+                                    } else if(number >= 51 && number <= 100){
+                                        barra.classList.toggle("bg-success");
+                                    }
+                                }, 1000);
+                        </script>
+                        <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
+                        <?php } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-3"></div>
-        </div>
-        <div>
+            <div>
             <div class="container">
             <div class="row">
-                <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
+                <?php while($maquina = mysqli_fetch_array($query)){  ?>
                     <div class="col-lg-4 text-center d-block mx-auto">
                         <div class="card my-2">
                             <div class="card-header">

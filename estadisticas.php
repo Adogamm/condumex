@@ -102,74 +102,83 @@
             <div class="col-lg-12">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+
+                    <!-- FORMULARIO -->
+                        <div class="col-lg-4 d-block mx-auto">
                             <div class="container mt-2">
                                 <div class="row">
                                     <div class="col-lg-12 d-block mx-auto">
-                                        <form name="selector_datos" action="#" class="d-block mx-auto">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <select class="form-control" name="area" id="area">
-                                                            <option value="null">-- Seleccionar Área --</option>
-                                                            <option value="Irradiado">Irradiado</option>
-                                                            <option value="Repase">Repase</option>
-                                                            <option value="Termo fijo">Termo fijo</option>
-                                                            <option value="Termo plástico">Termo plástico</option>
-                                                            <option value="Tubulado">Tubulado</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <select class="form-control"  name="maquina" id="maquina">
-                                                            <option value="null">-- Seleccionar Máquina --</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <select class="form-control">
-                                                            <option value="null">-- Seleccionar Variables --</option>
-                                                            <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                                            <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                                            <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                                            <option value="fallas-superficie">Fallas de superficie</option>
-                                                            <option value="preset_length">Preset_length</option>
-                                                            <option value="spool-change">Cambio de bobina (spool change)</option>
-                                                            <option value="last-spool">Velocidad de operación</option>
-                                                            <option value="last-spool">Concentricidad</option>
-                                                            <option value="last-spool">Horómetro</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-lg-4 my-2 d-block mx-auto">
-                                                        <div class="form-group row">
-                                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
-                                                            <div class="col-sm-7">
-                                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form name="selector_datos" action="#" class="d-block mx-auto">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 my-1">
+                                                                <select class="form-control" name="area" id="area">
+                                                                    <option value="null">-- Seleccionar Área --</option>
+                                                                    <option value="Irradiado">Irradiado</option>
+                                                                    <option value="Repase">Repase</option>
+                                                                    <option value="Termo fijo">Termo fijo</option>
+                                                                    <option value="Termo plástico">Termo plástico</option>
+                                                                    <option value="Tubulado">Tubulado</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-12 my-1">
+                                                                <select class="form-control"  name="maquina" id="maquina">
+                                                                    <option value="null">-- Seleccionar Máquina --</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-12 my-1">
+                                                                <select class="form-control">
+                                                                    <option value="null">-- Seleccionar Variables --</option>
+                                                                    <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                                                    <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                                                    <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                                                    <option value="fallas-superficie">Fallas de superficie</option>
+                                                                    <option value="preset_length">Preset_length</option>
+                                                                    <option value="spool-change">Cambio de bobina (spool change)</option>
+                                                                    <option value="last-spool">Velocidad de operación</option>
+                                                                    <option value="last-spool">Concentricidad</option>
+                                                                    <option value="last-spool">Horómetro</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-12 my-1 d-block mx-auto">
+                                                                <div class="form-group row">
+                                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                                                    <div class="col-sm-7">
+                                                                    <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 my-1 d-block mx-auto">
+                                                                <div class="form-group row">
+                                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                                                    <div class="col-sm-7">
+                                                                    <input type="date" name="" id="" class="form-control my-2">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4 my-2 d-block mx-auto">
-                                                        <div class="form-group row">
-                                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
-                                                            <div class="col-sm-7">
-                                                            <input type="date" name="" id="" class="form-control my-2">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                </form>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="col-lg-5 d-block mx-auto mt-2">
+                        <!-- GRAFICA -->
+                        <div class="col-lg-4 d-block mx-auto mt-2">
                             <div class="card">
                                 <div class="card-body">
-                                    <canvas id="grafica-lineas" width="30%" height="30%"></canvas>
+                                    <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7">
+
+                        <!-- TABLA -->
+                        <div class="col-lg-7 d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-body">
                                     <table class="table table-striped mt-4">

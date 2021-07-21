@@ -6,8 +6,8 @@
     <div class="row">
             <?php 
             $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
-            $query = sqlsrv_query($conexion, $select);
-    while($row = sqlsrv_fetch_array($query)){
+            $query = mysqli_query($conexion, $select);
+    while($row = mysqli_fetch_array($query)){
 
         // Asignacion a nombre de variables
         $maquina = $row["MAQUINA"];

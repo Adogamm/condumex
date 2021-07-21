@@ -114,7 +114,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                     </div>
                                     <div class="col-lg-2 mr-3 mt-2">
                                         <div class="swtich-container">
-                                            <input type="checkbox" id="switch" disabled>
+                                            <input type="checkbox" id="switch" checked disabled>
                                             <label for="switch" class="lbl"></label>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                     </div>
                                     <div class="col-lg-2 mr-3 mt-2">
                                         <div class="swtich-container">
-                                            <input type="checkbox" id="switch" disabled>
+                                            <input type="checkbox" id="switch" cheked disabled>
                                             <label for="switch" class="lbl"></label>
                                         </div>
                                     </div>

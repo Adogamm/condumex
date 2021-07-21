@@ -85,116 +85,85 @@
   <div class="home-content">
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
-                    <p class="text-left">
-                        <i class='bx bx-arrow-back'></i>
-                        <span class="ml-1"> Regresar</span>
-                    </p>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <h1 class="text-center title">Estadísticas</h1>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 mt-4">
+            <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
+                <p class="text-left">
+                    <i class='bx bx-arrow-back'></i>
+                    <span class="ml-1"> Regresar</span>
+                </p>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <h1 class="text-center title">ESTADÍSTICAS</h1>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="container">
-                    <div class="row">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container mt-2">
+                            <div class="row">
+                                <div class="col-lg-12 d-block mx-auto">
+                                    <form name="selector_datos" action="#" class="form-inline">
+                                        <select class="form-control my-2 mx-1" name="area" id="area">
+                                            <option value="null">-- Seleccionar Área --</option>
+                                            <option value="Irradiado">Irradiado</option>
+                                            <option value="Repase">Repase</option>
+                                            <option value="Termo fijo">Termo fijo</option>
+                                            <option value="Termo plástico">Termo plástico</option>
+                                            <option value="Tubulado">Tubulado</option>
+                                        </select>
+                                        <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
+                                            <option value="null">-- Seleccionar Máquina --</option>
+                                        </select>
+                                        <select class="form-control my-2 mx-1">
+                                            <option value="null">-- Seleccionar Variables --</option>
+                                            <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                            <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                            <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                            <option value="fallas-superficie">Fallas de superficie</option>
+                                            <option value="preset_length">Preset_length</option>
+                                            <option value="spool-change">Cambio de bobina (spool change)</option>
+                                            <option value="last-spool">Velocidad de operación</option>
+                                            <option value="last-spool">Concentricidad</option>
+                                            <option value="last-spool">Horómetro</option>
+                                        </select>
 
-                    <!-- FORMULARIO -->
-                        <div class="col-lg-5 d-block mx-auto">
-                            <div class="container mt-2">
-                                <div class="row">
-                                    <div class="col-lg-12 d-block mx-auto">
-                                        <div class="card">
-                                            <div class="card-body my-2">
-                                                <h6 class="text-center">
-                                                    Ingresa los datos que requieras
-                                                </h6>
-                                                <form name="selector_datos" action="#" class="d-block mx-auto">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col-lg-12 my-1">
-                                                                <select class="form-control" name="area" id="area">
-                                                                    <option value="null">-- Seleccionar Área --</option>
-                                                                    <option value="Irradiado">Irradiado</option>
-                                                                    <option value="Repase">Repase</option>
-                                                                    <option value="Termo fijo">Termo fijo</option>
-                                                                    <option value="Termo plástico">Termo plástico</option>
-                                                                    <option value="Tubulado">Tubulado</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-12 my-1">
-                                                                <select class="form-control"  name="maquina" id="maquina">
-                                                                    <option value="null">-- Seleccionar Máquina --</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-12 my-1">
-                                                                <select class="form-control">
-                                                                    <option value="null">-- Seleccionar Variables --</option>
-                                                                    <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                                                    <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                                                    <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                                                    <option value="fallas-superficie">Fallas de superficie</option>
-                                                                    <option value="preset_length">Preset_length</option>
-                                                                    <option value="spool-change">Cambio de bobina (spool change)</option>
-                                                                    <option value="last-spool">Velocidad de operación</option>
-                                                                    <option value="last-spool">Concentricidad</option>
-                                                                    <option value="last-spool">Horómetro</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-12 my-1">
-                                                                <select class="form-control">
-                                                                    <option value="null">-- Día de la semana --</option>
-                                                                    <option value="Lunes">Lunes</option>
-                                                                    <option value="Martes">Martes</option>
-                                                                    <option value="Miercoles">Miercoles</option>
-                                                                    <option value="Jueves">Jueves</option>
-                                                                    <option value="Viernes">Viernes</option>
-                                                                    <option value="Sabado">Sabado</option>
-                                                                    <option value="Domingo">Domingo</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-lg-12 my-1">
-                                                                <select class="form-control">
-                                                                    <option value="null">-- Seleccionar Turno --</option>
-                                                                    <option value="Turno-1">Turno 1</option>
-                                                                    <option value="Turno-2">Turno 2</option>
-                                                                    <option value="Turno-3">Turno 3</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div class="col-lg-12 my-1 d-block mx-auto">
-                                                                <div class="form-group row">
-                                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
-                                                                    <div class="col-sm-7">
-                                                                    <input type="date" name="" id="" class="form-control mx-1">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-12 my-1 d-block mx-auto">
-                                                                <div class="form-group row">
-                                                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
-                                                                    <div class="col-sm-7">
-                                                                    <input type="date" name="" id="" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                        <div class="form-group row">
+                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                            <div class="col-sm-7">
+                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
                                             </div>
                                         </div>
-                                    </div>
+
+                                        <div class="form-group row mx-4">
+                                            <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                            <div class="col-sm-7">
+                                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mx-4">
+                                            <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
+                                            <div class="col-sm-7">
+                                                <select class="form-control my-2 mx-1">
+                                                    <option value="null">-- Turno --</option>
+                                                    <option value="Turno_1">Turno 1</option>
+                                                    <option value="Turno_2">Turno 2</option>
+                                                    <option value="Turno_3">Turno 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         
                         <!-- GRAFICA -->
                         <div class="col-lg-5 d-block mx-auto mt-2">

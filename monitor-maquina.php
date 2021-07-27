@@ -23,7 +23,7 @@
         <title>Monitor maquina</title>
    </head>
 <body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -32,11 +32,11 @@
       
       <li>
         <div class="iocn-link">
-          <a href="monitor.php">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="link_name">Monitor piso</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+            <a href="monitor.php">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Monitor piso</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -98,7 +98,7 @@
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
             <li><a href="administracion-usuarios.html">Administración</a></li>
-            <li><a href="roles-privilegio.html">Roles y privilegios</a></li>
+            <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">
@@ -161,7 +161,7 @@
                 <div class="col-lg-3 my-2">
                     <div class="card">
                         <div class="card-header">
-                            <h6 class="text-center"><i class='bx bx-timer'></i> Tiempo muerto</h6>
+                            <h6 class="text-center"><i class='bx bx-timer'></i> Tiempos de línea</h6>
                         </div>
                         <div class="card-body my-3">
                             <div class="card-text my-3">
@@ -342,8 +342,8 @@
                                         </script>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <p>Producción real: 256 pzs.<br>
-                                        Producción prevista: 280 pzs.</p>
+                                        <p>Producción real: 256 km.<br>
+                                        Producción prevista: 280 km.</p>
                                     </div>
                                 </div>
                             </div>
@@ -401,8 +401,8 @@
                                         </script>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <p>Producción real: 226 pzs.<br>
-                                        Producción OK: 226 pzs.</p>
+                                        <p>Producción real: 226 km.<br>
+                                        Producción OK: 226 km.</p>
                                     </div>
                                 </div>
                             </div>

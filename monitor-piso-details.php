@@ -22,7 +22,7 @@
         <title>Monitor de piso</title>
    </head>
 <body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -31,11 +31,11 @@
       
       <li>
         <div class="iocn-link">
-          <a href="monitor.php">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="link_name">Monitor piso</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+            <a href="monitor.php">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Monitor piso</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -96,8 +96,8 @@
         </div>
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
-            <li><a href="#">Administración</a></li>
-            <li><a href="#">Roles y privilegios</a></li>
+            <li><a href="administracion-usuarios.html">Administración</a></li>
+            <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">
@@ -170,7 +170,7 @@
                         <div class="col-lg-4 text-center d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-header">
-                                    <img src="images/trabajador.png" alt="maquina" class="d-block mx-auto top-img">
+                                    <img src="images/trabajador.png" alt="maquina" class="ml-1 top-img">
                                     <h6 class="text-center"><?php echo $maquina['MAQUINA'] ?></h6>
                                 </div>
                             <div class="card-body">
@@ -180,7 +180,7 @@
                                         data-type="radial-gauge"
                                         data-width="150"
                                         data-height="150"
-                                        data-units="OEE"
+                                        data-units=""
                                         data-min-value="0"
                                         data-start-angle="90"
                                         data-ticks-angle="180"

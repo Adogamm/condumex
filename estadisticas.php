@@ -13,7 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    </head>
 <body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -22,11 +22,11 @@
       
       <li>
         <div class="iocn-link">
-          <a href="monitor.php">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="link_name">Monitor piso</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+            <a href="monitor.php">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Monitor piso</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -88,7 +88,7 @@
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
             <li><a href="administracion-usuarios.html">Administración</a></li>
-            <li><a href="roles-privilegio.html">Roles y privilegios</a></li>
+            <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">
@@ -126,72 +126,72 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <form name="selector_datos" action="#" class="form-inline">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-3 d-block mx-auto my-1">
-                                    <select class="form-control my-2 mx-1" name="area" id="area">
-                                        <option value="null">-- Seleccionar Área --</option>
-                                        <option value="Irradiado">Irradiado</option>
-                                        <option value="Repase">Repase</option>
-                                        <option value="Termo fijo">Termo fijo</option>
-                                        <option value="Termo plástico">Termo plástico</option>
-                                        <option value="Tubulado">Tubulado</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-3 d-block mx-auto my-1">
-                                    <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
-                                        <option value="null">-- Seleccionar Máquina --</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-3 d-block mx-auto my-1">
-                                    <select class="form-control my-2 mx-1">
-                                        <option value="null">-- Seleccionar Variables --</option>
-                                        <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                        <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                        <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                        <option value="fallas-superficie">Fallas de superficie</option>
-                                        <option value="preset_length">Preset_length</option>
-                                        <option value="spool-change">Cambio de bobina (spool change)</option>
-                                        <option value="last-spool">Velocidad de operación</option>
-                                        <option value="last-spool">Concentricidad</option>
-                                        <option value="last-spool">Horómetro</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-4 d-block mx-auto my-1">
-                                    <div class="form-group row">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
-                                        <div class="col-sm-7">
-                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group row">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
-                                        <div class="col-sm-7">
-                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 d-block mx-auto my-1">
-                                    <div class="form-group row mx-4">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
-                                        <div class="col-sm-7">
-                                            <select class="form-control my-2 mx-1">
-                                                <option value="null"> Turno </option>
-                                                <option value="Turno_1">Turno 1</option>
-                                                <option value="Turno_2">Turno 2</option>
-                                                <option value="Turno_3">Turno 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+              <div class="col-lg-12">
+                  <form name="selector_datos" action="#" class="form-inline">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-lg-3 d-block mx-auto my-1">
+                                  <select class="form-control my-2 mx-1" name="area" id="area">
+                                      <option value="null">-- Seleccionar Área --</option>
+                                      <option value="Irradiado">Irradiado</option>
+                                      <option value="Repase">Repase</option>
+                                      <option value="Termo fijo">Termo fijo</option>
+                                      <option value="Termo plástico">Termo plástico</option>
+                                      <option value="Tubulado">Tubulado</option>
+                                  </select>
+                              </div>
+                              <div class="col-lg-3 d-block mx-auto my-1">
+                                  <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
+                                      <option value="null">-- Seleccionar Máquina --</option>
+                                  </select>
+                              </div>
+                              <div class="col-lg-3 d-block mx-auto my-1">
+                                  <select class="form-control my-2 mx-1">
+                                      <option value="null">-- Seleccionar Variables --</option>
+                                      <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                      <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                      <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                      <option value="fallas-superficie">Fallas de superficie</option>
+                                      <option value="preset_length">Preset_length</option>
+                                      <option value="spool-change">Cambio de bobina (spool change)</option>
+                                      <option value="last-spool">Velocidad de operación</option>
+                                      <option value="last-spool">Concentricidad</option>
+                                      <option value="last-spool">Horómetro</option>
+                                  </select>
+                              </div>
+                              <div class="col-lg-4 d-block mx-auto my-1">
+                                  <div class="form-group row">
+                                      <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                      <div class="col-sm-7">
+                                          <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-4">
+                                  <div class="form-group row">
+                                      <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                      <div class="col-sm-7">
+                                          <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-3 d-block mx-auto my-1">
+                                  <div class="form-group row mx-4">
+                                      <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
+                                      <div class="col-sm-7">
+                                          <select class="form-control my-2 mx-1">
+                                              <option value="null"> Turno </option>
+                                              <option value="Turno_1">Turno 1</option>
+                                              <option value="Turno_2">Turno 2</option>
+                                              <option value="Turno_3">Turno 3</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
 
                 <!-- GRAFICA -->
                 <div class="col-lg-5 d-block mx-auto mt-2">

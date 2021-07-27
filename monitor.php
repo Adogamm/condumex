@@ -95,8 +95,8 @@ $query1 = mysqli_query($conexion,$select_avg);
         </div>
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
-            <li><a href="#">Administración</a></li>
-            <li><a href="#">Roles y privilegios</a></li>
+            <li><a href="administracion-usuarios.html">Administración</a></li>
+            <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">
@@ -135,7 +135,7 @@ $query1 = mysqli_query($conexion,$select_avg);
                                     data-type="radial-gauge"
                                     data-width="150"
                                     data-height="150"
-                                    data-units="Km/h"
+                                    data-units="%OEE"
                                     data-min-value="0"
                                     data-max-value="100"
                                     data-major-ticks="0,10,20,30,40,50,60,70,80,90,100"

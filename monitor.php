@@ -16,6 +16,9 @@ $query1 = mysqli_query($conexion,$select_avg);
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
+      <title>Monitor de piso</title>
    </head>
 <body>
   <div class="sidebar close">
@@ -27,11 +30,11 @@ $query1 = mysqli_query($conexion,$select_avg);
       
       <li>
         <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="link_name">Monitor piso</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+            <a href="monitor.php">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Monitor piso</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -84,30 +87,30 @@ $query1 = mysqli_query($conexion,$select_avg);
       </li>
       <li>
         <div class="iocn-link">
-          <a href="#">
+            <a href="#">
             <i class='bx bx-user' ></i>
             <span class="link_name">Usuarios</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
         </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="#">Administración</a></li>
-          <li><a href="#">Roles y privilegios</a></li>
-        </ul>
-      </li>
-    <div class="profile-details">
-      <div class="profile-content">
-        <img src="images/avatar.png" alt="profileImg">
-      </div>
-      <div class="name-job">
-        <div class="profile_name">Prem Shahi</div>
-        <div class="job">Web Desginer</div>
-      </div>
-      <i class='bx bx-log-out' style="color: #fff;"></i>
-    </div>
-  </li>
-</ul>
+            <ul class="sub-menu">
+            <li><a class="link_name" href="#">Usuarios</a></li>
+            <li><a href="#">Administración</a></li>
+            <li><a href="#">Roles y privilegios</a></li>
+            </ul>
+        </li>
+        <div class="profile-details">
+            <div class="profile-content">
+            <img src="images/avatar.png" alt="profileImg">
+        </div>
+        <div class="name-job">
+            <div class="profile_name">Prem Shahi</div>
+            <div class="job">Web Desginer</div>
+        </div>
+          <i class='bx bx-log-out' style="color: #fff;"></i>
+        </div>
+    </li>
+    </ul>
   </div>
 
   <!-- CONTENIDO DE LA PÁGINA -->

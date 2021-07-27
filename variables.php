@@ -16,7 +16,7 @@ $query1 = mysqli_query($conexion,$select_avg);
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles/styles-monitor copy.css">
+    <link rel="stylesheet" href="styles/styles-monitor.css">
     <link rel="stylesheet" href="styles/switch.css">
     <title>Monitor piso</title>
 </head>

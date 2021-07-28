@@ -142,9 +142,9 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     data-minor-ticks="2"
                                     data-stroke-ticks="true"
                                     data-highlights='[
-                                        {"from": 0, "to": 20, "color": "rgba(200, 50, 50, .75)"},
-                                        {"from": 20, "to": 50, "color": "rgba(240, 233, 29, .94)"},
-                                        {"from": 50, "to": 100, "color": "rgba(19, 142, 13, .56)"}
+                                        {"from": 0, "to": 60, "color": "rgba(200, 50, 50, .75)"},
+                                        {"from": 60, "to": 85, "color": "rgba(240, 233, 29, .94)"},
+                                        {"from": 85, "to": 100, "color": "rgba(19, 142, 13, .56)"}
                                     ]'
                                     data-color-plate="#fff"
                                     data-border-shadow-width="0"

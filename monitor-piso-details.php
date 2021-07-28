@@ -4,8 +4,8 @@
   setcookie('Prueba',$tipo_maquina,time()+3600);
   $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
-  $query = mysqli_query($conexion, $select);
-  $query1 = mysqli_query($conexion,$select_avg);
+  $query = sqlsrv_query($conexion, $select);
+  $query1 = sqlsrv_query($conexion,$select_avg);
 ?>
 
 <!DOCTYPE html>
@@ -137,7 +137,7 @@
                     <div class="col-lg-3">
                         <div class="card ml-4">
                             <div class="card-body">
-                            <?php while($avg = mysqli_fetch_array($query1)){ ?>
+                            <?php while($avg = sqlsrv_fetch_array($query1)){ ?>
                             <div class="progress my-4">
                                 <div id="medidor" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <?php echo $avg['RENDIMIENTO'];  ?>?%; min-width: 25%;" aria-valuenow="<?php echo $avg['RENDIMIENTO'];  ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $avg['RENDIMIENTO'];  ?>%</div>
                             </div>
@@ -166,7 +166,7 @@
                 <div>
                 <div class="container">
                 <div class="row">
-                    <?php while($maquina = mysqli_fetch_array($query)){  ?>
+                    <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
                         <div class="col-lg-4 text-center d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-header">

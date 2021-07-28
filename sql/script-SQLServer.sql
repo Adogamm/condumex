@@ -6,6 +6,8 @@
 -- CREATE DATABASE laboratoriosql;
 -- USE laboratoriosql;
 
+use pruebas;
+
 DROP TABLE IF EXISTS USUARIOS;
 
 CREATE TABLE USUARIOS(
@@ -36,8 +38,8 @@ CREATE TABLE MAQUINAS (
     PAROACTUAL VARCHAR(50) NOT NULL,
     EVENTOACTUAL VARCHAR(50) NOT NULL,
     OE VARCHAR(50) NOT NULL,
-    TIPO_MAQUINA_HIDDEN INTEGER NOT NULL,
-    TIPO_MAQUINA INTEGER NOT NULL,
+    TIPO_MAQUINA_HIDDEN VARCHAR(50) NOT NULL,
+    TIPO_MAQUINA VARCHAR(50) NOT NULL,
     TIEMPO_MUERTO INTEGER NOT NULL,
     TIEMPO_PERDIDO INTEGER NOT NULL,
     TIEMPO_CICLO INTEGER NOT NULL,
@@ -50,29 +52,31 @@ CREATE TABLE MAQUINAS (
 
 INSERT INTO MAQUINAS 
 (MAQUINA, RENDIMIENTO, VELOCIDAD,ULTIMOPARO, EVENTO, 
-PAROACTUAL, EVENTOACTUAL, OE, TIPO_MAQUINA_HIDDEN, TIPO_MAQUINA) VALUES
+PAROACTUAL, EVENTOACTUAL, OE, TIPO_MAQUINA_HIDDEN, 
+TIPO_MAQUINA,TIEMPO_MUERTO,TIEMPO_PERDIDO,TIEMPO_CICLO,
+TIEMPO_OPERATIVO,TIEMPO_DISPONIBLE,PRODUCCION_REAL,PRODUCCION_PREVISTA,PRODUCCION_OK) VALUES
 
-('LIR601',10,'100KM/H','20MIN',' ',' ',' ', ' ','Irradiado','Irradiado',1,2,3,4,5,6,7,8),
-('LRP601',11,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
-('LRP602',12,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
-('LAF601',80,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF602',10,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF603',11,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF604',40,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF605',70,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF606',20,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAF607',36,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
-('LAP601',30,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP602',31,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP603',32,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP604',33,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP605',34,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP606',35,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP607',36,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP608',37,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP609',38,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP610',38,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LAP611',38,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
-('LEM601',90,'100KM/H','20MIN',' ',' ',' ', ' ','Tubulado','Tubulado',1,2,3,4,5,6,7,8);
+('LIR601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Irradiado','Irradiado',1,2,3,4,5,6,7,8),
+('LRP601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
+('LRP602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
+('LAF601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF603',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF604',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF605',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF606',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAF607',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
+('LAP601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP603',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP604',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP605',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP606',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP607',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP608',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP609',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP610',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8),
+('LAP611',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Plastico','Termo Plastico',1,2,3,4,5,6,7,8);
 
 SELECT * FROM MAQUINAS;
+

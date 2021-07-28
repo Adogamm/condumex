@@ -1,10 +1,10 @@
 <?php 
 include 'databaseconnect/conection.php';
 $select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN;";
-$query = mysqli_query($conexion,$select);
+$query = sqlsrv_query($conexion,$select);
 
 $select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
-$query1 = mysqli_query($conexion,$select_avg);
+$query1 = sqlsrv_query($conexion,$select_avg);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

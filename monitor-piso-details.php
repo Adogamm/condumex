@@ -148,11 +148,17 @@
                                     setInterval(function() {
                                         number = Math.floor(Math.random()*100);
                                         $("#medidor").css("width",number+"%").attr("aria-valuenow",number).text(number+"%");
-                                        if(number >= 0 && number <= 20){
+                                        if(number >= 0 && number <= 60){
+                                            barra.classList.remove("bg-warning");
+                                            barra.classList.remove("bg-success");
                                             barra.classList.toggle("bg-danger");
-                                        } else if(number >= 21 && number <= 50){
+                                        } else if(number >= 61 && number <= 85){
+                                            barra.classList.remove("bg-danger");
+                                            barra.classList.remove("bg-success");
                                             barra.classList.toggle("bg-warning");
-                                        } else if(number >= 51 && number <= 100){
+                                        } else if(number >= 86 && number <= 100){
+                                            barra.classList.remove("bg-danger");
+                                            barra.classList.remove("bg-warning");
                                             barra.classList.toggle("bg-success");
                                         }
                                     }, 1000);
@@ -230,6 +236,6 @@
     <script src="js/gauge.min.js"></script>
     <script src="js/monitor.js"></script>
   </body>
-<script src="js/live.js"></script>
+<script src="js/live/live-monitor-piso-details.js"></script>
 </html>
 

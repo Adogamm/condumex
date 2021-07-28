@@ -131,7 +131,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                 <div class="card-body">
                                     <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                                     <canvas
-                                    data-value="100"
+                                    data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>"
                                     data-type="radial-gauge"
                                     data-width="150"
                                     data-height="150"
@@ -160,13 +160,13 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"
                                     ></canvas>
 
-                                    <script>
+                                    <!-- <script>
                                         var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
                                             setInterval(function() {
                                                 number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
                                                 $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
                                             }, 1000);
-                                    </script>
+                                    </script> -->
                                     <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Detalles</a>
                                 </div>
                             </div>
@@ -213,4 +213,5 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
+<script src="js/live/live-monitor.js"></script>
 </html>

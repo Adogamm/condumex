@@ -179,13 +179,13 @@
                                 <div class="card-header">
                                     <div class="container">
                                       <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 col-md-12">
                                           <div class="led-box">
                                             <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
                                           </div>
                                           <p style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></p>
                                         </div>
-                                        <div class="col-lg-6 mt-2">
+                                        <div class="col-lg-6 col-md-12 mt-2">
                                           <p>Velocidad: 200 km/h</p>
                                           <p>Status: OK</p>
                                         </div>

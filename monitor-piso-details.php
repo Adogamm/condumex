@@ -20,7 +20,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
-        <title>Monitor de piso</title>
+        <title>Área: <?php echo $tipo_maquina ?></title>
    </head>
 <body>
 <div class="sidebar close">
@@ -177,23 +177,17 @@
                         <div class="col-lg-4 text-center d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-header">
-                                    <!-- <img src="images/trabajador.png" alt="maquina" class="ml-1 top-img"> -->
                                     <div class="container">
                                       <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                           <div class="led-box">
                                             <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
                                           </div>
+                                          <p style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></p>
                                         </div>
-                                        <div class="col-lg-12">
-                                          <h6 style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></h6>
-                                        </div>
-                                      </div>
-
-                                      <!-- AQUI ESTA EL ERROR -->
-                                      <div class="row" style="margin-left: 50%;">
-                                        <div class="col-lg-12">
-                                          <h6>Velocidad: 20 km/h</h6>
+                                        <div class="col-lg-6 mt-2">
+                                          <p>Velocidad: 200 km/h</p>
+                                          <p>Status: OK</p>
                                         </div>
                                       </div>
                                     </div>

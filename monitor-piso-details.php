@@ -121,7 +121,7 @@
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">MONITOR DE PISO</span>
+      <span class="text"><?php echo strtoupper($tipo_maquina) ?></span>
     </div>
     <div class="container">
         <div class="row col-12">
@@ -164,7 +164,7 @@
                                         }
                                     }, 1000);
                             </script>
-                            <h5 class="card-title text-center"><?php echo $tipo_maquina ?></h5>
+                            <h5 class="card-title text-center">% OEE Promedio</h5>
                             <?php } ?>
                             </div>
                         </div>
@@ -178,10 +178,23 @@
                             <div class="card my-2">
                                 <div class="card-header">
                                     <!-- <img src="images/trabajador.png" alt="maquina" class="ml-1 top-img"> -->
-                                    <div class="led-box">
-                                      <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
+                                    <div class="container">
+                                      <div class="row">
+                                        <div class="col-lg-12">
+                                          <div class="led-box">
+                                            <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                          <h6 style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></h6>
+                                        </div>
+                                      </div>
+                                      <div class="row" style="margin-left: 50%;">
+                                        <div class="col-lg-12">
+                                          <h6>Velocidad: 20 km/h</h6>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <h6 style="margin-right: 25%;" class="my-3"><?php echo $maquina['MAQUINA'] ?></h6>
                                 </div>
                             <div class="card-body">
                                 <h6 id="text<?php echo $maquina['MAQUINA'] ?>"></h6>

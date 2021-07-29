@@ -154,7 +154,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     data-needle-circle-size="7"
                                     data-needle-circle-outer="true"
                                     data-needle-circle-inner="false"
-                                    data-animation-duration="900"
+                                    data-animation-duration="750"
                                     data-animation-rule="linear"
                                     class="d-block mx-auto"
                                     id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"
@@ -214,23 +214,5 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
-<script>
-  function loadXMLDoc() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("link_wrapper").innerHTML =
-        this.responseText;
-      }
-    };
-    xhttp.open("GET", "live-update/monitor.php", true);
-    xhttp.send();
-  }
-  setInterval(function(){
-      loadXMLDoc();
-      // 1sec
-  },1000);
-
-window.onload = loadXMLDoc;
-</script>
+<script src="js/live/live-monitor.js"></script>
 </html>

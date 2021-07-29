@@ -1,7 +1,7 @@
 <?php
   include 'databaseconnect/conection.php';
   $tipo_maquina = $_GET['tipo_maquina'];
-  setcookie('Prueba',$tipo_maquina,time()+3600);
+  setcookie('tipo_maquina',$tipo_maquina,time()+3600);
   $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
   $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
   $query = sqlsrv_query($conexion, $select);
@@ -14,6 +14,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles/sidebar.css">
         <link rel="stylesheet" href="styles/styles-monitor.css">
+        <link rel="stylesheet" href="styles/led.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -151,15 +152,15 @@
                                         if(number >= 0 && number <= 60){
                                             barra.classList.remove("bg-warning");
                                             barra.classList.remove("bg-success");
-                                            barra.classList.toggle("bg-danger");
+                                            barra.classList.add("bg-danger");
                                         } else if(number >= 61 && number <= 85){
                                             barra.classList.remove("bg-danger");
                                             barra.classList.remove("bg-success");
-                                            barra.classList.toggle("bg-warning");
+                                            barra.classList.add("bg-warning");
                                         } else if(number >= 86 && number <= 100){
                                             barra.classList.remove("bg-danger");
                                             barra.classList.remove("bg-warning");
-                                            barra.classList.toggle("bg-success");
+                                            barra.classList.add("bg-success");
                                         }
                                     }, 1000);
                             </script>
@@ -176,8 +177,11 @@
                         <div class="col-lg-4 text-center d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-header">
-                                    <img src="images/trabajador.png" alt="maquina" class="ml-1 top-img">
-                                    <h6 class="text-center"><?php echo $maquina['MAQUINA'] ?></h6>
+                                    <!-- <img src="images/trabajador.png" alt="maquina" class="ml-1 top-img"> -->
+                                    <div class="led-box">
+                                      <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
+                                    </div>
+                                    <h6 style="margin-right: 25%;" class="my-3"><?php echo $maquina['MAQUINA'] ?></h6>
                                 </div>
                             <div class="card-body">
                                 <h6 id="text<?php echo $maquina['MAQUINA'] ?>"></h6>

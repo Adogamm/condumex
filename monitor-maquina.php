@@ -1,7 +1,7 @@
 <?php
     include('databaseconnect/conection.php');
     $maquina = $_GET['maquina'];
-
+    setcookie('maquina',$maquina,time()+3600);
 
     $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
     $resultado = sqlsrv_query($conexion,$select);
@@ -150,10 +150,10 @@
                             <h6 class="text-center"><i class='bx bx-info-circle'></i> Información</h6>
                         </div>
                         <div class="card-body text-center">
-                            <p>Área: <?php echo $row['TIPO_MAQUINA'] ?></p>
-                            <p>Línea: <?php echo $maquina; ?></p>
-                            <p class="my-4">Fecha: <?php echo date("m/d/y"); ?></p>
-                            <p class="my-4">Hora: <?php echo date("H:i"); ?></p>
+                            <p id="area"></p>
+                            <p id="linea" class="my-3"></p>
+                            <p id="fecha" class="my-4"></p>
+                            <p id="hora" class="my-2"></p>
                         </div>
                     </div>
                 </div>
@@ -165,9 +165,9 @@
                         </div>
                         <div class="card-body my-3">
                             <div class="card-text my-3">
-                                <p>Tiempo muerto: 0.23 mins<br>
-                                <p>Tiempo perdido: 2.03 mins<br>
-                                <p>Tiempo ciclo: 12.43 mins</p>
+                                <p id="tiempo_muerto"><br>
+                                <p id="tiempo_perdido"><br>
+                                <p id="tiempo_ciclo"></p>
                             </div>
                         </div>
                     </div>
@@ -412,8 +412,8 @@
             </div>
         
     </section>
+    <div id="link_wrapper"></div>
 
-    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -421,4 +421,5 @@
     <script src="js/gauge.min.js"></script>
     <script src="js/monitor.js"></script>
   </body>
+  <script src="js/live/live-monitor-maquina.js"></script>
 </html>

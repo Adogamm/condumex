@@ -189,6 +189,8 @@
                                           <h6 style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></h6>
                                         </div>
                                       </div>
+
+                                      <!-- AQUI ESTA EL ERROR -->
                                       <div class="row" style="margin-left: 50%;">
                                         <div class="col-lg-12">
                                           <h6>Velocidad: 20 km/h</h6>

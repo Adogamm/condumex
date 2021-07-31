@@ -197,8 +197,8 @@
                                     <canvas
                                         data-value="<?php echo $maquina['RENDIMIENTO'] ?>"
                                         data-type="radial-gauge"
-                                        data-width="150"
-                                        data-height="150"
+                                        data-width="175"
+                                        data-height="175"
                                         data-units=""
                                         data-min-value="0"
                                         data-start-angle="90"

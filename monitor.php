@@ -126,9 +126,9 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 <div class="container">
                     <div class="row">
                         <?php while($maquinas = sqlsrv_fetch_array($query) AND $porcentaje = sqlsrv_fetch_array($query1)){ ?>
-                        <div class="col-lg-5 mt-1">
+                        <div class="col-lg-6 mt-1">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body my-2">
                                     <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                                     <canvas
                                     data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>"
@@ -167,7 +167,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
                                             }, 1000);
                                     </script> -->
-                                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="btn btn-warning text-white d-block mx-auto">Detalles</a>
+                                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>" class="my-2 btn btn-warning text-white d-block mx-auto">Detalles</a>
                                 </div>
                             </div>
                         </div>

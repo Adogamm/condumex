@@ -120,7 +120,7 @@
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' ></i>
-            <span class="text">MONITOR MAQUINA</span>
+            <span class="text"><?php echo $row['MAQUINA']; ?></span>
         </div>
 
         <div class="container">
@@ -133,11 +133,8 @@
                         </p>
                     </a>
                 </div>
-                <div class="col-lg-5 mt-3">
-                    <h3>MONITOR DE MÁQUINA: <?php echo $row['MAQUINA']; ?></h3>
-                </div>
-                <div class="col-lg-3">
-                    <a href="variables.php?maquina=<?php echo $maquina ?>" class="d-block text-white  my-3 mx-auto btn btn-warning">Variables</a>
+                <div c lass="col-lg-3">
+                    <a href="variables.php?maquina=<?php echo $maquina ?>" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
                 </div>
             </div>
         </div>

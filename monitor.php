@@ -127,7 +127,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                     <div class="row">
                         <?php while($maquinas = sqlsrv_fetch_array($query) AND $porcentaje = sqlsrv_fetch_array($query1)){ ?>
                         <div class="col-lg-6 mt-1">
-                            <div class="card">
+                            <div class="card my-2">
                                 <div class="card-body my-2">
                                     <h5 class="card-title text-center"><?php echo $maquinas['TIPO_MAQUINA'] ?></h5>
                                     <canvas

@@ -10,9 +10,10 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <html lang="en" dir="ltr">
   <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="styles/sidebar.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
@@ -120,180 +121,154 @@ $query1 = sqlsrv_query($conexion,$select_avg);
             <span class="text">CTP'S</span>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
-                        <p class="text-left">
-                            <i class='bx bx-arrow-back'></i>
-                            <span class="ml-1"> Regresar</span>
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 d-block mx-auto mt-2">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <h6>Estatus</h6>
-                        </div>
-                        <div class="card-body my-4">
-                            <div class="container">
-                                <div class="row">
-
-                                <!-- TOGGLERS -->
-                                    <div class="col-lg-5 d-block mx-auto">
-                                        <p class="text-center">Obtención del estado del enrollador</p>
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="selector_datos" action="#" class="form-inline">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 d-block mx-auto my-1">
+                                <select class="form-control my-2 mx-1" name="area" id="area">
+                                    <option value="null">-- Seleccionar Área --</option>
+                                    <option value="Irradiado">Irradiado</option>
+                                    <option value="Repase">Repase</option>
+                                    <option value="Termo fijo">Termo fijo</option>
+                                    <option value="Termo plástico">Termo plástico</option>
+                                    <option value="Tubulado">Tubulado</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 d-block mx-auto my-1">
+                                <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
+                                    <option value="null">-- Seleccionar Máquina --</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 d-block mx-auto my-1">
+                                <select class="form-control my-2 mx-1">
+                                    <option value="null">-- Seleccionar Variables --</option>
+                                    <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                    <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                    <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                    <option value="fallas-superficie">Fallas de superficie</option>
+                                    <option value="preset_length">Preset_length</option>
+                                    <option value="spool-change">Cambio de bobina (spool change)</option>
+                                    <option value="last-spool">Velocidad de operación</option>
+                                    <option value="last-spool">Concentricidad</option>
+                                    <option value="last-spool">Horómetro</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                    <div class="col-sm-7">
+                                        <input type="date" name="" id="" class="form-control my-2 mx-1">
                                     </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">Off</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group row">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                    <div class="col-sm-7">
+                                        <input type="date" name="" id="" class="form-control my-2 mx-1">
                                     </div>
-                                    <div class="col-lg-2 mr-3 mt-2">
-                                        <div class="swtich-container">
-                                            <input type="checkbox" id="switch" checked disabled>
-                                            <label for="switch" class="lbl"></label>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-block mx-auto my-1">
+                                <div class="form-group row mx-4">
+                                    <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
+                                    <div class="col-sm-7">
+                                        <select class="form-control my-2 mx-1">
+                                            <option value="null"> Turno </option>
+                                            <option value="Turno_1">Turno 1</option>
+                                            <option value="Turno_2">Turno 2</option>
+                                            <option value="Turno_3">Turno 3</option>
+                                        </select>
                                     </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">On</p>
-                                    </div>
-
-
-                                    <div class="col-lg-5 d-block mx-auto">
-                                        <p class="text-center mt-1">Matriz de fallas de chispa</p>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">Off</p>
-                                    </div>
-                                    <div class="col-lg-2 mr-3 mt-2">
-                                        <div class="swtich-container">
-                                            <input type="checkbox" id="switch" disabled>
-                                            <label for="switch" class="lbl"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">On</p>
-                                    </div>
-
-
-                                    <div class="col-lg-5 d-block mx-auto">
-                                        <p class="text-center mt-3">Última bobina</p>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">Off</p>
-                                    </div>
-                                    <div class="col-lg-2 mr-3 mt-2">
-                                        <div class="swtich-container">
-                                            <input type="checkbox" id="switch" cheked disabled>
-                                            <label for="switch" class="lbl"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">On</p>
-                                    </div>
-
-
-                                    <div class="col-lg-5 d-block mx-auto">
-                                        <p class="text-center mt-3">Cambio de bobina</p>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">Off</p>
-                                    </div>
-                                    <div class="col-lg-2 mr-3 mt-2">
-                                        <div class="swtich-container">
-                                            <input type="checkbox" id="switch" disabled>
-                                            <label for="switch" class="lbl"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 d-block mx-auto">
-                                        <p class="text-center mt-3">On</p>
-                                    </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
+        </div>
+        <div class="row my-1">
+            <div class="my-1 col-lg-5">
+                <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
+            </div>
+            <div class="my-1 col-lg-7">
+                <div class="container">
+                    <div class="row">
 
-
-
-
-                <div class="col-lg-5 d-block mx-auto mt-2">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <h6>Float</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <p class="mt-5">Velocidad de operación</p>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <canvas 
-                                            data-value="100"
-                                            data-type="radial-gauge"
-                                            data-width="150"
-                                            data-height="150"
-                                            data-units="Km/h"
-                                            data-min-value="0"
-                                            data-max-value="220"
-                                            data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
-                                            data-minor-ticks="2"
-                                            data-stroke-ticks="true"
-                                            data-highlights='[
-                                                {"from": 160, "to": 220, "color": "rgba(200, 50, 50, .75)"}
-                                            ]'
-                                            data-color-plate="#fff"
-                                            data-border-shadow-width="0"
-                                            data-borders="false"
-                                            data-needle-type="arrow"
-                                            data-needle-width="2"
-                                            data-needle-circle-size="7"
-                                            data-needle-circle-outer="true"
-                                            data-needle-circle-inner="false"
-                                            data-animation-duration="900"
-                                            data-animation-rule="linear"
-                                        ></canvas>
-                                    </div>
-
-
-                                    <div class="col-lg-5">
-                                        <p class="mt-5">Horómetro</p>
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <canvas 
-                                            data-value="90.56"
-                                            data-type="radial-gauge"
-                                            data-width="150"
-                                            data-height="150"
-                                            data-units="Horas"
-                                            data-min-value="0"
-                                            data-max-value="220"
-                                            data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
-                                            data-minor-ticks="2"
-                                            data-stroke-ticks="true"
-                                            data-highlights='[
-                                                {"from": 160, "to": 220, "color": "rgba(200, 50, 50, .75)"}
-                                            ]'
-                                            data-color-plate="#fff"
-                                            data-border-shadow-width="0"
-                                            data-borders="false"
-                                            data-needle-type="arrow"
-                                            data-needle-width="2"
-                                            data-needle-circle-size="7"
-                                            data-needle-circle-outer="true"
-                                            data-needle-circle-inner="false"
-                                            data-animation-duration="900"
-                                            data-animation-rule="linear"
-                                        ></canvas>
+                        <div class="col-lg-12 my-2">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-3 bg-warning">
+                                                <h6 class="text-center text-white">Estatus</h6>
+                                            </div>
+                                            <div class="col-lg-9 py-3">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Bobina</h6>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Velocidad</h6>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-danger text-danger">a</span> Estado</h6>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-warning text-warning">a</span> Enrollador</h6>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Estado</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-12 my-2">
+                            <div class="card">
+                                <div class="card-body p-0">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-3 bg-warning">
+                                                <h6 class="text-center text-white">Variables</h6>
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <table class="table">
+                                                    <tbody>
+
+
+                                                        <tr>
+                                                            <td>Velocidad: 200km km/h</td>
+                                                            <td>Enrollador: OK</td>
+                                                            <tr>
+                                                                <td>Velocidad: 200km km/h</td>
+                                                                <td>Enrollador: OK</td>
+                                                                <tr>
+                                                                    <td>Velocidad: 200km km/h</td>
+                                                                    <td>Enrollador: OK</td>
+                                                                </tr>
+                                                            </tr>
+                                                        </tr>
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -303,10 +278,10 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
 
 <script src="js/sidebar.js"></script>
-<script src="js/gauge.min.js"></script>
 <script src="js/monitor.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

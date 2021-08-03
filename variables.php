@@ -127,7 +127,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                     <form name="selector_datos" action="#" class="form-inline">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                     <select class="form-control my-2 mx-1" name="area" id="area">
                                         <option value="null">-- Seleccionar Área --</option>
                                         <option value="Irradiado">Irradiado</option>
@@ -137,12 +137,12 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         <option value="Tubulado">Tubulado</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                     <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
                                         <option value="null">-- Seleccionar Máquina --</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                     <select class="form-control my-2 mx-1">
                                         <option value="null">-- Seleccionar Variables --</option>
                                         <option value="estado-enrollador">Obtención del estado del enrollador</option>
@@ -156,7 +156,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         <option value="last-spool">Horómetro</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                     <div class="form-group row">
                                         <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
                                         <div class="col-sm-7">
@@ -164,7 +164,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4 col-sm-12 my-1">
                                     <div class="form-group row">
                                         <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
                                         <div class="col-sm-7">
@@ -172,7 +172,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 d-block mx-auto my-1">
+                                <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                     <div class="form-group row mx-4">
                                         <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
                                         <div class="col-sm-7">
@@ -191,7 +191,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-sm-12 my-1">
                     <div class="card">
                         <div class="card-body">
                             <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
@@ -206,52 +206,52 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     <div class="card-header bg-warning text-white">
                                         <h6 class="text-center">ESTATUS</h6>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body p-0">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
                                                         <p>Funcionamiento</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
                                                         <p>Velocidad</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
                                                         <p>Estado enrollador</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
                                                         <p>Temperatura</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
                                                         <p>Sistema inyeccion</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
                                                         <p>Estado</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
                                                         <p>Estado</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
                                                         <p>Estado</p>

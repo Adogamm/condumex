@@ -125,7 +125,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mt-3">
+                <div class="col-lg-9">
                     <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
                         <p class="text-left">
                             <i class='bx bx-arrow-back'></i>
@@ -133,7 +133,7 @@
                         </p>
                     </a>
                 </div>
-                <div c lass="col-lg-3">
+                <div class="col-lg-3 mr-1">
                     <a href="variables.php?maquina=<?php echo $maquina ?>" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
                 </div>
             </div>

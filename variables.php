@@ -124,6 +124,14 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
+                        <p class="text-left">
+                            <i class='bx bx-arrow-back'></i>
+                            <span class="ml-1"> Regresar</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="col-lg-12">
                     <form name="selector_datos" action="#" class="form-inline">
                         <div class="container">
                             <div class="row">

@@ -162,9 +162,9 @@
                         </div>
                         <div class="card-body my-3">
                             <div class="card-text my-3">
-                                <p id="tiempo_muerto"><br>
-                                <p id="tiempo_perdido"><br>
-                                <p id="tiempo_ciclo"></p>
+                                <p id="tiempo_muerto">Tiempo muerto: 10:00 mins<br>
+                                <p id="tiempo_perdido">Tiempo perdido: 10:00 mins<br>
+                                <p id="tiempo_ciclo">Tiempo ciclo: 42:00 mins</p>
                             </div>
                         </div>
                     </div>

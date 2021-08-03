@@ -17,7 +17,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
-        <link rel="stylesheet" href="styles/switch.css">
+        <link rel="stylesheet" href="styles/boxes.css">
         <title>Variables</title>
    </head>
 <body>
@@ -115,114 +115,146 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
 
     <!-- CONTENIDO DE LA PÁGINA -->
-        <section class="home-section">
+    <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' ></i>
             <span class="text">CTP'S</span>
         </div>
+
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <form name="selector_datos" action="#" class="form-inline">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 d-block mx-auto my-1">
-                                <select class="form-control my-2 mx-1" name="area" id="area">
-                                    <option value="null">-- Seleccionar Área --</option>
-                                    <option value="Irradiado">Irradiado</option>
-                                    <option value="Repase">Repase</option>
-                                    <option value="Termo fijo">Termo fijo</option>
-                                    <option value="Termo plástico">Termo plástico</option>
-                                    <option value="Tubulado">Tubulado</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-3 d-block mx-auto my-1">
-                                <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
-                                    <option value="null">-- Seleccionar Máquina --</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-3 d-block mx-auto my-1">
-                                <select class="form-control my-2 mx-1">
-                                    <option value="null">-- Seleccionar Variables --</option>
-                                    <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                    <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                    <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                    <option value="fallas-superficie">Fallas de superficie</option>
-                                    <option value="preset_length">Preset_length</option>
-                                    <option value="spool-change">Cambio de bobina (spool change)</option>
-                                    <option value="last-spool">Velocidad de operación</option>
-                                    <option value="last-spool">Concentricidad</option>
-                                    <option value="last-spool">Horómetro</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-4 d-block mx-auto my-1">
-                                <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
-                                    <div class="col-sm-7">
-                                        <input type="date" name="" id="" class="form-control my-2 mx-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="selector_datos" action="#" class="form-inline">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 d-block mx-auto my-1">
+                                    <select class="form-control my-2 mx-1" name="area" id="area">
+                                        <option value="null">-- Seleccionar Área --</option>
+                                        <option value="Irradiado">Irradiado</option>
+                                        <option value="Repase">Repase</option>
+                                        <option value="Termo fijo">Termo fijo</option>
+                                        <option value="Termo plástico">Termo plástico</option>
+                                        <option value="Tubulado">Tubulado</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 d-block mx-auto my-1">
+                                    <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
+                                        <option value="null">-- Seleccionar Máquina --</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 d-block mx-auto my-1">
+                                    <select class="form-control my-2 mx-1">
+                                        <option value="null">-- Seleccionar Variables --</option>
+                                        <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                        <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
+                                        <option value="fallas-chispa">Matriz de fallas de chispa</option>
+                                        <option value="fallas-superficie">Fallas de superficie</option>
+                                        <option value="preset_length">Preset_length</option>
+                                        <option value="spool-change">Cambio de bobina (spool change)</option>
+                                        <option value="last-spool">Velocidad de operación</option>
+                                        <option value="last-spool">Concentricidad</option>
+                                        <option value="last-spool">Horómetro</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 d-block mx-auto my-1">
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>
+                                        <div class="col-sm-7">
+                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
-                                    <div class="col-sm-7">
-                                        <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                <div class="col-lg-4">
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">Fecha fin</label>
+                                        <div class="col-sm-7">
+                                            <input type="date" name="" id="" class="form-control my-2 mx-1">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 d-block mx-auto my-1">
-                                <div class="form-group row mx-4">
-                                    <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
-                                    <div class="col-sm-7">
-                                        <select class="form-control my-2 mx-1">
-                                            <option value="null"> Turno </option>
-                                            <option value="Turno_1">Turno 1</option>
-                                            <option value="Turno_2">Turno 2</option>
-                                            <option value="Turno_3">Turno 3</option>
-                                        </select>
+                                <div class="col-lg-4 d-block mx-auto my-1">
+                                    <div class="form-group row mx-4">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">Turno</label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control my-2 mx-1">
+                                                <option value="null"> Turno </option>
+                                                <option value="Turno_1">Turno 1</option>
+                                                <option value="Turno_2">Turno 2</option>
+                                                <option value="Turno_3">Turno 3</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
+                        </div>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div class="row my-1">
-            <div class="my-1 col-lg-5">
-                <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
-            </div>
-            <div class="my-1 col-lg-7">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12 my-2">
-                            <div class="card">
-                                <div class="card-body p-0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3 bg-warning">
-                                                <h6 class="text-center text-white">Estatus</h6>
-                                            </div>
-                                            <div class="col-lg-9 py-3">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Bobina</h6>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Velocidad</h6>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-danger text-danger">a</span> Estado</h6>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-warning text-warning">a</span> Enrollador</h6>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <h6><span id="#TODONOMBRE_VARIBALE" class="badge badge-success text-success">a</span> Estado</h6>
-                                                        </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 my-2">
+                                <div class="card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6 class="text-center">ESTATUS</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Funcionamiento</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box red"></div>
+                                                        <p>Velocidad</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Estado enrollador</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box red"></div>
+                                                        <p>Temperatura</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box red"></div>
+                                                        <p>Sistema inyeccion</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Estado</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Estado</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Estado</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -230,49 +262,24 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-12 my-2">
-                            <div class="card">
-                                <div class="card-body p-0">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3 bg-warning">
-                                                <h6 class="text-center text-white">Variables</h6>
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <table class="table">
-                                                    <tbody>
-
-
-                                                        <tr>
-                                                            <td>Velocidad: 200km km/h</td>
-                                                            <td>Enrollador: OK</td>
-                                                            <tr>
-                                                                <td>Velocidad: 200km km/h</td>
-                                                                <td>Enrollador: OK</td>
-                                                                <tr>
-                                                                    <td>Velocidad: 200km km/h</td>
-                                                                    <td>Enrollador: OK</td>
-                                                                </tr>
-                                                            </tr>
-                                                        </tr>
-
-
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                            <div class="col-lg-12 my-2">
+                                <div class="card">
+                                    <div class="card-header bg-warning text-white">
+                                        <h6 class="text-center">VARIABLES</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse doloribus voluptates dicta, facilis, reiciendis aliquid est neque eaque, obcaecati nulla velit. Nam fugiat soluta voluptatum quam, eaque dolor exercitationem fuga.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+        
 
     </section>
 
@@ -282,6 +289,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
-
+<script src="js/select.js"></script>
 </body>
 </html>

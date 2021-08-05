@@ -138,7 +138,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <option value="Repase">Repase</option>
                                                 <option value="Termo fijo">Termo fijo</option>
                                                 <option value="Termo plástico">Termo plástico</option>
-                                                <option value="Tubulado">Tubulado</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">

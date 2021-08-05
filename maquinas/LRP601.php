@@ -21,7 +21,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <title>Variables</title>
    </head>
 <body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div class="logo-details">
       <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -62,16 +62,16 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </ul>
       </li>
       <li>
-        <a href="../bitacora-eventos.html">
+        <a href="bitacora-eventos.html">
           <i class='bx bx-calendar-event' ></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="../bitacora-eventos.html">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
-        <a href="../maestros.html">
+        <a href="maestros.html">
           <i class='bx bx-wrench' ></i>
           <span class="link_name">Maestros</span>
         </a>
@@ -89,8 +89,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
-            <li><a href="#">Administración</a></li>
-            <li><a href="#">Roles y privilegios</a></li>
+            <li><a href="../administracion-usuarios.html">Administración</a></li>
+            <li><a href="../roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">

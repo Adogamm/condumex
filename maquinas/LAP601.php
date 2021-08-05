@@ -217,49 +217,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Funcionamiento</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Velocidad</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado enrollador</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Temperatura</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Sistema inyeccion</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
+                                                        <p>Matriz de fallas de chispa</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,10 +230,66 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     <div class="card-header bg-warning text-white">
                                         <h6 class="text-center">VARIABLES</h6>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="">
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse doloribus voluptates dicta, facilis, reiciendis aliquid est neque eaque, obcaecati nulla velit. Nam fugiat soluta voluptatum quam, eaque dolor exercitationem fuga.
-                                        </p>
+                                    <div class="card-body p-0">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Obtención del estado del enrollador: OK</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Medición de la producción conforme "Actual Length": 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Fallas de superficie: 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Ultima bobina (Last spool): 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Preset_length: 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Cambio de bobina (spool change): OK</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Obtención del estado de la máquina: OK</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Velocidad de operación: 10 km/h</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Diámetro del producto: 0.05 mm</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Concentricidad: 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Horómetro: 5 hrs</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

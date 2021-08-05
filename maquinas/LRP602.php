@@ -21,7 +21,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <title>Variables</title>
    </head>
 <body>
-  <div class="sidebar close">
+<div class="sidebar close">
     <div class="logo-details">
       <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -30,7 +30,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       
       <li>
         <div class="iocn-link">
-            <a href="monitor.php">
+            <a href="../monitor.php">
                 <i class='bx bx-grid-alt' ></i>
                 <span class="link_name">Monitor piso</span>
             </a>
@@ -57,8 +57,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Catalogos</a></li>
-          <li><a href="catalogo-compuestos.html">Compuestos</a></li>
-          <li><a href="recetas.html">Recetas</a></li>
+          <li><a href="../catalogo-compuestos.html">Compuestos</a></li>
+          <li><a href="../recetas.html">Recetas</a></li>
         </ul>
       </li>
       <li>
@@ -67,7 +67,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="../bitacora-eventos.html">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -76,7 +76,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.html">Maestros</a></li>
+          <li><a class="link_name" href="../maestros.html">Maestros</a></li>
         </ul>
       </li>
       <li>
@@ -89,8 +89,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
             <ul class="sub-menu">
             <li><a class="link_name" href="#">Usuarios</a></li>
-            <li><a href="#">Administración</a></li>
-            <li><a href="#">Roles y privilegios</a></li>
+            <li><a href="../administracion-usuarios.html">Administración</a></li>
+            <li><a href="../roles-privilegios.html">Roles y privilegios</a></li>
             </ul>
         </li>
         <div class="profile-details">

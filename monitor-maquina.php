@@ -120,12 +120,12 @@
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' ></i>
-            <span class="text">MONITOR MAQUINA</span>
+            <span class="text"><?php echo $row['MAQUINA']; ?></span>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mt-3">
+                <div class="col-lg-9">
                     <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
                         <p class="text-left">
                             <i class='bx bx-arrow-back'></i>
@@ -133,11 +133,8 @@
                         </p>
                     </a>
                 </div>
-                <div class="col-lg-5 mt-3">
-                    <h3>MONITOR DE MÁQUINA: <?php echo $row['MAQUINA']; ?></h3>
-                </div>
-                <div class="col-lg-3">
-                    <a href="variables.php?maquina=<?php echo $maquina ?>" class="d-block text-white  my-3 mx-auto btn btn-warning">Variables</a>
+                <div class="col-lg-3 mr-1">
+                    <a href="variables.php?maquina=<?php echo $maquina ?>" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
                 </div>
             </div>
         </div>
@@ -165,9 +162,9 @@
                         </div>
                         <div class="card-body my-3">
                             <div class="card-text my-3">
-                                <p id="tiempo_muerto"><br>
-                                <p id="tiempo_perdido"><br>
-                                <p id="tiempo_ciclo"></p>
+                                <p id="tiempo_muerto">Tiempo muerto: 10:00 mins<br>
+                                <p id="tiempo_perdido">Tiempo perdido: 10:00 mins<br>
+                                <p id="tiempo_ciclo">Tiempo ciclo: 42:00 mins</p>
                             </div>
                         </div>
                     </div>

@@ -45,13 +45,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </ul>
       </li>
       <li>
-        <a href="estadisticas.php">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Estadísticas</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="estadisticas.php">Estadísticas</a></li>
-        </ul>
+         
       </li>
       <li>
         <div class="iocn-link">

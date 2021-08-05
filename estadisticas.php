@@ -131,7 +131,6 @@
                                       <option value="Repase">Repase</option>
                                       <option value="Termo fijo">Termo fijo</option>
                                       <option value="Termo plástico">Termo plástico</option>
-                                      <option value="Tubulado">Tubulado</option>
                                   </select>
                               </div>
                               <div class="col-lg-3 d-block mx-auto my-1">

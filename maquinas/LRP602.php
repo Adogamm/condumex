@@ -1,5 +1,5 @@
 <?php 
-include 'databaseconnect/conection.php';
+include '../databaseconnect/conection.php';
 $select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN;";
 $query = sqlsrv_query($conexion,$select);
 
@@ -12,18 +12,18 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link rel="stylesheet" href="styles/sidebar.css">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="16x16">
         <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png" sizes="32x32">
-        <link rel="stylesheet" href="styles/boxes.css">
+        <link rel="stylesheet" href="../styles/sidebar.css">
+        <link rel="stylesheet" href="../styles/boxes.css">
         <title>Variables</title>
    </head>
 <body>
   <div class="sidebar close">
     <div class="logo-details">
-      <img src="images/logo-sidebar.png" alt="logo condumex">
+      <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
     </div>
     <ul class="nav-links">
@@ -38,10 +38,10 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Repase">Repase</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Repase">Repase</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
         </ul>
       </li>
       <li>
@@ -95,7 +95,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </li>
         <div class="profile-details">
             <div class="profile-content">
-            <img src="images/avatar.png" alt="profileImg">
+            <img src="../images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
             <div class="profile_name">Prem Shahi</div>
@@ -148,7 +148,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                             <select class="form-control my-2 mx-1">
                                                 <option value="null">-- Seleccionar Variables --</option>
-                                                <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                                <!-- <option value="estado-enrollador">Obtención del estado del enrollador</option>
                                                 <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
                                                 <option value="fallas-chispa">Matriz de fallas de chispa</option>
                                                 <option value="fallas-superficie">Fallas de superficie</option>
@@ -156,7 +156,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <option value="spool-change">Cambio de bobina (spool change)</option>
                                                 <option value="last-spool">Velocidad de operación</option>
                                                 <option value="last-spool">Concentricidad</option>
-                                                <option value="last-spool">Horómetro</option>
+                                                <option value="last-spool">Horómetro</option> -->
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
@@ -196,14 +196,14 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-12 my-1">
+                <div class="col-lg-7 col-sm-12 my-1">
                     <div class="card">
                         <div class="card-body">
-                            <canvas class="my-1" id="grafica-lineas" width="40%" height="40%"></canvas>
+                            <canvas class="my-1" id="grafica-lineas" width="40%" height="26%"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-5">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 my-2">
@@ -217,49 +217,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Funcionamiento</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Velocidad</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado enrollador</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Temperatura</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Sistema inyeccion</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
+                                                        <p>Fallas de chispa</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,10 +230,21 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                     <div class="card-header bg-warning text-white">
                                         <h6 class="text-center">VARIABLES</h6>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="">
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse doloribus voluptates dicta, facilis, reiciendis aliquid est neque eaque, obcaecati nulla velit. Nam fugiat soluta voluptatum quam, eaque dolor exercitationem fuga.
-                                        </p>
+                                    <div class="card-body p-0">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Medición de la producción conforme (Actual lenght): 10%</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Velocidad de operación: 10 km/h</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -289,11 +258,11 @@ $query1 = sqlsrv_query($conexion,$select_avg);
     </section>
 
 
-<script src="js/sidebar.js"></script>
-<script src="js/monitor.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
-<script src="js/select.js"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../js/monitor.js"></script>
+<script src="../https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="../https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="../js/main.js"></script>
+<script src="../js/select.js"></script>
 </body>
 </html>

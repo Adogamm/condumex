@@ -167,7 +167,7 @@
                 <div class="container">
                 <div class="row">
                     <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
-                        <div class="col-lg-4 text-center d-block mx-auto">
+                        <div class="col-lg-6 text-center d-block mx-auto">
                             <div class="card my-2">
                                 <div class="card-header">
                                     <div class="container">
@@ -190,8 +190,8 @@
                                     <canvas
                                         data-value="<?php echo $maquina['RENDIMIENTO'] ?>"
                                         data-type="radial-gauge"
-                                        data-width="175"
-                                        data-height="175"
+                                        data-width="200"
+                                        data-height="200"
                                         data-units=""
                                         data-min-value="0"
                                         data-start-angle="90"
@@ -219,7 +219,7 @@
                                         class="d-block mx-auto"
                                         id="medidor<?php echo $maquina['MAQUINA']; ?>"
                                     ></canvas>
-                                <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>" class="btn btn-warning d-block mx-auto mt-4 text-white">Detalles</a>
+                                <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>" class="btn btn-warning d-block mx-auto text-white">Detalles</a>
                             </div>
                         </div>
                     </div>

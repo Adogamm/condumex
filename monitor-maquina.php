@@ -128,7 +128,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 mr-1">
-                    <a href="variables.php?maquina=<?php echo $maquina ?>" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
+                    <a href="maquinas/<?php echo $row['MAQUINA'] ?>.php" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
                 </div>
             </div>
         </div>
@@ -140,11 +140,13 @@
                         <div class="card-header">
                             <h6 class="text-center"><i class='bx bx-info-circle'></i> Información</h6>
                         </div>
-                        <div class="card-body text-center">
+                        <div class="card-body">
                             <p id="area"></p>
-                            <p id="linea" class="my-3"></p>
-                            <p id="fecha" class="my-4"></p>
-                            <p id="hora" class="my-2"></p>
+                            <p id="linea" class="my-2"></p>
+                            <p id="fecha" class="my-1"></p>
+                            <p id="hora" class="my-1"></p>
+                            <p class="my-2">Estatus: </p>
+                            <p class="my-2">Velocidad: </p>
                         </div>
                     </div>
                 </div>
@@ -156,9 +158,9 @@
                         </div>
                         <div class="card-body my-3">
                             <div class="card-text my-3">
-                                <p id="tiempo_muerto">Tiempo muerto: 10:00 mins<br>
-                                <p id="tiempo_perdido">Tiempo perdido: 10:00 mins<br>
-                                <p id="tiempo_ciclo">Tiempo ciclo: 42:00 mins</p>
+                                <p id="tiempo_muerto" class="my-4">Tiempo muerto: 10:00 mins<br>
+                                <p id="tiempo_perdido" class="my-4">Tiempo perdido: 10:00 mins<br>
+                                <!-- <p id="tiempo_ciclo">Tiempo ciclo: 42:00 mins</p> -->
                             </div>
                         </div>
                     </div>
@@ -176,8 +178,8 @@
                                     <canvas
                                     data-value="0"
                                     data-type="radial-gauge"
-                                    data-width="150"
-                                    data-height="150"
+                                    data-width="200"
+                                    data-height="200"
                                     data-units="OEE"
                                     data-min-value="0"
                                     data-start-angle="90"
@@ -236,8 +238,8 @@
                                         <canvas
                                             data-value="0"
                                             data-type="radial-gauge"
-                                            data-width="150"
-                                            data-height="150"
+                                            data-width="200"
+                                            data-height="200"
                                             data-units="OEE"
                                             data-min-value="0"
                                             data-start-angle="90"
@@ -295,8 +297,8 @@
                                         <canvas
                                             data-value="0"
                                             data-type="radial-gauge"
-                                            data-width="150"
-                                            data-height="150"
+                                            data-width="200"
+                                            data-height="200"
                                             data-units="OEE"
                                             data-min-value="0"
                                             data-start-angle="90"
@@ -354,8 +356,8 @@
                                         <canvas
                                             data-value="0"
                                             data-type="radial-gauge"
-                                            data-width="150"
-                                            data-height="150"
+                                            data-width="200"
+                                            data-height="200"
                                             data-units="OEE"
                                             data-min-value="0"
                                             data-start-angle="90"
@@ -414,3 +416,6 @@
   </body>
   <script src="js/live/live-monitor-maquina.js"></script>
 </html>
+
+
+<!-- ?maquina=<?php echo $maquina ?> -->

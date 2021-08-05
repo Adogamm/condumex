@@ -3,6 +3,8 @@
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
 
+    $maquinas_array = array('LRP601','LRP602','LAF601','LAF602','LAF603','LAF604','LAF605','LAF606','LAF607');
+
     $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
     $resultado = sqlsrv_query($conexion,$select);
     $row = sqlsrv_fetch_array($resultado);
@@ -128,7 +130,13 @@
                     </a>
                 </div>
                 <div class="col-lg-3 mr-1">
-                    <a href="maquinas/<?php echo $row['MAQUINA'] ?>.php" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
+                    <?php 
+                        if(in_array($row['MAQUINA'],$maquinas_array)){?>
+                            <a href="maquinas/<?php echo $row['MAQUINA']?>.php" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a><?php
+                        }else{
+                            ?><a href="./404.html" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a><?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

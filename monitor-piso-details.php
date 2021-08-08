@@ -119,7 +119,7 @@
     </div>
     <div class="container">
         <div class="row col-12">
-            <a href="monitor.php" class="text-dark" style="text-decoration: none;">
+            <a href="monitor.php" class="text-dark" style="max-width: 100px;text-decoration: none;">
                 <p class="text-left">
                     <i class='bx bx-arrow-back'></i>
                     <span class="ml-1"> Regresar</span>
@@ -168,7 +168,7 @@
                 <div class="row">
                     <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
                         <div class="col-lg-6 text-center d-block mx-auto">
-                            <div class="card my-2">
+                            <div class="card my-2" style="min: width 170px;">
                                 <div class="card-header">
                                     <div class="container">
                                       <div class="row">
@@ -176,7 +176,7 @@
                                           <div class="led-box">
                                             <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
                                           </div>
-                                          <p style="margin-right: 75%"><?php echo $maquina['MAQUINA'] ?></p>
+                                          <p style="margin-right: 75%; min-width:52px;"><?php echo $maquina['MAQUINA'] ?></p>
                                         </div>
                                         <div class="col-lg-6 col-md-12 mt-2">
                                           <p>Velocidad: 200 km/h</p>

@@ -168,19 +168,19 @@
                 <div class="row">
                     <?php while($maquina = sqlsrv_fetch_array($query)){  ?>
                         <div class="col-lg-6 text-center d-block mx-auto">
-                            <div class="card my-2" style="min: width 170px;">
-                                <div class="card-header">
-                                    <div class="container">
-                                      <div class="row">
-                                        <div class="col-lg-6 col-md-12">
-                                          <div class="led-box">
-                                            <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
-                                          </div>
-                                          <p style="margin-right: 75%; min-width:52px;"><?php echo $maquina['MAQUINA'] ?></p>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 mt-2">
-                                          <p>Velocidad: 200 km/h</p>
-                                          <p>Status: OK</p>
+                          <div class="card my-2" style="min: width 170px;">
+                            <div class="card-header">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-lg-6 col-md-12">
+                                    <div class="led-box">
+                                      <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
+                                      </div>
+                                      <p style="margin-right: 75%; min-width:52px;"><?php echo $maquina['MAQUINA'] ?></p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-2">
+                                      <p>Velocidad: 200 km/h</p>
+                                      <p>Status: OK</p>
                                         </div>
                                       </div>
                                     </div>

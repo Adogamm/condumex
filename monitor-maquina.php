@@ -3,7 +3,7 @@
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
 
-    $maquinas_array = array('LRP601','LRP602','LAF601','LAF602','LAF603','LAF604','LAF605','LAF606','LAF607');
+    $maquinas_array = array('LRP601','LRP602','LAF601','LAF602','LAF603','LAF604','LAF605','LAF606','LAF607','LIR601');
 
     $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
     $resultado = sqlsrv_query($conexion,$select);
@@ -373,4 +373,4 @@
 </html>
 
 
-<!-- ?maquina=<?php echo $maquina ?> -->
+<!-- ?maquina=<?php /* echo $maquina */ ?> -->

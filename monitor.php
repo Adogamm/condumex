@@ -50,7 +50,13 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </ul>
       </li>
       <li>
-
+        <a href="maestros.html">
+          <i class='bx bx-wrench'></i>
+          <span class="link_name">Maestros</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="maestros.html">Maestros</a></li>
+        </ul>
       </li>
       <li>
         <div class="iocn-link">
@@ -81,15 +87,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
-          <span class="link_name">Maestros</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
       <li>

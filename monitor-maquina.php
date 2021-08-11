@@ -129,7 +129,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark"
+                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $row['TIPO_MAQUINA_HIDDEN']; ?>" class="text-dark"
                         style="max-width: 100px;text-decoration: none;">
                         <p class="text-left">
                             <i class='bx bx-arrow-back'></i>

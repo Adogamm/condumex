@@ -112,7 +112,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' ></i>
-            <span class="text">CTP'S</span>
+            <span class="text">row['AREA']/row['MAQUINA']</span>
         </div>
 
         <div class="container">

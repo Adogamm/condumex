@@ -189,7 +189,26 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Matriz de fallas de chispa</p>
+                                                        <p>Status</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <div class="box red"></div>
+                                                        <p>Spark fault</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <div class="box green"></div>
+                                                        <p>Surface fault</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <div class="box red"></div>
+                                                        <p>Spool change</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -207,59 +226,34 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                             <div class="row">
                                                 <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Obtención del estado del enrollador: OK</p>
+                                                        <p>Actual length: 10%</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Medición de la producción conforme "Actual Length": 10%</p>
+                                                        <p>Last spool: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Fallas de superficie: 10%</p>
+                                                        <p>Preset length: 10 mts</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Ultima bobina (Last spool): 10%</p>
+                                                        <p>Speed: 20 km/h</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Preset_length: 10%</p>
+                                                        <p>Hourmeter: 5 hrs</p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
+                                                <!-- <div class="col-lg-5 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Cambio de bobina (spool change): OK</p>
+                                                        <p>Concentricity: -</p>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Obtención del estado de la máquina: OK</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Velocidad de operación: 10 km/h</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Diámetro del producto: 0.05 mm</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Concentricidad: 10%</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Horómetro: 5 hrs</p>
-                                                    </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

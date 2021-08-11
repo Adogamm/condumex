@@ -190,7 +190,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Fallas de chispa</p>
+                                                        <p>Spark fault</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
@@ -202,19 +202,19 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Estado enrollador</p>
+                                                        <p>Status</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Estatus de la linea</p>
+                                                        <p>Status line</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Falla de superficie</p>
+                                                        <p>Surface fault</p>
                                                     </div>
                                                 </div>
                                                 
@@ -233,22 +233,22 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                             <div class="row">
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Medición de la producción conforme (Actual lenght): 10%</p>
+                                                        <p>Actual lenght: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Producción última bobina: 10%</p>
+                                                        <p>Last spool: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Producción actual: 10%</p>
+                                                        <p>Actual Lenght: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Velocidad de la produccion actual: 10 km/h</p>
+                                                        <p>Speed: 10 km/h</p>
                                                     </div>
                                                 </div>
                                             </div>

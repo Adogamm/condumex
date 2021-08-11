@@ -66,9 +66,17 @@
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Catalogos</a></li>
+                    <li><a class="link_name" href="catalogo-compuestos.html">Catalogos</a></li>
                     <li><a href="catalogo-compuestos.html">Compuestos</a></li>
-                    <li><a href="recetas.html">Recetas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="recetas.html">
+                    <i class='bx bx-bookmark-alt'></i>
+                    <span class="link_name">Recetas</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="recetas.html">Recetas</a></li>
                 </ul>
             </li>
             <li>
@@ -130,8 +138,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $row['TIPO_MAQUINA_HIDDEN']; ?>" class="text-dark"
-                        style="max-width: 100px;text-decoration: none;">
+                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $row['TIPO_MAQUINA_HIDDEN']; ?>"
+                        class="text-dark" style="max-width: 100px;text-decoration: none;">
                         <p class="text-left">
                             <i class='bx bx-arrow-back'></i>
                             <span class="ml-1"> Regresar</span>
@@ -167,7 +175,7 @@
                             <div class="container p-0">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                    <p class="my-2">Estatus: </p>
+                                        <p class="my-2">Estatus: </p>
                                     </div>
                                     <div class="col-lg-5">
                                         <div class="led-box">

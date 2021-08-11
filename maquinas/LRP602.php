@@ -190,7 +190,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Fallas de chispa</p>
+                                                        <p>Spark fault</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,7 +208,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                             <div class="row">
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Medición de la producción conforme (Actual lenght): 10%</p>
+                                                        <p>Actual lenght: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">

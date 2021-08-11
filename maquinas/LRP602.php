@@ -213,7 +213,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Velocidad de operación: 10 km/h</p>
+                                                        <p>Speed: 10 km/h</p>
                                                     </div>
                                                 </div>
                                             </div>

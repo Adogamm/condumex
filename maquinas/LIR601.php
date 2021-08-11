@@ -185,58 +185,28 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                         <h6 class="text-center">ESTATUS</h6>
                                     </div>
                                     <div class="card-body p-0">
-                                        <!-- <div class="container">
+                                        <div class="container">
                                             <div class="row">
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Funcionamiento</p>
+                                                        <p>Status line</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Velocidad</p>
+                                                        <p>Spark fault</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Estado enrollador</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Temperatura</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box red"></div>
-                                                        <p>Sistema inyeccion</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <div class="box green"></div>
-                                                        <p>Estado</p>
+                                                        <p>Surface fault</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -250,52 +220,42 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                             <div class="row">
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Medición de la producción: </p>
+                                                        <p>Actual length: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Velocidad de operación: 20 km/h</p>
+                                                        <p>Speed: 20 km/h</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Consumo de energía eléctrica: </p>
+                                                        <p>Electrical energy: 12.5 V</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Corriente del haz de rayos X: </p>
+                                                        <p>Xraycurr: </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Voltaje del haz de rayos X: </p>
+                                                        <p>Xrayvolt: </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Vacío: </p>
+                                                        <p>Vacumm: </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Diametro del producto: 0.05 mm</p>
+                                                        <p>Diameter: 0.05 mm</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Fallas de chispa: </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Fallas de superficie: </p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Producción de la última bobina: </p>
+                                                        <p>Last spool: OK</p>
                                                     </div>
                                                 </div>
                                             </div>

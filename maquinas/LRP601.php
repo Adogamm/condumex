@@ -196,7 +196,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Cambio de bobina (spool change)</p>
+                                                        <p>Spool change</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">

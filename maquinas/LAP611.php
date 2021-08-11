@@ -190,25 +190,25 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Obtención del estado del enrollador</p>
+                                                        <p>Status</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Matriz de fallas de chispa</p>
+                                                        <p>Spark fault</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box green"></div>
-                                                        <p>Fallas de superficie</p>
+                                                        <p>Surface fault</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 col-sm-12 mt-2">
                                                     <div id="variable">
                                                         <div class="box red"></div>
-                                                        <p>Cambio de bobina (spool change)</p>
+                                                        <p>Spool change</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -226,32 +226,32 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                                             <div class="row">
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Velocidad de operación: 20 km/h</p>
+                                                        <p>Speed: 20 km/h</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Diametro del producto: 0.05 mm</p>
+                                                        <p>Diameter: 0.05 mm</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Horómetro: 5 hrs</p>
+                                                        <p>Hourmeter: 5 hrs</p>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-lg-6 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Concentricity: 10</p>
+                                                    </div>
+                                                </div> -->
+                                                <div class="col-lg-6 col-sm-12 mt-2">
+                                                    <div id="variable">
+                                                        <p>Actual length</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
                                                     <div id="variable">
-                                                        <p>Concentricidad: 10</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Medición de la producción conforme (Actual length)</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Ultima bobina (Last spool): OK</p>
+                                                        <p>Last spool: OK</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-sm-12 mt-2">

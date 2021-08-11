@@ -141,15 +141,15 @@
                               <div class="col-lg-3 d-block mx-auto my-1">
                                   <select class="form-control my-2 mx-1">
                                       <option value="null">-- Seleccionar Variables --</option>
-                                      <option value="estado-enrollador">Obtención del estado del enrollador</option>
+                                      <option value="estado-enrollador">Status</option>
                                       <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                      <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                      <option value="fallas-superficie">Fallas de superficie</option>
+                                      <option value="fallas-chispa">Spark fault</option>
+                                      <option value="fallas-superficie">Surface fault</option>
                                       <option value="preset_length">Preset_length</option>
-                                      <option value="spool-change">Cambio de bobina (spool change)</option>
-                                      <option value="last-spool">Velocidad de operación</option>
-                                      <option value="last-spool">Concentricidad</option>
-                                      <option value="last-spool">Horómetro</option>
+                                      <option value="spool-change">Spool change</option>
+                                      <option value="last-spool">Speed</option>
+                                      <option value="last-spool">Concentricity</option>
+                                      <option value="last-spool">Hourmeter</option>
                                   </select>
                               </div>
                               <div class="col-lg-4 d-block mx-auto my-1">

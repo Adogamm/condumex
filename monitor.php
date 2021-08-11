@@ -166,18 +166,27 @@ $query1 = sqlsrv_query($conexion,$select_avg);
             <div class="card-body">
               <table class="table table-striped">
                 <tr>
-                  <th>Área</th>
-                  <th>Nombre de línea</th>
-                  <th>Fecha</th>
-                  <th>Hora</th>
+                  <th>Ítem</th>
+                  <th>Máquina</th>
+                  <th>Id paro</th>
+                  <th>Fecha inicio</th>
+                  <th>Hora inicio</th>
+                  <th>Fecha fin</th>
+                  <th>Hora fin</th>
                 </tr>
                 <tr>
                   <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>

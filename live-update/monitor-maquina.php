@@ -22,7 +22,6 @@ date_default_timezone_set("America/Mexico_City");
         var tiempo_ciclo = document.getElementById('tiempo_ciclo');
 
         area.textContent = 'Área: <?php echo $area ?>'
-        linea.textContent = 'Linea: <?php echo $linea ?>'
         fecha.textContent = 'Fecha: <?php echo date("m/d/y") ?>'+', Hora: <?php echo date("H:i:s"); ?>'
 
         " hidden>

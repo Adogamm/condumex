@@ -131,34 +131,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                             <form name="selector_datos" action="#" class="form-inline">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
-                                            <select class="form-control my-2 mx-1" name="area" id="area">
-                                                <option value="null">-- Seleccionar Área --</option>
-                                                <option value="Irradiado">Irradiado</option>
-                                                <option value="Repase">Repase</option>
-                                                <option value="Termo fijo">Termo fijo</option>
-                                                <option value="Termo plástico">Termo plástico</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
-                                            <select class="form-control my-2 mx-1"  name="maquina" id="maquina">
-                                                <option value="null">-- Seleccionar Máquina --</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
-                                            <select class="form-control my-2 mx-1">
-                                                <option value="null">-- Seleccionar Variables --</option>
-                                                <!-- <option value="estado-enrollador">Obtención del estado del enrollador</option>
-                                                <option value="actual-length">Medición de la producción conforme "Actual Length"</option>
-                                                <option value="fallas-chispa">Matriz de fallas de chispa</option>
-                                                <option value="fallas-superficie">Fallas de superficie</option>
-                                                <option value="preset_length">Preset_length</option>
-                                                <option value="spool-change">Cambio de bobina (spool change)</option>
-                                                <option value="last-spool">Velocidad de operación</option>
-                                                <option value="last-spool">Concentricidad</option>
-                                                <option value="last-spool">Horómetro</option> -->
-                                            </select>
-                                        </div>
+                                         
                                         <div class="col-lg-4 col-sm-12 my-1 d-block mx-auto my-1">
                                             <div class="form-group row">
                                                 <label for="staticEmail" class="col-sm-4 col-form-label">Fecha inicio</label>

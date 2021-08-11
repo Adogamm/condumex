@@ -16,6 +16,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/led.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/styles-monitor.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -161,10 +162,20 @@
                         </div>
                         <div class="card-body">
                             <p id="area"></p>
-                            <p id="linea" class="my-2"></p>
                             <p id="fecha" class="my-1"></p>
                             <p id="hora" class="my-1"></p>
-                            <p class="my-2">Estatus: </p>
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                    <p class="my-2">Estatus: </p>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="led-box">
+                                            <div id="led" class="led-green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="my-2">Velocidad: </p>
                         </div>
                     </div>
@@ -216,8 +227,8 @@
                                         </script>
                                     </div>
                                     <div class="col-lg-6 text-left">
-                                        <p>Alarmas: Ninguno</p>
-                                        <p>Último fallo: Ninguno</p>
+                                        <p>Alarmas en turno: 2</p>
+                                        <p>Último fallo: 103</p>
                                         <p>
                                             <?php echo date("D M j G:i:s T Y"); ?>
                                         </p>

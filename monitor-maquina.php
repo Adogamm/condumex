@@ -134,7 +134,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-2 mt-3" style="max-width: 120px;">
                     <a href="monitor-piso-details.php?tipo_maquina=<?php echo $row['TIPO_MAQUINA_HIDDEN']; ?>"
                         class="text-dark" style="max-width: 100px;text-decoration: none;">
                         <p class="text-left">
@@ -143,7 +143,7 @@
                         </p>
                     </a>
                 </div>
-                <div class="col-lg-3 mr-1">
+                <div class="col-lg-9 d-flex flex-row-reverse">
                     <?php 
                         if(in_array($row['MAQUINA'],$maquinas_array)){?>
                     <a href="maquinas/<?php echo $row['MAQUINA']?>.php"

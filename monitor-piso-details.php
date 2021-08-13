@@ -133,7 +133,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="max-width: 120px;">
           <a href="monitor.php" class="text-dark" style="max-width: 100px;text-decoration: none;">
             <p class="text-left">
               <i class='bx bx-arrow-back'></i>

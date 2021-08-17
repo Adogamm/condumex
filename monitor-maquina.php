@@ -1,4 +1,6 @@
 <?php
+    // setlocale(LC_ALL, 'es_MX');
+    date_default_timezone_set("America/Mexico_City");
     include('databaseconnect/conection.php');
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
@@ -221,7 +223,7 @@
                                     ]' data-color-plate="#fff" data-border-shadow-width="0" data-borders="false"
                                             data-needle-type="arrow" data-needle-width="2" data-needle-circle-size="7"
                                             data-needle-circle-outer="true" data-needle-circle-inner="false"
-                                            data-animation-duration="1000" data-animation-rule="linear"
+                                            data-animation-duration="500" data-animation-rule="linear"
                                             class="d-block mx-auto my-2" id="medidor"></canvas>
                                         <script>
                                             var number = 0;
@@ -235,7 +237,9 @@
                                         <p>Alarmas en turno: 2</p>
                                         <p>Último fallo: 103</p>
                                         <p>
-                                            <?php echo date("D M j G:i:s T Y"); ?>
+                                            <!-- echo strftime("%d-%h-%Y", strtotime($date)); -->
+                                            <?php setlocale(LC_TIME, array('es_MX.UTF-8','es_MX','spanish'));
+                                            echo strftime("%A %e %B %Y"); ?>
                                         </p>
                                     </div>
                                 </div>
@@ -264,7 +268,7 @@
                                             ]' data-color-plate="#fff" data-border-shadow-width="0"
                                             data-borders="false" data-needle-type="arrow" data-needle-width="2"
                                             data-needle-circle-size="7" data-needle-circle-outer="true"
-                                            data-needle-circle-inner="false" data-animation-duration="1000"
+                                            data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor1"></canvas>
                                         <script>
@@ -305,7 +309,7 @@
                                             ]' data-color-plate="#fff" data-border-shadow-width="0"
                                             data-borders="false" data-needle-type="arrow" data-needle-width="2"
                                             data-needle-circle-size="7" data-needle-circle-outer="true"
-                                            data-needle-circle-inner="false" data-animation-duration="1000"
+                                            data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor2"></canvas>
                                         <script>
@@ -346,7 +350,7 @@
                                             ]' data-color-plate="#fff" data-border-shadow-width="0"
                                             data-borders="false" data-needle-type="arrow" data-needle-width="2"
                                             data-needle-circle-size="7" data-needle-circle-outer="true"
-                                            data-needle-circle-inner="false" data-animation-duration="1000"
+                                            data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor3"></canvas>
                                         <script>

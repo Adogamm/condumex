@@ -4,7 +4,7 @@ var graficalineas = new Chart(graficalineascontexto, {
   data: {
     labels: ["1ro", "2do", "3ro", "4to"],
     datasets: [{
-      label: "Velocidad de la maquína",
+      label: "Disponibilidad",
       data: [7, 8, 10, 9],
       backgroundColor: [
         'rgb(66, 134, 244, 0.5)',
@@ -14,7 +14,7 @@ var graficalineas = new Chart(graficalineascontexto, {
       ]
     },
     {
-      label: "Máximo",
+      label: "Rendimiento",
       options: {
         elements: {
           point: {
@@ -29,7 +29,7 @@ var graficalineas = new Chart(graficalineascontexto, {
         'rgb(245, 10, 10, 0.3)',
       ]
     }, {
-      label: "Óptimo",
+      label: "Calidad",
       options: {
         elements: {
           point: {
@@ -45,7 +45,7 @@ var graficalineas = new Chart(graficalineascontexto, {
       ]
     },
     {
-      label: "Mínimo",
+      label: "OEE",
       options: {
         elements: {
           point: {

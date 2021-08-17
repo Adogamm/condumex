@@ -148,17 +148,26 @@
                         </p>
                     </a>
                 </div>
-                <div class="col-lg-9 d-flex flex-row-reverse">
-                    <?php 
-                        if(in_array($row['MAQUINA'],$maquinas_array)){?>
-                    <a href="maquinas/<?php echo $row['MAQUINA']?>.php"
-                        class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
-                    <?php
-                        }else{
-                            ?><a href="./404.html" class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
-                    <?php
-                        }
-                    ?>
+                <div class="col-lg-9">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-11 d-flex flex-row-reverse">
+                                <a href="historial-fallos.html" class="btn btn-warning text-white my-3">Historial de fallos</a>
+                            </div>
+                            <div class="col-lg-1">
+                                <?php 
+                                    if(in_array($row['MAQUINA'],$maquinas_array)){?>
+                                <a href="maquinas/<?php echo $row['MAQUINA']?>.php"
+                                    class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
+                                <?php
+                                    }else{
+                                        ?><a href="./404.html" class="text-white  my-3 btn btn-warning">CTP'S</a>
+                                <?php
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,6 +183,7 @@
                             <p id="area"></p>
                             <p id="fecha" class="my-1"></p>
                             <p id="hora" class="my-1"></p>
+                            <p class="my-2">Velocidad: </p>
                             <div class="container p-0">
                                 <div class="row">
                                     <div class="col-lg-5">
@@ -186,7 +196,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="my-2">Velocidad: </p>
                         </div>
                     </div>
                 </div>

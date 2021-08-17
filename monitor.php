@@ -69,6 +69,9 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <ul class="sub-menu">
           <li><a class="link_name" href="catalogo-compuestos.html">Catalogos</a></li>
           <li><a href="catalogo-compuestos.html">Compuestos</a></li>
+          <li><a href="#">Área</a></li>
+          <li><a href="#">Máquina</a></li>
+          <li><a href="#">Familia calibre</a></li>
         </ul>
       </li>
       <li>
@@ -150,12 +153,12 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                       id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"></canvas>
 
                     <!-- <script>
-                                        var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
-                                            setInterval(function() {
-                                                number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
-                                                $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
-                                            }, 1000);
-                                    </script> -->
+                      var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
+                      setInterval(function() {
+                        number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
+                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
+                          }, 1000);
+                    </script> -->
                     <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>"
                       class="my-2 btn btn-warning text-white d-block mx-auto">Detalles</a>
                   </div>

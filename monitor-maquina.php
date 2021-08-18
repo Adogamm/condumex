@@ -152,7 +152,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-11 d-flex flex-row-reverse">
-                                <a href="historial-fallos.html" class="btn btn-warning text-white my-3">Historial de fallos</a>
+                                <a href="historial-fallos.php" class="btn btn-warning text-white my-3">Historial de fallos</a>
                             </div>
                             <div class="col-lg-1">
                                 <?php 

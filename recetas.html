@@ -13,6 +13,11 @@
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
         sizes="32x32">
     <link rel="stylesheet" href="styles/styles-monitor.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+
     <title>Recetas</title>
 </head>
 
@@ -188,21 +193,25 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-striped">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Área</th>
-                                    <th>Máquina</th>
-                                    <th>Editar</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                                <tr>
-                                    <td>01</td>
-                                    <td>Irradiado</td>
-                                    <td>LIR601</td>
-                                    <td><button type="button" class="btn btn-dark">Editar receta</button></td>
-                                    <td><button type="button" class="btn btn-dark">Eliminar receta</button></td>
-                                </tr>
+                            <table id="myTable" >
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Área</th>
+                                        <th>Máquina</th>
+                                        <th>Editar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Irradiado</td>
+                                        <td>LIR601</td>
+                                        <td><button type="button" class="btn btn-dark">Editar receta</button></td>
+                                        <td><button type="button" class="btn btn-dark">Eliminar receta</button></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -210,8 +219,11 @@
             </div>
         </div>
         </div>
+        
     </section>
 
+
+    
 
 
     <script src="js/sidebar.js"></script>
@@ -223,7 +235,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    <script src="js/export.js"></script>
 </body>
 
 </html>

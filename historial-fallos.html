@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<div class="sidebar ">
+  <div class="sidebar ">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -129,52 +129,88 @@
       <span class="text">HISTORIAL DE FALLOS</span>
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row my-2">
         <div class="col-lg-6">
-          <div class="card mb-2">
-            <div class="card-body">
-              <form name="selector_datos" action="#" class="form-inline">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-12 col-sm-12 my-1 d-block mx-auto my-1">
-                      <div class="form-group row">
-                        <div class="col-sm-4">
-                          <label for="staticEmail" class="col-form-label">Fecha Inicio</label>
-                        </div>
-                        <div class="col-sm-8">
-                          <input type="date" name="" id="" class="form-control my-2 mx-1">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12 col-sm-12 my-1">
-                      <div class="form-group row">
-                        <div class="col-sm-4">
-                          <label for="staticEmail" class="col-form-label">Fecha Fin</label>
-                        </div>
-                        <div class="col-sm-8">
-                          <input type="date" name="" id="" class="form-control my-2 mx-1">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12 col-sm-12 my-1 d-block mx-auto my-1">
-                      <div class="form-group row">
-                        <div class="col-sm-4">
-                          <label for="staticEmail" class="col-form-label">Turno</label>
-                        </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card mb-2">
+                  <div class="card-body">
+                    <form name="selector_datos" action="#" class="form-inline">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12 col-sm-12 my-1 d-block mx-auto my-1">
+                            <div class="form-group row">
+                              <div class="col-sm-4">
+                                <label for="staticEmail" class="col-form-label">Fecha Inicio</label>
+                              </div>
+                              <div class="col-sm-8">
+                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-sm-12 my-1">
+                            <div class="form-group row">
+                              <div class="col-sm-4">
+                                <label for="staticEmail" class="col-form-label">Fecha Fin</label>
+                              </div>
+                              <div class="col-sm-8">
+                                <input type="date" name="" id="" class="form-control my-2 mx-1">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-12 col-sm-12 my-1 d-block mx-auto my-1">
+                            <div class="form-group row">
+                              <div class="col-sm-4">
+                                <label for="staticEmail" class="col-form-label">Turno</label>
+                              </div>
 
-                        <div class="col-sm-8">
-                          <select class="form-control my-2 mx-1">
-                            <option value="null"> Turno </option>
-                            <option value="Turno_1">Turno 1</option>
-                            <option value="Turno_2">Turno 2</option>
-                            <option value="Turno_3">Turno 3</option>
-                          </select>
+                              <div class="col-sm-8">
+                                <select class="form-control my-2 mx-1">
+                                  <option value="null"> Turno </option>
+                                  <option value="Turno_1">Turno 1</option>
+                                  <option value="Turno_2">Turno 2</option>
+                                  <option value="Turno_3">Turno 3</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
-              </form>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">LISTADO DE FALLOS</h5>
+                    <table class="table table-hover mt-3">
+                      <thead>
+                        <tr>
+                          <th>Fallo</th>
+                          <th>Tiempo perdido/Tiempo muerto</th>
+                          <th>Tiempo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Reventón</td>
+                          <td>Tiempo muerto</td>
+                          <td>03 mins</td>
+                        </tr>
+                        <tr>
+                          <td>Error en operación</td>
+                          <td>Tiempo perdido</td>
+                          <td>03 mins</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -41,8 +41,8 @@ INSERT INTO MAQUINAS
 PAROACTUAL, EVENTOACTUAL, OE, TIPO_MAQUINA_HIDDEN, TIPO_MAQUINA) VALUES
 
 ('LIR601',10,'100KM/H','20MIN',' ',' ',' ', ' ','Irradiado','Irradiado'),
-('LRP601',11,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase'),
-('LRP602',12,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase'),
+('LRP601',11,'100KM/H','20MIN',' ',' ',' ', ' ','Retrabajo','Retrabajo'),
+('LRP602',12,'100KM/H','20MIN',' ',' ',' ', ' ','Retrabajo','Retrabajo'),
 ('LAF601',80,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo'),
 ('LAF602',10,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo'),
 ('LAF603',11,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo'),

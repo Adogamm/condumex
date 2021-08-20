@@ -57,8 +57,8 @@ TIPO_MAQUINA,TIEMPO_MUERTO,TIEMPO_PERDIDO,TIEMPO_CICLO,
 TIEMPO_OPERATIVO,TIEMPO_DISPONIBLE,PRODUCCION_REAL,PRODUCCION_PREVISTA,PRODUCCION_OK) VALUES
 
 ('LIR601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Irradiado','Irradiado',1,2,3,4,5,6,7,8),
-('LRP601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
-('LRP602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Repase','Repase',1,2,3,4,5,6,7,8),
+('LRP601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Retrabajo','Retrabajo',1,2,3,4,5,6,7,8),
+('LRP602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Retrabajo','Retrabajo',1,2,3,4,5,6,7,8),
 ('LAF601',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
 ('LAF602',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),
 ('LAF603',95,'100KM/H','20MIN',' ',' ',' ', ' ','Termo_Fijo','Termo Fijo',1,2,3,4,5,6,7,8),

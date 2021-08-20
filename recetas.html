@@ -40,7 +40,7 @@
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Monitor piso</a></li>
                     <li><a href="monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
-                    <li><a href="monitor-piso-details.php?tipo_maquina=Repase">Repase</a></li>
+                    <li><a href="monitor-piso-details.php?tipo_maquina=Retrabajo">Retrabajo</a></li>
                     <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
                     <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
                 </ul>

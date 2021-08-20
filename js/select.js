@@ -17,7 +17,7 @@ document.body.onload = function () {
         resetSelect();
         if (option == 'Irradiado') {
             array = ['LIR601']
-        } else if (option == "Repase") {
+        } else if (option == "Retrabajo") {
             array = ['LRP601', 'LRP602'];
         } else if (option == "Termo fijo") {
             array = ['LAF601', 'LAF602', 'LAF603', 'LAF604', 'LAF605', 'LAF606', 'LAF607'];

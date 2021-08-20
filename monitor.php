@@ -26,7 +26,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 </head>
 
 <body>
-  <div class="sidebar close">
+  <div class="sidebar ">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -160,7 +160,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                           }, 1000);
                     </script> -->
                     <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>"
-                      class="my-2 btn btn-warning text-white d-block mx-auto">Detalles</a>
+                      class="my-2 btn btn-dark text-white d-block mx-auto">Detalles</a>
                   </div>
                 </div>
               </div>

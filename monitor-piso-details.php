@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <div class="sidebar close">
+  <div class="sidebar ">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
@@ -227,7 +227,7 @@
                     data-animation-rule="linear" class="d-block mx-auto"
                     id="medidor<?php echo $maquina['MAQUINA']; ?>"></canvas>
                   <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>"
-                    class="btn btn-warning d-block mx-auto text-white">Detalles</a>
+                    class="btn btn-dark d-block mx-auto text-white">Detalles</a>
                 </div>
               </div>
             </div>

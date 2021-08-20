@@ -33,7 +33,7 @@
 </head>
 
 <body>
-<div class="sidebar close">
+<div class="sidebar ">
         <div class="logo-details">
             <img src="images/logo-sidebar.png" alt="logo condumex">
             <span class="logo_name">CONDUMEX</span>
@@ -152,16 +152,16 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-11 d-flex flex-row-reverse">
-                                <a href="historial-fallos.php" class="btn btn-warning text-white my-3">Historial de fallos</a>
+                                <a href="historial-fallos.php" class="btn btn-dark text-white my-3">Historial de fallos</a>
                             </div>
                             <div class="col-lg-1">
                                 <?php 
                                     if(in_array($row['MAQUINA'],$maquinas_array)){?>
                                 <a href="maquinas/<?php echo $row['MAQUINA']?>.php"
-                                    class="mr-1 text-white  my-3 btn btn-warning">CTP'S</a>
+                                    class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
                                 <?php
                                     }else{
-                                        ?><a href="./404.html" class="text-white  my-3 btn btn-warning">CTP'S</a>
+                                        ?><a href="./404.html" class="text-white  my-3 btn btn-dark">CTP'S</a>
                                 <?php
                                     }
                                 ?>

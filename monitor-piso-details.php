@@ -30,10 +30,11 @@
 </head>
 
 <body>
-  <div class="sidebar ">
+<div class="sidebar ">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
+      <span class="logo_subname">AUTOPARTES</span>
     </div>
     <ul class="nav-links">
 
@@ -137,18 +138,6 @@
       <span class="text">
         <?php echo strtoupper($tipo_maquina) ?>
       </span>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12" style="max-width: 120px;">
-          <a href="monitor.php" class="text-dark" style="max-width: 100px;text-decoration: none;">
-            <p class="text-left">
-              <i class='bx bx-arrow-back'></i>
-              <span class="ml-1"> Regresar</span>
-            </p>
-          </a>
-        </div>
-      </div>
     </div>
     <div class="container">
       <div class="row">

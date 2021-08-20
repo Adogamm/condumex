@@ -22,10 +22,11 @@
 </head>
 
 <body>
-  <div class="sidebar ">
+<div class="sidebar ">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
+      <span class="logo_subname">AUTOPARTES</span>
     </div>
     <ul class="nav-links">
 
@@ -127,20 +128,6 @@
       <i class='bx bx-menu'></i>
       <span class="text">HISTORIAL DE FALLOS</span>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
-            <p class="text-left">
-              <i class='bx bx-arrow-back'></i>
-              <span class="ml-1"> Regresar</span>
-            </p>
-          </a>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6">

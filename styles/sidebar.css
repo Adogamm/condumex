@@ -48,7 +48,18 @@ body {
     transition: 0.3s ease;
     transition-delay: 0.1s;
 }
+.sidebar .logo-details .logo_subname{
+    position: absolute;
+    left: 30%;
+    top: 5%;
+}
+
 .sidebar.close .logo-details .logo_name{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.close .logo-details .logo_subname{
     transition-delay: 0s;
     opacity: 0;
     pointer-events: none;

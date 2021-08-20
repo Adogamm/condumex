@@ -21,7 +21,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <title>Variables</title>
    </head>
 <body>
-  <div class="sidebar ">
+  <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>

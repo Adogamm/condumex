@@ -187,27 +187,29 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="text-center">LISTADO DE FALLOS</h5>
-                    <table class="table table-hover mt-3">
-                      <thead>
-                        <tr>
-                          <th>Fallo</th>
-                          <th>Tiempo perdido/Tiempo muerto</th>
-                          <th>Tiempo</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Reventón</td>
-                          <td>Tiempo muerto</td>
-                          <td>03 mins</td>
-                        </tr>
-                        <tr>
-                          <td>Error en operación</td>
-                          <td>Tiempo perdido</td>
-                          <td>03 mins</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table class="table table-hover mt-3">
+                        <thead>
+                          <tr>
+                            <th>Fallo</th>
+                            <th>Tiempo perdido/Tiempo muerto</th>
+                            <th>Tiempo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Reventón</td>
+                            <td>Tiempo muerto</td>
+                            <td>03 mins</td>
+                          </tr>
+                          <tr>
+                            <td>Error en operación</td>
+                            <td>Tiempo perdido</td>
+                            <td>03 mins</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -26,11 +26,12 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 </head>
 
 <body>
-<div class="sidebar ">
+<div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name">CONDUMEX</span>
       <span class="logo_subname">AUTOPARTES</span>
+      <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
 
@@ -129,7 +130,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu'></i>
+      <i class='bx bx-menu' id="open_sidebar"></i>
       <span class="text">MONITOR DE PISO</span>
     </div>
     <div class="container my-1">
@@ -223,7 +224,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
 </body>
 <script src="js/live/live-monitor.js"></script>
 

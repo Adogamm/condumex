@@ -29,7 +29,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name">CONDUMEX</span>
+      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span class="logo_subname">AUTOPARTES</span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
@@ -178,35 +178,41 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <div class="col-lg-5 mt-1">
           <div class="card">
             <div class="card-body">
-              <table class="table table-hover">
-                <tr>
-                  <th>Ítem</th>
-                  <th>Máquina</th>
-                  <th>Id paro</th>
-                  <th>Fecha inicio</th>
-                  <th>Hora inicio</th>
-                  <th>Fecha fin</th>
-                  <th>Hora fin</th>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Ítem</th>
+                      <th>Máquina</th>
+                      <th>Id paro</th>
+                      <th>Fecha inicio</th>
+                      <th>Hora inicio</th>
+                      <th>Fecha fin</th>
+                      <th>Hora fin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

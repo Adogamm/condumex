@@ -49,9 +49,9 @@ body {
     transition-delay: 0.1s;
 }
 .sidebar .logo-details .logo_subname{
-    position: absolute;
-    left: 30%;
-    top: 5%;
+    position: relative;
+    right: 42%;
+    top: 50%;
 }
 
 .sidebar.close .logo-details .logo_name{

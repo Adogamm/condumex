@@ -33,7 +33,7 @@
 </head>
 
 <body>
-<div class="sidebar ">
+    <div class="sidebar ">
         <div class="logo-details">
             <img src="images/logo-sidebar.png" alt="logo condumex">
             <span class="logo_name">CONDUMEX</span>
@@ -121,7 +121,11 @@
                     <div class="profile_name">Prem Shahi</div>
                     <div class="job">Web Desginer</div>
                 </div>
-                <i class='bx bx-log-out' style="color: #fff;"></i>
+                <div>
+                    <a href="#">
+                        <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+                    </a>
+                </div>
             </div>
             </li>
         </ul>
@@ -152,7 +156,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-11 d-flex flex-row-reverse">
-                                <a href="historial-fallos.php" class="btn btn-dark text-white my-3">Historial de fallos</a>
+                                <a href="historial-fallos.php" class="btn btn-dark text-white my-3">Historial de
+                                    fallos</a>
                             </div>
                             <div class="col-lg-1">
                                 <?php 

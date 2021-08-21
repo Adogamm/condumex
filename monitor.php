@@ -30,7 +30,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
-
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">

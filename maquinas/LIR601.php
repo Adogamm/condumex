@@ -23,7 +23,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <body>
 <div class="sidebar" id="sidebar">
     <div class="logo-details">
-      <img src="images/logo-sidebar.png" alt="logo condumex">
+      <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
@@ -31,7 +31,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
       <li>
         <div class="iocn-link">
-          <a href="monitor.php">
+          <a href="../monitor.php">
             <i class='bx bx-grid-alt'></i>
             <span class="link_name">Monitor piso</span>
           </a>
@@ -39,19 +39,19 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Retrabajo">Retrabajo</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Retrabajo">Retrabajo</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
+          <li><a href="../monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
         </ul>
       </li>
       <li>
-        <a href="maestros.html">
+        <a href="../maestros.html">
           <i class='bx bx-wrench'></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.html">Maestros</a></li>
+          <li><a class="link_name" href="../maestros.html">Maestros</a></li>
         </ul>
       </li>
       <li>
@@ -64,28 +64,28 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="catalogo-compuestos.html">Catalogos</a></li>
-          <li><a href="catalogo-compuestos.html">Compuestos</a></li>
-          <li><a href="reporte-paros.html">Paros</a></li>
+          <li><a href="../catalogo-compuestos.html">Compuestos</a></li>
+          <li><a href="../reporte-paros.html">Paros</a></li>
           <li><a href="#">Máquina</a></li>
           <li><a href="#">Familia calibre</a></li>
         </ul>
       </li>
       <li>
-        <a href="recetas.html">
+        <a href="../recetas.html">
           <i class='bx bx-bookmark-alt'></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="recetas.html">Recetas</a></li>
+          <li><a class="link_name" href="../recetas.html">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="bitacora-eventos.html">
+        <a href="../bitacora-eventos.html">
           <i class='bx bx-calendar-event'></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="../bitacora-eventos.html">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -98,13 +98,13 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="administracion-usuarios.html">Administración</a></li>
-          <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
+          <li><a href="../administracion-usuarios.html">Administración</a></li>
+          <li><a href="../roles-privilegios.html">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
         <div class="profile-content">
-          <img src="images/avatar.png" alt="profileImg">
+          <img src="../images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
           <div class="profile_name">Prem Shahi</div>

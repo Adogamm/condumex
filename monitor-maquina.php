@@ -66,22 +66,7 @@
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt'></i>
-            <span class="link_name">Catalogos</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow'></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="catalogo-compuestos.html">Catalogos</a></li>
-          <li><a href="catalogo-compuestos.html">Compuestos</a></li>
-          <li><a href="reporte-paros.html">Paros</a></li>
-          <li><a href="#">Máquina</a></li>
-          <li><a href="#">Familia calibre</a></li>
-        </ul>
-      </li>
+      
       <li>
         <a href="recetas.html">
           <i class='bx bx-bookmark-alt'></i>

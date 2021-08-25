@@ -1,14 +1,16 @@
 <?php
-    // setlocale(LC_ALL, 'es_MX');
     date_default_timezone_set("America/Mexico_City");
     include('databaseconnect/conection.php');
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
 
-    $maquinas_array = array('LRP601','LRP602','LAF601','LAF602','LAF603','LAF604','LAF605','LAF606','LAF607','LIR601');
+    $maquinas_array = array('LRP601','LRP602','LAP601','LAP602','LAP605','LAP606','LAP607',
+    'LAP608','LAP609','LAP610','LAP611','LIR601');
 
-    $select = "SELECT * FROM MAQUINAS WHERE MAQUINA = '$maquina'";
+    $select = "SELECT * FROM TB_CAT_LINE WHERE NAME = '$maquina'";
     $resultado = sqlsrv_query($conexion,$select);
+
+
     $row = sqlsrv_fetch_array($resultado);
 
 
@@ -123,7 +125,7 @@
         <div class="home-content">
             <i class='bx bx-menu' id="open_sidebar"></i>
             <span class="text">
-                <?php echo $row['MAQUINA']; ?>
+                <?php echo $row['NAME']; ?>
             </span>
         </div>
 
@@ -138,8 +140,8 @@
                             </div>
                             <div class="col-lg-1">
                                 <?php 
-                                    if(in_array($row['MAQUINA'],$maquinas_array)){?>
-                                <a href="maquinas/<?php echo $row['MAQUINA']?>.php"
+                                    if(in_array($row['NAME'],$maquinas_array)){?>
+                                <a href="maquinas/<?php echo $row['NAME']?>.php"
                                     class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
                                 <?php
                                     }else{
@@ -219,21 +221,17 @@
                                             data-needle-circle-outer="true" data-needle-circle-inner="false"
                                             data-animation-duration="500" data-animation-rule="linear"
                                             class="d-block mx-auto my-2" id="medidor"></canvas>
-                                        <script>
-                                            var number = 0;
-                                            setInterval(function () {
-                                                number = Math.floor(Math.random() * 100);
-                                                $("#medidor").attr("data-value", number);
-                                            }, 1000);
-                                        </script>
                                     </div>
                                     <div class="col-lg-6 text-left">
                                         <p>Alarmas en turno: 2</p>
                                         <p>Último fallo: 103</p>
                                         <p>
                                             <!-- echo strftime("%d-%h-%Y", strtotime($date)); -->
-                                            <?php setlocale(LC_TIME, array('es_MX.UTF-8','es_MX','spanish'));
-                                            echo strftime("%A %e %B %Y"); ?>
+                                            <?php
+                                            setlocale(LC_TIME, array('es_MX.UTF-8','es_MX','spanish'));
+                                            $final = utf8_encode(strftime("%A %e %B %Y"));
+                                            echo $final
+                                            ?>
                                         </p>
                                     </div>
                                 </div>
@@ -265,13 +263,6 @@
                                             data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor1"></canvas>
-                                        <script>
-                                            var number1 = 0;
-                                            setInterval(function () {
-                                                number1 = Math.floor(Math.random() * 100);
-                                                $("#medidor1").attr("data-value", number1);
-                                            }, 1000);
-                                        </script>
                                     </div>
                                     <div class="col-lg-12 text-center">
                                         <p>Tiempo operativo: 43.12 mins<br>
@@ -306,13 +297,6 @@
                                             data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor2"></canvas>
-                                        <script>
-                                            var number2 = 0;
-                                            setInterval(function () {
-                                                number2 = Math.floor(Math.random() * 100);
-                                                $("#medidor2").attr("data-value", number2);
-                                            }, 1000);
-                                        </script>
                                     </div>
                                     <div class="col-lg-12 text-center">
                                         <p>Producción real: 256 km.<br>
@@ -347,13 +331,6 @@
                                             data-needle-circle-inner="false" data-animation-duration="500"
                                             data-animation-rule="linear" class="d-block mx-auto my-2"
                                             id="medidor3"></canvas>
-                                        <script>
-                                            var number3 = 0;
-                                            setInterval(function () {
-                                                number3 = Math.floor(Math.random() * 100);
-                                                $("#medidor3").attr("data-value", number3);
-                                            }, 1000);
-                                        </script>
                                     </div>
                                     <div class="col-lg-12 text-center">
                                         <p>Producción real: 226 km.<br>

@@ -12,11 +12,11 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es">
 
 <head>
   <!-- <meta charset="UTF-8"> -->
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/sidebar.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,7 +132,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 <div class="card my-2">
                   <div class="card-body my-2">
                     <h5 class="card-title text-center">
-                      <?php echo $maquinas['NAME'] ?>
+                      <?php $final = utf8_encode($maquinas['NAME']); echo $final ?>
                     </h5>
                     <canvas data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>" data-type="radial-gauge"
                       data-width="150" data-height="150" data-units="%OEE" data-min-value="0" data-max-value="100"
@@ -146,16 +146,6 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                       data-needle-circle-outer="true" data-needle-circle-inner="false" data-animation-duration="750"
                       data-animation-rule="linear" class="d-block mx-auto"
                       id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"></canvas>
-
-                    <!-- <script>
-                      var number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = 0;
-                      setInterval(function() {
-                        number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?> = Math.floor(Math.random()*100);
-                        $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
-                          }, 1000);
-                    </script> -->
-                    <script>
-                    </script>
                     <a href="monitor-piso-details.php?id_area=<?php echo $maquinas['CAT_AREA_ID'] ?>"
                       class="my-2 btn btn-dark text-white d-block mx-auto">Detalles</a>
                   </div>

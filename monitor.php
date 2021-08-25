@@ -1,6 +1,9 @@
-<?php 
+<!-- #TODO CALCULAR RENDIMIENTO POR AREA -->
+<?php
+header("Content-Type: text/html;charset=utf-8");
 include 'databaseconnect/conection.php';
-$select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN;";
+$select = "SELECT * FROM TB_CAT_AREA";
+// $select = "SELECT DISTINCT TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN FROM MAQUINAS GROUP BY TIPO_MAQUINA, TIPO_MAQUINA_HIDDEN;";
 $query = sqlsrv_query($conexion,$select);
 
 $select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
@@ -12,7 +15,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8"> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <link rel="stylesheet" href="styles/sidebar.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,12 +126,13 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         <div class="col-lg-7">
           <div class="container">
             <div class="row">
-              <?php while($maquinas = sqlsrv_fetch_array($query) AND $porcentaje = sqlsrv_fetch_array($query1)){ ?>
+            <!-- AND $porcentaje = sqlsrv_fetch_array($query1) -->
+              <?php while($maquinas = sqlsrv_fetch_array($query) ){ ?>
               <div class="col-lg-6 mt-1">
                 <div class="card my-2">
                   <div class="card-body my-2">
                     <h5 class="card-title text-center">
-                      <?php echo $maquinas['TIPO_MAQUINA'] ?>
+                      <?php echo $maquinas['NAME'] ?>
                     </h5>
                     <canvas data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>" data-type="radial-gauge"
                       data-width="150" data-height="150" data-units="%OEE" data-min-value="0" data-max-value="100"
@@ -149,7 +154,9 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                         $("#medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>").attr("data-value",number<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>);
                           }, 1000);
                     </script> -->
-                    <a href="monitor-piso-details.php?tipo_maquina=<?php echo $maquinas['TIPO_MAQUINA'] ?>"
+                    <script>
+                    </script>
+                    <a href="monitor-piso-details.php?id_area=<?php echo $maquinas['CAT_AREA_ID'] ?>"
                       class="my-2 btn btn-dark text-white d-block mx-auto">Detalles</a>
                   </div>
                 </div>

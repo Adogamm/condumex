@@ -1,11 +1,12 @@
+<!-- #TODO CALCULAR RENDIMIENTO POR AREA -->
 <?php
   include 'databaseconnect/conection.php';
-  $tipo_maquina = $_GET['tipo_maquina'];
-  setcookie('tipo_maquina',$tipo_maquina,time()+3600);
-  $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA='$tipo_maquina'";
-  $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+  $id_area = $_GET['id_area'];
+  setcookie('id_area',$id_area,time()+3600);
+  $select = "SELECT * FROM TB_CAT_LINE WHERE CAT_AREA_ID='$id_area'";
+  // $select_avg = "SELECT ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
   $query = sqlsrv_query($conexion, $select);
-  $query1 = sqlsrv_query($conexion,$select_avg);
+  // $query1 = sqlsrv_query($conexion,$select_avg);
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +25,8 @@
     sizes="16x16">
   <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
     sizes="32x32">
-  <title>Área:
-    <?php echo $tipo_maquina ?>
+  <title>
+    Detalles por área
   </title>
 </head>
 
@@ -121,7 +122,7 @@
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
       <span class="text">
-        <?php echo strtoupper($tipo_maquina) ?>
+        <?php //echo strtoupper($tipo_maquina) ?>
       </span>
     </div>
     <div class="container">
@@ -132,16 +133,16 @@
               <h6 class="text-center">OEE</h6>
             </div>
             <div class="card-body">
-              <?php while($avg = sqlsrv_fetch_array($query1)){ ?>
+              <?php //while($avg = sqlsrv_fetch_array($query1)){ ?>
               <div class="progress my-4">
                 <div id="medidor" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                  style="width: <?php echo $avg['RENDIMIENTO'];  ?>?%; min-width: 25%;"
-                  aria-valuenow="<?php echo $avg['RENDIMIENTO'];  ?>" aria-valuemin="0" aria-valuemax="100">
-                  <?php echo $avg['RENDIMIENTO'];  ?>%
+                  style="width: <?php //echo $avg['RENDIMIENTO'];  ?>?%; min-width: 25%;"
+                  aria-valuenow="<?php //echo $avg['RENDIMIENTO'];  ?>" aria-valuemin="0" aria-valuemax="100">
+                  <?php //echo $avg['RENDIMIENTO'];  ?>%
                 </div>
               </div>
               <!-- Actualizar los medidores con valores aleatorios -->
-              <script>
+              <!-- <script>
                 var number = 0;
                 var barra = document.getElementById("medidor");
                 setInterval(function () {
@@ -161,8 +162,8 @@
                     barra.classList.add("bg-success");
                   }
                 }, 1000);
-              </script>
-              <?php } ?>
+              </script> -->
+              <?php //} ?>
             </div>
           </div>
         </div>
@@ -178,10 +179,10 @@
                     <div class="row">
                       <div class="col-lg-6 col-md-12">
                         <div class="led-box">
-                          <div id="led<?php echo $maquina['MAQUINA'] ?>" class="led-green"></div>
+                          <div id="led<?php echo $maquina['NAME'] ?>" class="led-green"></div>
                         </div>
                         <p style="margin-right: 75%; min-width:52px;">
-                          <?php echo $maquina['MAQUINA'] ?>
+                          <?php echo $maquina['NAME'] ?>
                         </p>
                       </div>
                       <div class="col-lg-6 col-md-12 mt-4">
@@ -191,8 +192,8 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <h6 id="text<?php echo $maquina['MAQUINA'] ?>"></h6>
-                  <canvas data-value="<?php echo $maquina['RENDIMIENTO'] ?>" data-type="radial-gauge" data-width="200"
+                  <h6 id="text<?php echo $maquina['NAME'] ?>"></h6>
+                  <canvas data-value="00 <?php //echo $maquina['RENDIMIENTO'] ?>" data-type="radial-gauge" data-width="200"
                     data-height="200" data-units="" data-min-value="0" data-start-angle="90" data-ticks-angle="180"
                     data-value-box="false" data-max-value="100" data-major-ticks="0,25,50,75,100" data-minor-ticks="4"
                     data-stroke-ticks="true" data-highlights='[
@@ -203,8 +204,8 @@
                     data-needle-type="arrow" data-needle-width="2" data-needle-circle-size="7"
                     data-needle-circle-outer="true" data-needle-circle-inner="false" data-animation-duration="900"
                     data-animation-rule="linear" class="d-block mx-auto"
-                    id="medidor<?php echo $maquina['MAQUINA']; ?>"></canvas>
-                  <a href="monitor-maquina.php?maquina=<?php echo $maquina['MAQUINA'] ?>"
+                    id="medidor<?php echo $maquina['NAME']; ?>"></canvas>
+                  <a href="monitor-maquina.php?maquina=<?php echo $maquina['NAME'] ?>"
                     class="btn btn-dark d-block mx-auto text-white">Detalles</a>
                 </div>
               </div>

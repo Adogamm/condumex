@@ -1,17 +1,19 @@
+<!-- #TODO CALCULAR RENDIMIENTO POR AREA -->
+
 <?php
     include("../databaseconnect/conection.php");
-    $tipo_maquina = $_COOKIE['tipo_maquina'];
+    $id_area = $_COOKIE['id_area'];
 ?>
 <div class="container">
     <div class="row">
             <?php 
-            $select = "SELECT * FROM MAQUINAS WHERE TIPO_MAQUINA = '$tipo_maquina'";
+            $select = "SELECT * FROM TB_CAT_LINE WHERE CAT_AREA_ID = $id_area";
             $query = sqlsrv_query($conexion, $select);
     while($row = sqlsrv_fetch_array($query)){
 
         // Asignacion a nombre de variables
-        $maquina = $row["MAQUINA"];
-        $rendimiento = $row["RENDIMIENTO"];
+        $maquina = $row["NAME"];
+        // $rendimiento = $row["RENDIMIENTO"];
  ?>
 
 <!-- Input para actualizar los medidores -->

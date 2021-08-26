@@ -9,9 +9,13 @@
         $linea = $rowNombres['LINEA'];
     }
     $selectVariablesBool = "SELECT TB_VARIABLE.VARIABLE_ID AS ID, TB_VARIABLE.TAG AS TAG, TB_MEASUREMENT.VALUE AS VALUE FROM TB_MEASUREMENT 
-    INNER JOIN TB_VARIABLE ON TB_MEASUREMENT.VARIABLE_ID = TB_VARIABLE.VARIABLE_ID
-    INNER JOIN TB_CAT_LINE ON TB_VARIABLE.CAT_LINE_ID = TB_CAT_LINE.CAT_LINE_ID WHERE TB_CAT_LINE.NAME = '$maquina' AND TB_VARIABLE.TYPE = 'BOOL';";
-    $bools = sqlsrv_query($conexion,$selectVariablesBool)
+        INNER JOIN TB_VARIABLE ON TB_MEASUREMENT.VARIABLE_ID = TB_VARIABLE.VARIABLE_ID
+        INNER JOIN TB_CAT_LINE ON TB_VARIABLE.CAT_LINE_ID = TB_CAT_LINE.CAT_LINE_ID WHERE TB_CAT_LINE.NAME = '$maquina' AND TB_VARIABLE.TYPE = 'BOOL';";
+    $bools = sqlsrv_query($conexion,$selectVariablesBool);
+    $selectVariables = "SELECT TB_VARIABLE.VARIABLE_ID AS ID, TB_VARIABLE.TAG AS TAG, TB_MEASUREMENT.VALUE, TB_VARIABLE.UNIT AS UNIT FROM TB_MEASUREMENT 
+        INNER JOIN TB_VARIABLE ON TB_MEASUREMENT.VARIABLE_ID = TB_VARIABLE.VARIABLE_ID
+        INNER JOIN TB_CAT_LINE ON TB_VARIABLE.CAT_LINE_ID = TB_CAT_LINE.CAT_LINE_ID WHERE TB_CAT_LINE.NAME = '$maquina' AND TB_VARIABLE.TYPE <> 'BOOL';";
+    $variables = sqlsrv_query($conexion,$selectVariables);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -211,36 +215,11 @@
                                     <div class="card-body p-0">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Actual length: 10%</p>
+                                                <?php while($rowsVariables = sqlsrv_fetch_array($variables)){ ?>
+                                                    <div class="col-lg-6 col-sm-2 my-2">
+                                                        <small id="variable<?php echo $rowsVariables['ID']; ?>"></small>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Last spool: OK</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Preset length: 10 mts</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Speed: 20 km/h</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Hourmeter: 5 hrs</p>
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="col-lg-5 col-sm-12 mt-2">
-                                                    <div id="variable">
-                                                        <p>Concentricity: -</p>
-                                                    </div>
-                                                </div> -->
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>

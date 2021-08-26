@@ -49,10 +49,10 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Irradiado">Irradiado</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Retrabajo">Retrabajo</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Fijo">Termo fijo</a></li>
-          <li><a href="monitor-piso-details.php?tipo_maquina=Termo%20Plastico">Termo plastico</a></li>
+          <li><a href="monitor-piso-details.php?id_area=2">Irradiado</a></li>
+          <li><a href="monitor-piso-details.php?id_area=3">Retrabajo</a></li>
+          <li><a href="monitor-piso-details.php?id_area=4">Termo fijo</a></li>
+          <li><a href="monitor-piso-details.php?id_area=1">Termo plastico</a></li>
         </ul>
       </li>
       <li>

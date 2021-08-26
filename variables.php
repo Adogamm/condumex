@@ -127,14 +127,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="text-dark" style="text-decoration: none;">
-                        <p class="text-left">
-                            <i class='bx bx-arrow-back'></i>
-                            <span class="ml-1"> Regresar</span>
-                        </p>
-                    </a>
-                </div>
-                <div class="col-lg-12">
                     <div class="card mb-2">
                         <div class="card-body">
                             <form name="selector_datos" action="#" class="form-inline">
@@ -210,7 +202,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-12 my-2">
                                 <div class="card">
                                     <div class="card-header bg-warning text-white">

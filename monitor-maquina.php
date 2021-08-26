@@ -141,7 +141,7 @@
                             <div class="col-lg-1">
                                 <?php 
                                     if(in_array($row['NAME'],$maquinas_array)){?>
-                                <a href="maquinas/<?php echo $row['NAME']?>.php"
+                                <a href="variables.php?maquina=<?php echo $row['NAME']?>"
                                     class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
                                 <?php
                                     }else{

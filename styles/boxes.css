@@ -2,14 +2,15 @@
   float: left;
   width: 20px;
   height: 20px;
-  margin: 5px;
-  border: 1px solid rgba(0, 0, 0, .2);
+  margin: 3px 10px;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 100%;
 }
 
 .red {
-  background: red;
+  background: #FF4C46;
 }
 
 .green {
-  background: green;
+  background: #74EB69;
 }

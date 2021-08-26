@@ -126,7 +126,7 @@
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' id="open_sidebar"></i>
-            <span class="text"><?php echo utf8_encode($area) ?>/<?php echo $linea ?></span>
+            <span class="text"><?php echo $area ?>/<?php echo $linea ?></span>
         </div>
         <div class="container">
             <div class="row">

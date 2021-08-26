@@ -4,8 +4,8 @@
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
 
-    $maquinas_array = array('LRP601','LRP602','LAP601','LAP602','LAP605','LAP606','LAP607',
-    'LAP608','LAP609','LAP610','LAP611','LIR601');
+    //$maquinas_array = array('LRP601','LRP602','LAP601','LAP602','LAP605','LAP606','LAP607',
+    //'LAP608','LAP609','LAP610','LAP611','LIR601','');
 
     $select = "SELECT * FROM TB_CAT_LINE WHERE NAME = '$maquina'";
     $resultado = sqlsrv_query($conexion,$select);
@@ -139,16 +139,7 @@
                                     fallos</a>
                             </div>
                             <div class="col-lg-1">
-                                <?php 
-                                    if(in_array($row['NAME'],$maquinas_array)){?>
-                                <a href="variables.php?maquina=<?php echo $row['NAME']?>"
-                                    class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
-                                <?php
-                                    }else{
-                                        ?><a href="./404.html" class="text-white  my-3 btn btn-dark">CTP'S</a>
-                                <?php
-                                    }
-                                ?>
+                                <a href="variables.php?maquina=<?php echo $row['NAME']?>" class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
                             </div>
                         </div>
                     </div>

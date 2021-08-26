@@ -132,7 +132,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 <div class="card my-2">
                   <div class="card-body my-2">
                     <h5 class="card-title text-center">
-                      <?php $final = utf8_encode($maquinas['NAME']); echo $final ?>
+                      <?php $final = $maquinas['NAME']; echo $final ?>
                     </h5>
                     <canvas data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>" data-type="radial-gauge"
                       data-width="150" data-height="150" data-units="%OEE" data-min-value="0" data-max-value="100"

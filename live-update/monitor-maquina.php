@@ -10,7 +10,7 @@ date_default_timezone_set("America/Mexico_City");
     // $select = "SELECT * FROM TB_CAT_LINE WHERE NAME = '$maquina'";
     $query = sqlsrv_query($conexion, $select);
     while($row = sqlsrv_fetch_array($query)){
-        $area = utf8_encode($row['TIPO_MAQUINA']);
+        $area = $row['TIPO_MAQUINA'];
         $linea = $row['MAQUINA'];
 ?>
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="

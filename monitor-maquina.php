@@ -220,7 +220,7 @@
                                             <!-- echo strftime("%d-%h-%Y", strtotime($date)); -->
                                             <?php
                                             setlocale(LC_TIME, array('es_MX.UTF-8','es_MX','spanish'));
-                                            $final = utf8_encode(strftime("%A %e %B %Y"));
+                                            $final = strftime("%A %e %B %Y");
                                             echo $final
                                             ?>
                                         </p>

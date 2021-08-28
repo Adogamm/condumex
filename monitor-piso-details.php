@@ -181,7 +181,7 @@
                         <div class="led-box">
                           <div id="led<?php echo $maquina['NAME'] ?>" class="led-green"></div>
                         </div>
-                        <p style="margin-right: 75%; min-width:52px;">
+                        <p style="margin-right: 75%; min-width:70px;">
                           <?php echo $maquina['NAME'] ?>
                         </p>
                       </div>

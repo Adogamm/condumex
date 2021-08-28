@@ -290,4 +290,8 @@ body {
         position: fixed;
         left: 37%;
     }
+
+    .sidebar .profile-details{
+        width: 100%;
+    }
 }

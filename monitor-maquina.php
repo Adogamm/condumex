@@ -131,15 +131,15 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-11 d-flex flex-row-reverse">
-                                <a href="historial-fallos.php" class="btn btn-dark text-white my-3">Historial de
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-lg-2 col-sm-12">
+                                <a href="historial-fallos.php" class="btn-custom btn btn-dark text-white my-3">Historial de
                                     fallos</a>
                             </div>
-                            <div class="col-lg-1">
-                                <a href="variables.php?maquina=<?php echo $row['NAME']?>" class="mr-1 text-white  my-3 btn btn-dark">CTP'S</a>
+                            <div class="col-lg-2 col-sm-12">
+                                <a href="variables.php?maquina=<?php echo $row['NAME']?>" style="min-width: 160px;" class="mr-1 text-white  my-3 btn-custom btn btn-dark">CTP'S</a>
                             </div>
                         </div>
                     </div>

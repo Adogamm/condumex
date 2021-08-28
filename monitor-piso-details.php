@@ -181,9 +181,15 @@
                         <div class="led-box">
                           <div id="led<?php echo $maquina['NAME'] ?>" class="led-green"></div>
                         </div>
-                        <p style="margin-right: 75%; min-width:70px;">
-                          <?php echo $maquina['NAME'] ?>
-                        </p>
+                        <div class="container mt-2">
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <p style="margin-right: 75%; min-width:70px;">
+                                <?php echo $maquina['NAME'] ?>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="col-lg-6 col-md-12 mt-4">
                         <p>Velocidad: 200 km/h</p>

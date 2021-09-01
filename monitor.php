@@ -1,5 +1,6 @@
 <!-- #TODO CALCULAR RENDIMIENTO POR AREA -->
 <?php
+include ("seguridad.php");
 header("Content-Type: text/html;charset=utf-8");
 include 'databaseconnect/conection.php';
 $select = "SELECT * FROM TB_CAT_AREA";
@@ -8,6 +9,7 @@ $query = sqlsrv_query($conexion,$select);
 
 $select_avg = "SELECT TIPO_MAQUINA,ROUND(AVG(RENDIMIENTO), 2) AS RENDIMIENTO FROM MAQUINAS GROUP BY TIPO_MAQUINA";
 $query1 = sqlsrv_query($conexion,$select_avg);
+
 ?>
 
 
@@ -101,11 +103,11 @@ $query1 = sqlsrv_query($conexion,$select_avg);
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE'];?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
+          <a href="./loggout.php">
             <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
           </a>
         </div>

@@ -20,11 +20,11 @@
         <div class="ctn-form border shadow">
             <img src="images/condumex_logo.png" alt="Condumex Logo" class="logo"><br>
             <h2 class="title">Iniciar Sesión</h2>
-            <form action="monitor.php">
-                <label for="">Email</label>
-                <input type="email" name="" id="">
+            <form action="login-check.php" method="POST">
+                <label for="">Nombre de usuario</label>
+                <input type="text" name="user" id="">
                 <label for="">Contraseña</label>
-                <input type="password" name="" id="">
+                <input type="password" name="pass" id="">
                 <input type="submit" value="Iniciar">
             </form>
         </div>

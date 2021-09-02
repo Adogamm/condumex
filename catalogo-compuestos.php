@@ -1,9 +1,7 @@
 <?php
 include 'databaseconnect/conection.php';
 $selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
-$selectArea = "SELECT * FROM TB_CAT_AREA;";
 $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
-$queryArea = sqlsrv_query($conexion,$selectArea);
 ?>
 
 <!DOCTYPE html>
@@ -132,9 +130,10 @@ $queryArea = sqlsrv_query($conexion,$selectArea);
             </div>
             <select class="form-control" id="area">
               <option selected>Selecciona...</option>
-              <?php while($rowsArea = sqlsrv_fetch_array($queryArea)){ ?>
-                <option value="<?php echo $rowsArea['NAME']; ?>"><?php echo $rowsArea['NAME']; ?></option>
-              <?php } ?>
+                <option value="Termo plastico">Termo plastico</option>
+                <option value="Termo plastico">Termo fijo</option>
+                <option value="Termo plastico">Irradiado</option>
+                <option value="Termo plastico">Retrabajo</option>
             </select>
           </div>
         </div>

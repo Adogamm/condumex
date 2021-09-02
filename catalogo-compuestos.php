@@ -1,3 +1,11 @@
+<?php
+include 'databaseconnect/conection.php';
+$selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
+$selectArea = "SELECT * FROM TB_CAT_AREA;";
+$queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
+$queryArea = sqlsrv_query($conexion,$selectArea);
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -25,7 +33,9 @@
   <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
+      <span class="logo_name text-center mt-3">CONDUMEX <br>
+        <h6>AUTOPARTES</h6>
+      </span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
@@ -55,7 +65,7 @@
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
-      
+
       <li>
         <a href="recetas.html">
           <i class='bx bx-bookmark-alt'></i>
@@ -116,26 +126,93 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Area</option>
-            <option value="1">Estirado grueso</option>
-            <option value="2">Estirado fino</option>
-            <option value="3">Termo plasticos</option>
-            <option value="4">Termo fijos</option>
-            <option value="5">Irradiado</option>
-            <option value="6">Reunido</option>
-          </select>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="area">Area</label>
+            </div>
+            <select class="form-control" id="area">
+              <option selected>Selecciona...</option>
+              <?php while($rowsArea = sqlsrv_fetch_array($queryArea)){ ?>
+                <option value="<?php echo $rowsArea['NAME']; ?>"><?php echo $rowsArea['NAME']; ?></option>
+              <?php } ?>
+            </select>
+          </div>
         </div>
-        <div class="col-lg-2">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-2">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="maquina">Maquina</label>
+            </div>
+            <select class="form-control" id="maquina">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
       <div class="row mt-4">
         <div class="col-lg-6">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-dark">Alta</button>
-            <button type="button" class="btn btn-dark">Borrar</button>
-            <button type="button" class="btn btn-dark">Modificar</button>
+            <a href="maestros/alta-compuesto.php" class="btn btn-dark">Alta</a>
           </div>
         </div>
       </div>
@@ -150,19 +227,36 @@
                       <th>Id</th>
                       <th>Compuesto</th>
                       <th>Descripción</th>
+                      <th>Área</th>
+                      <th>Máquina</th>
+                      <th>Modificar</th>
+                      <th>ELiminar</th>
                     </tr>
                   </thead>
                   <tbody>
+                    <?php while($rows = sqlsrv_fetch_array($queryCompuestos)) { ?>
                     <tr>
-                      <td>01</td>
-                      <td>XL7425</td>
-                      <td>Compuesto 7425</td>
+                      <td>
+                        <?php echo $rows['CAT_MADE_UP_ID']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['NAME']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['DESCRIPTION']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['AREA']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['MACHINE']; ?>
+                      </td>
+                      <td><a href="maestros/update-compuesto.php?id=<?php echo $rows['CAT_MADE_UP_ID']; ?>"
+                          class="btn btn-dark d-block mx-auto">Modificar</a></td>
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_MADE_UP_ID'] ?>);"
+                          class="btn btn-danger d-block mx-auto">Eliminar</a></td>
                     </tr>
-                    <tr>
-                      <td>02</td>
-                      <td>POL135</td>
-                      <td>Compuesto 135</td>
-                    </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -182,13 +276,14 @@
   <script src="js/sidebar.js"></script>
   <script src="js/gauge.min.js"></script>
   <script src="js/monitor.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/delete.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>

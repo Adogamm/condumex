@@ -22,9 +22,9 @@
             <h2 class="title">Iniciar Sesión</h2>
             <form action="login-check.php" method="POST">
                 <label for="">Nombre de usuario</label>
-                <input type="text" name="user" id="">
+                <input type="text" name="user" id="user">
                 <label for="">Contraseña</label>
-                <input type="password" name="pass" id="">
+                <input type="password" name="pass" id="user">
                 <input type="submit" value="Iniciar">
             </form>
         </div>

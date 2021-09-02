@@ -1,7 +1,9 @@
 <?php
 include 'databaseconnect/conection.php';
 $selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
+$selectArea = "SELECT * FROM TB_CAT_AREA;";
 $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
+$queryArea = sqlsrv_query($conexion,$selectArea);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +33,9 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
+      <span class="logo_name text-center mt-3">CONDUMEX <br>
+        <h6>AUTOPARTES</h6>
+      </span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
@@ -61,7 +65,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
-      
+
       <li>
         <a href="recetas.html">
           <i class='bx bx-bookmark-alt'></i>
@@ -122,19 +126,88 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Area</option>
-            <option value="1">Estirado grueso</option>
-            <option value="2">Estirado fino</option>
-            <option value="3">Termo plasticos</option>
-            <option value="4">Termo fijos</option>
-            <option value="5">Irradiado</option>
-            <option value="6">Reunido</option>
-          </select>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="area">Area</label>
+            </div>
+            <select class="form-control" id="area">
+              <option selected>Selecciona...</option>
+              <?php while($rowsArea = sqlsrv_fetch_array($queryArea)){ ?>
+                <option value="<?php echo $rowsArea['NAME']; ?>"><?php echo $rowsArea['NAME']; ?></option>
+              <?php } ?>
+            </select>
+          </div>
         </div>
-        <div class="col-lg-2">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-2">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="maquina">Maquina</label>
+            </div>
+            <select class="form-control" id="maquina">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
       <div class="row mt-4">
         <div class="col-lg-6">
@@ -162,16 +235,27 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
                   </thead>
                   <tbody>
                     <?php while($rows = sqlsrv_fetch_array($queryCompuestos)) { ?>
-                      <tr>
-                        <td><?php echo $rows['CAT_MADE_UP_ID']; ?></td>
-                        <td><?php echo $rows['NAME']; ?></td>
-                        <td><?php echo $rows['DESCRIPTION']; ?></td>
-                        <td><?php echo $rows['AREA']; ?></td>
-                        <td><?php echo $rows['MACHINE']; ?></td>
-                        <td><a href="maestros/update-compuesto.php?id=<?php echo $rows['CAT_MADE_UP_ID']; ?>" 
+                    <tr>
+                      <td>
+                        <?php echo $rows['CAT_MADE_UP_ID']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['NAME']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['DESCRIPTION']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['AREA']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['MACHINE']; ?>
+                      </td>
+                      <td><a href="maestros/update-compuesto.php?id=<?php echo $rows['CAT_MADE_UP_ID']; ?>"
                           class="btn btn-dark d-block mx-auto">Modificar</a></td>
-                        <td><a onclick="confirmar(<?php echo $rows['CAT_MADE_UP_ID'] ?>);" class="btn btn-danger d-block mx-auto">Eliminar</a></td>
-                      </tr>
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_MADE_UP_ID'] ?>);"
+                          class="btn btn-danger d-block mx-auto">Eliminar</a></td>
+                    </tr>
                     <?php } ?>
                   </tbody>
                 </table>

@@ -6,6 +6,7 @@ $(document).ready( function () {
         ]
     });
     $('.dt-button').addClass('btn btn-dark');
+    $('.dt-button').addClass('my-2');
     $('.dt-button').removeClass('buttons-html5');
     $('.dt-button').removeClass('dt-button');
     

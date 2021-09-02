@@ -1,3 +1,9 @@
+<?php
+include 'databaseconnect/conection.php';
+$selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
+$queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -133,9 +139,7 @@
       <div class="row mt-4">
         <div class="col-lg-6">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-dark">Alta</button>
-            <button type="button" class="btn btn-dark">Borrar</button>
-            <button type="button" class="btn btn-dark">Modificar</button>
+            <a href="maestros/alta-compuesto.php" class="btn btn-dark">Alta</a>
           </div>
         </div>
       </div>
@@ -150,19 +154,25 @@
                       <th>Id</th>
                       <th>Compuesto</th>
                       <th>Descripción</th>
+                      <th>Área</th>
+                      <th>Máquina</th>
+                      <th>Modificar</th>
+                      <th>ELiminar</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>01</td>
-                      <td>XL7425</td>
-                      <td>Compuesto 7425</td>
-                    </tr>
-                    <tr>
-                      <td>02</td>
-                      <td>POL135</td>
-                      <td>Compuesto 135</td>
-                    </tr>
+                    <?php while($rows = sqlsrv_fetch_array($queryCompuestos)) { ?>
+                      <tr>
+                        <td><?php echo $rows['CAT_MADE_UP_ID']; ?></td>
+                        <td><?php echo $rows['NAME']; ?></td>
+                        <td><?php echo $rows['DESCRIPTION']; ?></td>
+                        <td><?php echo $rows['AREA']; ?></td>
+                        <td><?php echo $rows['MACHINE']; ?></td>
+                        <td><a href="maestros/update-compuesto.php?id=<?php echo $rows['CAT_MADE_UP_ID']; ?>" 
+                          class="btn btn-dark d-block mx-auto">Modificar</a></td>
+                        <td><a onclick="confirmar(<?php echo $rows['CAT_MADE_UP_ID'] ?>);" class="btn btn-danger d-block mx-auto">Eliminar</a></td>
+                      </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>
@@ -182,13 +192,14 @@
   <script src="js/sidebar.js"></script>
   <script src="js/gauge.min.js"></script>
   <script src="js/monitor.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/delete.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" charset="utf8"
     src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>

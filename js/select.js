@@ -22,7 +22,7 @@ document.body.onload = function () {
         } else if (option == "Termo fijo") {
             array = ['LAF601', 'LAF602', 'LAF603', 'LAF604', 'LAF605', 'LAF606', 'LAF607'];
         } else if (option == "Termo plástico") {
-            array = ['LAF601', 'LAF602', 'LAF603', 'LAF604', 'LAF605', 'LAF606', 'LAF607', 'LAF608', 'LAF609', 'LAF610', 'LAF611'];
+            array = ['LAP601', 'LAP602', 'LAP603', 'LAP604', 'LAP605', 'LAP606', 'LAP607', 'LAP608', 'LAP609', 'LAP610', 'LAP611'];
         } else if (option == null) {
             resetSelect();
         }

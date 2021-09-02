@@ -121,6 +121,8 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       <i class='bx bx-menu' id="open_sidebar"></i>
       <span class="text">CATALOGO DE COMPUESTOS</span>
     </div>
+
+
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
@@ -130,81 +132,22 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
             </div>
             <select class="form-control" id="area">
               <option selected>Selecciona...</option>
-                <option value="Termo plastico">Termo plastico</option>
-                <option value="Termo plastico">Termo fijo</option>
-                <option value="Termo plastico">Irradiado</option>
-                <option value="Termo plastico">Retrabajo</option>
+                <option value="Termo plástico">Termo plástico</option>
+                <option value="Termo fijo">Termo fijo</option>
+                <option value="Irradiado">Irradiado</option>
+                <option value="Retrabajo">Retrabajo</option>
             </select>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="col-lg-2">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="maquina">Maquina</label>
             </div>
             <select class="form-control" id="maquina">
-              <option selected>Choose...</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
             </select>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       </div>
@@ -271,6 +214,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
 
   </section>
 
+  <script src="js/select.js"></script>
 
   <script src="js/sidebar.js"></script>
   <script src="js/gauge.min.js"></script>

@@ -124,8 +124,8 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
 
 
     <div class="container">
-      <div class="row">
-        <div class="col-lg-2">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-5 col-sm-12 my-2">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="area">Area</label>
@@ -139,7 +139,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
             </select>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-5 col-sm-12 my-2">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <label class="input-group-text" for="maquina">Maquina</label>

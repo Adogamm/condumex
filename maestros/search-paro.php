@@ -1,10 +1,9 @@
 <?php
 include '../databaseconnect/conection.php';
-$id = intval($_GET['id']);
-$selectAreas = "SELECT * FROM TB_CAT_AREA;";
-$selectMachine = "SELECT * FROM TB_CAT_MADE_UP WHERE CAT_MADE_UP_ID = $id;";
-$queryAreas = sqlsrv_query($conexion,$selectAreas);
-$queryMachine = sqlsrv_query($conexion,$selectMachine);
+$area = $_GET['area'];
+$maquina = $_GET['maquina'];
+$selectParos = "SELECT * FROM TB_CAT_SHUTDOWN WHERE AREA = '$area' AND MACHINE = '$maquina';";
+$queryParos = sqlsrv_query($conexion,$selectParos);
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +12,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../styles/sidebar.css">
+  <link rel="stylesheet" href="../styles/styles-monitor.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,7 +24,8 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-  <title>Actualizar compuesto</title>
+
+  <title>Catalogo de paros</title>
 </head>
 
 <body>
@@ -37,7 +38,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
-
       <li>
         <div class="iocn-link">
           <a href="../monitor.php">
@@ -63,7 +63,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
           <li><a class="link_name" href="../maestros.html">Maestros</a></li>
         </ul>
       </li>
-
       <li>
         <a href="../recetas.html">
           <i class='bx bx-bookmark-alt'></i>
@@ -113,40 +112,19 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       </li>
     </ul>
   </div>
-
-
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
-      <span class="text">ACTUALIZAR COMPUESTO</span>
+      <span class="text">CATALOGO DE PAROS</span>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <div class="card">
-            <div class="card-body mx-5 my-2">
-              <h4 class="text-center">ACTUALIZAR COMPUESTO</h4>
-              <form action="update-maestros/update-compuesto.php" method="POST">
-                <?php while($rowsCompuesto = sqlsrv_fetch_array($queryMachine)) { ?>
-                <div class="form-group my-2">
-                  <input type="text" class="form-control" id="id" name="id"
-                    value="<?php echo $rowsCompuesto['CAT_MADE_UP_ID']; ?>" hidden>
-                </div>
-                <div class="form-group my-2">
-                  <label for="Compuestp">Compuesto</label>
-                  <input type="text" class="form-control" id="compuesto" name="compuesto"
-                    value="<?php echo $rowsCompuesto['NAME']; ?>">
-                </div>
-                <div class="form-group my-2">
-                  <label for="Descripcion">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion"
-                    value="<?php echo $rowsCompuesto['DESCRIPTION']; ?>">
-                </div>
-                <?php } ?>
-
-
-                <div class="input-group my-3">
+      <div class="row d-flex justify-content-center">
+        <div class="container">
+          <form action="" method="GET">
+            <div class="row d-flex justify-content-beetween">
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="area">Area</label>
                   </div>
@@ -158,32 +136,100 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                     <option value="Retrabajo">Retrabajo</option>
                   </select>
                 </div>
-                <div class="input-group my-3">
+              </div>
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="maquina">Maquina</label>
                   </div>
                   <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
-
-
-                <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
-              </form>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <input class="mt-2 btn btn-dark d-block mx-auto" type="submit" value="Buscar">
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <a href="maestros/alta-paro.php" class="mt-2 btn btn-dark">Alta</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="myTable" class="table table-hover mt-4">
+                  <thead>
+                    <tr>
+                      <th>Id paro</th>
+                      <th>Nombre</th>
+                      <th>Descripcion</th>
+                      <th>Area</th>
+                      <th>Máquina</th>
+                      <th>Modificar</th>
+                      <th>ELiminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($rows = sqlsrv_fetch_array($queryParos)) { ?>
+                    <tr>
+                      <td>
+                        <?php echo $rows['CAT_SHUTDOWN_ID']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['NAME']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['DESCRIPTION']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['AREA']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['MACHINE']; ?>
+                      </td>
+                      <td><a href="update-paro.php?tipo=TB_CAT_SHUTDOWN&id=<?php echo $rows['CAT_SHUTDOWN_ID']; ?>"
+                          class="btn btn-dark d-block mx-auto">Modificar</a></td>
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_SHUTDOWN_ID'] ?>);"
+                          class="btn btn-danger d-block mx-auto">Eliminar</a></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <script src="../js/select.js"></script>
-    <script src="../js/sidebar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </section>
+  <script src="../js/select.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/gauge.min.js"></script>
+  <script src="../js/monitor.js"></script>
+  <script src="../js/delete-paro-from-search.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../js/export.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 </body>
 
 </html>

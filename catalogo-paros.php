@@ -1,7 +1,7 @@
 <?php
 include 'databaseconnect/conection.php';
-$selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
-$queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
+$selectParos = "SELECT * FROM TB_CAT_SHUTDOWN;";
+$queryParos = sqlsrv_query($conexion,$selectParos);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
-  <title>Catalogo de compuestos</title>
+  <title>Catalogo de paros</title>
 </head>
 
 <body>
@@ -114,12 +114,12 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
-      <span class="text">CATALOGO DE COMPUESTOS</span>
+      <span class="text">CATALOGO DE PAROS</span>
     </div>
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="container">
-          <form action="maestros/search-compuesto.php" method="GET">
+          <form action="maestros/search-paro.php" method="GET">
             <div class="row d-flex justify-content-beetween">
               <div class="col-lg-4 col-sm-12 my-2">
                 <div class="input-group mb-3">
@@ -148,7 +148,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
                 <input class="mt-2 btn btn-dark d-block mx-auto" type="submit" value="Buscar">
               </div>
               <div class="col-lg-2 col-sm-12">
-                <a href="maestros/alta-compuesto.php" class="mt-2 btn btn-dark">Alta</a>
+                <a href="maestros/alta-paro.php" class="mt-2 btn btn-dark">Alta</a>
               </div>
             </div>
           </form>
@@ -162,20 +162,20 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
                 <table id="myTable" class="table table-hover mt-4">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Compuesto</th>
-                      <th>Descripción</th>
-                      <th>Área</th>
+                      <th>Id paro</th>
+                      <th>Nombre</th>
+                      <th>Descripcion</th>
+                      <th>Area</th>
                       <th>Máquina</th>
                       <th>Modificar</th>
                       <th>ELiminar</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php while($rows = sqlsrv_fetch_array($queryCompuestos)) { ?>
+                    <?php while($rows = sqlsrv_fetch_array($queryParos)) { ?>
                     <tr>
                       <td>
-                        <?php echo $rows['CAT_MADE_UP_ID']; ?>
+                        <?php echo $rows['CAT_SHUTDOWN_ID']; ?>
                       </td>
                       <td>
                         <?php echo $rows['NAME']; ?>
@@ -189,9 +189,9 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
                       <td>
                         <?php echo $rows['MACHINE']; ?>
                       </td>
-                      <td><a href="maestros/update-compuesto.php?id=<?php echo $rows['CAT_MADE_UP_ID']; ?>"
+                      <td><a href="maestros/update-paro.php?id=<?php echo $rows['CAT_SHUTDOWN_ID']; ?>"
                           class="btn btn-dark d-block mx-auto">Modificar</a></td>
-                      <td><a onclick="confirmar(<?php echo $rows['CAT_MADE_UP_ID'] ?>);"
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_SHUTDOWN_ID'] ?>);"
                           class="btn btn-danger d-block mx-auto">Eliminar</a></td>
                     </tr>
                     <?php } ?>
@@ -209,7 +209,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <script src="js/gauge.min.js"></script>
   <script src="js/monitor.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/delete.js"></script>
+  <script src="js/delete-paro.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

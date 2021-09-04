@@ -1,9 +1,7 @@
 <?php
 include '../databaseconnect/conection.php';
 $id = intval($_GET['id']);
-$selectAreas = "SELECT * FROM TB_CAT_AREA;";
-$selectMachine = "SELECT * FROM TB_CAT_MADE_UP WHERE CAT_MADE_UP_ID = $id;";
-$queryAreas = sqlsrv_query($conexion,$selectAreas);
+$selectMachine = "SELECT * FROM TB_CAT_SHUTDOWN WHERE CAT_SHUTDOWN_ID = $id;";
 $queryMachine = sqlsrv_query($conexion,$selectMachine);
 ?>
 
@@ -24,7 +22,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-  <title>Actualizar compuesto</title>
+  <title>Actualizar paro</title>
 </head>
 
 <body>
@@ -119,23 +117,23 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
-      <span class="text">ACTUALIZAR COMPUESTO</span>
+      <span class="text">ACTUALIZAR PARO</span>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <div class="card">
             <div class="card-body mx-5 my-2">
-              <h4 class="text-center">ACTUALIZAR COMPUESTO</h4>
-              <form action="update-maestros/update-compuesto.php" method="POST">
+              <h4 class="text-center">ACTUALIZAR PARO</h4>
+              <form action="update-maestros/update-paro.php" method="POST">
                 <?php while($rowsCompuesto = sqlsrv_fetch_array($queryMachine)) { ?>
                 <div class="form-group my-2">
                   <input type="text" class="form-control" id="id" name="id"
-                    value="<?php echo $rowsCompuesto['CAT_MADE_UP_ID']; ?>" hidden>
+                    value="<?php echo $rowsCompuesto['CAT_SHUTDOWN_ID']; ?>" hidden>
                 </div>
                 <div class="form-group my-2">
                   <label for="Compuestp">Compuesto</label>
-                  <input type="text" class="form-control" id="compuesto" name="compuesto"
+                  <input type="text" class="form-control" id="paro" name="paro"
                     value="<?php echo $rowsCompuesto['NAME']; ?>">
                 </div>
                 <div class="form-group my-2">
@@ -144,8 +142,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                     value="<?php echo $rowsCompuesto['DESCRIPTION']; ?>">
                 </div>
                 <?php } ?>
-
-
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="area">Area</label>
@@ -165,8 +161,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                   <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
-
-
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>

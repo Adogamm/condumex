@@ -1,12 +1,3 @@
-<?php
-include '../databaseconnect/conection.php';
-$id = intval($_GET['id']);
-$selectAreas = "SELECT * FROM TB_CAT_AREA;";
-$selectMachine = "SELECT * FROM TB_CAT_MADE_UP WHERE CAT_MADE_UP_ID = $id;";
-$queryAreas = sqlsrv_query($conexion,$selectAreas);
-$queryMachine = sqlsrv_query($conexion,$selectMachine);
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -24,7 +15,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-  <title>Actualizar compuesto</title>
+  <title>Registrar paro</title>
 </head>
 
 <body>
@@ -114,38 +105,34 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
     </ul>
   </div>
 
-
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
-      <span class="text">ACTUALIZAR COMPUESTO</span>
+      <span class="text">REGISTRAR PARO</span>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <div class="card">
             <div class="card-body mx-5 my-2">
-              <h4 class="text-center">ACTUALIZAR COMPUESTO</h4>
-              <form action="update-maestros/update-compuesto.php" method="POST">
-                <?php while($rowsCompuesto = sqlsrv_fetch_array($queryMachine)) { ?>
+              <h4 class="text-center">AGREGAR NUEVO PARO</h4>
+              <form action="insert-maestros/insert-paro.php" method="POST">
                 <div class="form-group my-2">
-                  <input type="text" class="form-control" id="id" name="id"
-                    value="<?php echo $rowsCompuesto['CAT_MADE_UP_ID']; ?>" hidden>
+                  <label for="ID">ID</label>
+                  <input type="number" class="form-control" id="id" name="id" placeholder="ID del nuevo compuesto"
+                    required>
                 </div>
                 <div class="form-group my-2">
-                  <label for="Compuestp">Compuesto</label>
-                  <input type="text" class="form-control" id="compuesto" name="compuesto"
-                    value="<?php echo $rowsCompuesto['NAME']; ?>">
+                  <label for="Compuestp">Paro</label>
+                  <input type="text" class="form-control" id="paro" name="paro" placeholder="Paro"
+                    required>
                 </div>
                 <div class="form-group my-2">
                   <label for="Descripcion">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion"
-                    value="<?php echo $rowsCompuesto['DESCRIPTION']; ?>">
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion"
+                    required>
                 </div>
-                <?php } ?>
-
-
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="area">Area</label>
@@ -165,8 +152,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                   <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
-
-
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>
@@ -174,7 +159,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
         </div>
       </div>
     </div>
-
     <script src="../js/select.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -185,5 +169,4 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
-
 </html>

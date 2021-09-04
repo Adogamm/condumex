@@ -118,37 +118,46 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
     </div>
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div class="col-lg-5 col-sm-12 my-2">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="area">Area</label>
+
+
+
+        <div class="container">
+          <form action="maestros/search-compuesto.php" method="GET">
+            <div class="row d-flex justify-content-beetween">
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="area">Area</label>
+                  </div>
+                  <select class="form-control" id="area" name="area" required>
+                    <option selected>Selecciona...</option>
+                    <option value="Termo plástico">Termo plástico</option>
+                    <option value="Termo fijo">Termo fijo</option>
+                    <option value="Irradiado">Irradiado</option>
+                    <option value="Retrabajo">Retrabajo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="maquina">Maquina</label>
+                  </div>
+                  <select class="form-control" id="maquina" name="maquina" required>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <input class="mt-2 btn btn-dark d-block mx-auto" type="submit" value="Buscar">
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <a href="maestros/alta-compuesto.php" class="mt-2 btn btn-dark">Alta</a>
+              </div>
             </div>
-            <select class="form-control" id="area">
-              <option selected>Selecciona...</option>
-              <option value="Termo plástico">Termo plástico</option>
-              <option value="Termo fijo">Termo fijo</option>
-              <option value="Irradiado">Irradiado</option>
-              <option value="Retrabajo">Retrabajo</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-lg-5 col-sm-12 my-2">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="maquina">Maquina</label>
-            </div>
-            <select class="form-control" id="maquina">
-            </select>
-          </div>
+          </form>
         </div>
       </div>
-      <div class="row mt-4">
-        <div class="col-lg-6">
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="maestros/alta-compuesto.php" class="btn btn-dark">Alta</a>
-          </div>
-        </div>
-      </div>
+
       <div class="row mt-4">
         <div class="col-lg-12">
           <div class="card">

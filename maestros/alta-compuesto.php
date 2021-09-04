@@ -105,7 +105,6 @@
     </ul>
   </div>
 
-
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
@@ -134,9 +133,6 @@
                   <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion"
                     required>
                 </div>
-
-
-
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="area">Area</label>
@@ -156,9 +152,6 @@
                   <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
-
-
-
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>
@@ -166,9 +159,6 @@
         </div>
       </div>
     </div>
-
-
-
     <script src="../js/select.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -179,5 +169,4 @@
       crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
-
 </html>

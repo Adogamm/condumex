@@ -1,9 +1,3 @@
-<?php
-include '../databaseconnect/conection.php';
-$selectAreas = "SELECT * FROM TB_CAT_AREA;";
-$queryAreas = sqlsrv_query($conexion,$selectAreas);
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -127,29 +121,44 @@ $queryAreas = sqlsrv_query($conexion,$selectAreas);
               <form action="insert-maestros/insert-compuesto.php" method="POST">
                 <div class="form-group my-2">
                   <label for="ID">ID</label>
-                  <input type="number" class="form-control" id="id" name="id" placeholder="ID del nuevo compuesto" required>
+                  <input type="number" class="form-control" id="id" name="id" placeholder="ID del nuevo compuesto"
+                    required>
                 </div>
                 <div class="form-group my-2">
                   <label for="Compuestp">Compuesto</label>
-                  <input type="text" class="form-control" id="compuesto" name="compuesto" placeholder="Compuesto" required>
+                  <input type="text" class="form-control" id="compuesto" name="compuesto" placeholder="Compuesto"
+                    required>
                 </div>
                 <div class="form-group my-2">
                   <label for="Descripcion">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" required>
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion"
+                    required>
+                </div>
+
+
+
+                <div class="input-group my-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="area">Area</label>
+                  </div>
+                  <select class="form-control" id="area" name="area" required>
+                    <option selected>Selecciona...</option>
+                    <option value="Termo plástico">Termo plástico</option>
+                    <option value="Termo fijo">Termo fijo</option>
+                    <option value="Irradiado">Irradiado</option>
+                    <option value="Retrabajo">Retrabajo</option>
+                  </select>
                 </div>
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
-                    <label class="input-group-text" for="rol">Área</label>
+                    <label class="input-group-text" for="maquina">Maquina</label>
                   </div>
-                  <select class="form-control" id="area" name="area" required>
-                    <option selected>Seleccione...</option>
-                    <?php while($areasRows = sqlsrv_fetch_array($queryAreas)) { ?>
-                    <option value="<?php echo utf8_encode($areasRows['NAME']); ?>">
-                      <?php echo utf8_encode($areasRows['NAME']); ?>
-                    </option>
-                    <?php } ?>
+                  <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
+
+
+
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>
@@ -158,6 +167,9 @@ $queryAreas = sqlsrv_query($conexion,$selectAreas);
       </div>
     </div>
 
+
+
+    <script src="../js/select.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

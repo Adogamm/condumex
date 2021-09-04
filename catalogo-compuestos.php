@@ -19,7 +19,6 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
     sizes="16x16">
   <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
     sizes="32x32">
-
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
@@ -37,7 +36,6 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
-
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
@@ -63,7 +61,6 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
-
       <li>
         <a href="recetas.html">
           <i class='bx bx-bookmark-alt'></i>
@@ -113,16 +110,12 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       </li>
     </ul>
   </div>
-
   <!-- CONTENIDO DE LA PAGINA -->
-
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' id="open_sidebar"></i>
       <span class="text">CATALOGO DE COMPUESTOS</span>
     </div>
-
-
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-5 col-sm-12 my-2">
@@ -132,10 +125,10 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
             </div>
             <select class="form-control" id="area">
               <option selected>Selecciona...</option>
-                <option value="Termo plástico">Termo plástico</option>
-                <option value="Termo fijo">Termo fijo</option>
-                <option value="Irradiado">Irradiado</option>
-                <option value="Retrabajo">Retrabajo</option>
+              <option value="Termo plástico">Termo plástico</option>
+              <option value="Termo fijo">Termo fijo</option>
+              <option value="Irradiado">Irradiado</option>
+              <option value="Retrabajo">Retrabajo</option>
             </select>
           </div>
         </div>
@@ -148,8 +141,6 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
             </select>
           </div>
         </div>
-
-
       </div>
       <div class="row mt-4">
         <div class="col-lg-6">
@@ -207,15 +198,8 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
         </div>
       </div>
     </div>
-
-
-
-
-
   </section>
-
   <script src="js/select.js"></script>
-
   <script src="js/sidebar.js"></script>
   <script src="js/gauge.min.js"></script>
   <script src="js/monitor.js"></script>

@@ -143,22 +143,30 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                   <input type="text" class="form-control" id="descripcion" name="descripcion"
                     value="<?php echo $rowsCompuesto['DESCRIPTION']; ?>">
                 </div>
+                <?php } ?>
+
+
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
-                    <label class="input-group-text" for="rol">Área</label>
+                    <label class="input-group-text" for="area">Area</label>
                   </div>
-                  <select class="form-control" id="area" name="area">
-                    <option selected>
-                      <?php echo $rowsCompuesto['AREA']; ?>
-                    </option>
-                    <?php } ?>
-                    <?php while($areasRows = sqlsrv_fetch_array($queryAreas)) { ?>
-                    <option value="<?php echo utf8_encode($areasRows['NAME']); ?>">
-                      <?php echo utf8_encode($areasRows['NAME']); ?>
-                    </option>
-                    <?php } ?>
+                  <select class="form-control" id="area" name="area" required>
+                    <option selected>Selecciona...</option>
+                    <option value="Termo plástico">Termo plástico</option>
+                    <option value="Termo fijo">Termo fijo</option>
+                    <option value="Irradiado">Irradiado</option>
+                    <option value="Retrabajo">Retrabajo</option>
                   </select>
                 </div>
+                <div class="input-group my-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="maquina">Maquina</label>
+                  </div>
+                  <select class="form-control" id="maquina" name="maquina" required>
+                  </select>
+                </div>
+
+
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>
@@ -167,6 +175,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       </div>
     </div>
 
+    <script src="../js/select.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

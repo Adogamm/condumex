@@ -1,7 +1,20 @@
 <?php
 
-$servername = "laboratoriosql.c829vdik7kmt.us-east-1.rds.amazonaws.com";
-$connectionInfo = array("Database"=>"CONDUMEX","UID"=>"admin","PWD"=>"labsql01");
-$conexion = sqlsrv_connect($servername,$connectionInfo);
+// $serverName='ADOGAMM-OMEN\MSSQLSERVER1';
+// $conInfo=array("Database"=>"PRUEBAS");
+// $conexion = sqlsrv_connect($serverName,$conInfo);
+
+// if(!$conexion) {
+//     echo "Conexion fallida";
+// }
+
+$serverName = 'ADOGAMM-OMEN\CONDUMEX';
+$connectionInfo = array('Database'=>'PRUEBAS', 'UID' => 'pradiot', 'PWD' => 'pradiot');
+$conexion = sqlsrv_connect( $serverName, $connectionInfo);
+
+
+
 
 ?>
+
+

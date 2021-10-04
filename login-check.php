@@ -1,9 +1,9 @@
 <?php
 // Datos de la BDD
-$serverName = "laboratoriosql.c829vdik7kmt.us-east-1.rds.amazonaws.com";
-$username = "admin";
-$password = "labsql01";
-$database = "CONDUMEX";
+$serverName = "ADOGAMM-OMEN\CONDUMEX";
+$username = "pradiot";
+$password = "pradiot";
+$database = "PRUEBAS";
 // Conexion bdd con PDO
 try {
     $conn = new PDO("sqlsrv:server = $serverName; Database = $database", $username, $password);

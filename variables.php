@@ -229,7 +229,6 @@
     </section>
     <div id="link_wrapper"></div>
 
-
     <script src="js/sidebar.js"></script>
     <script src="js/monitor.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

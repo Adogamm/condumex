@@ -13,8 +13,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" href="../styles/sidebar.css">
   <link href='../styles/icons/all.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles\bootstrap\bootstrap.min.css">
   <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
     sizes="16x16">
   <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"

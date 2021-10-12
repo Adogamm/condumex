@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../databaseconnect/conection.php';
 $id = intval($_GET['id']);
 $selectAreas = "SELECT * FROM TB_CAT_AREA;";
@@ -27,85 +28,83 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
 </head>
 
 <body>
-  <div class="sidebar" id="sidebar">
+<div class="sidebar" id="sidebar">
     <div class="logo-details">
-      <img src="../images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name text-center mt-3">CONDUMEX <br>
-        <h6>AUTOPARTES</h6>
-      </span>
+      <img src="images/logo-sidebar.png" alt="logo condumex">
+      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
 
       <li>
         <div class="iocn-link">
-          <a href="../monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <a href="monitor.php">
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
-          <li><a href="../monitor-piso-details.php?id_area=2">Irradiado</a></li>
-          <li><a href="../monitor-piso-details.php?id_area=3">Retrabajo</a></li>
-          <li><a href="../monitor-piso-details.php?id_area=4">Termo fijo</a></li>
-          <li><a href="../monitor-piso-details.php?id_area=1">Termo plastico</a></li>
+          <li><a href="monitor-piso-details.php?id_area=2">Irradiado</a></li>
+          <li><a href="monitor-piso-details.php?id_area=3">Retrabajo</a></li>
+          <li><a href="monitor-piso-details.php?id_area=4">Termo fijo</a></li>
+          <li><a href="monitor-piso-details.php?id_area=1">Termo plastico</a></li>
         </ul>
       </li>
       <li>
-        <a href="../maestros.php">
-          <i class='bx bx-wrench'></i>
+        <a href="maestros.php">
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../maestros.php">Maestros</a></li>
+          <li><a class="link_name" href="maestros.php">Maestros</a></li>
         </ul>
       </li>
-
+      
       <li>
-        <a href="../recetas.php">
-          <i class='bx bx-bookmark-alt'></i>
+        <a href="recetas.php">
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../recetas.php">Recetas</a></li>
+          <li><a class="link_name" href="recetas.php">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="../bitacora-eventos.php">
-          <i class='bx bx-calendar-event'></i>
+        <a href="bitacora-eventos.php">
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../bitacora-eventos.php">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="bitacora-eventos.php">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="../administracion-usuarios.php">Administración</a></li>
-          <li><a href="../roles-privilegios.php">Roles y privilegios</a></li>
+          <li><a href="administracion-usuarios.php">Administración</a></li>
+          <li><a href="roles-privilegios.php">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
         <div class="profile-content">
-          <img src="../images/avatar.png" alt="profileImg">
+          <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+          <a href="./loggout.php">
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>

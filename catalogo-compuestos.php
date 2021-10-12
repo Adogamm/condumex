@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'databaseconnect/conection.php';
 $selectCompuestos = "SELECT * FROM TB_CAT_MADE_UP;";
 $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
@@ -18,30 +19,29 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
     sizes="16x16">
   <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
     sizes="32x32">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="styles\datatables\jquery.dataTables.css">
+  <link rel="stylesheet" href="styles\datatables\jquery.dataTables.min.css">
+  <link rel="stylesheet" href="styles\datatables\buttons.dataTables.min.css">
 
   <title>Catalogo de compuestos</title>
 </head>
 
 <body>
-  <div class="sidebar" id="sidebar">
+ <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name text-center mt-3">CONDUMEX <br>
-        <h6>AUTOPARTES</h6>
-      </span>
+      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
+
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -53,16 +53,17 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       </li>
       <li>
         <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
+      
       <li>
         <a href="recetas.html">
-          <i class='bx bx-bookmark-alt'></i>
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
@@ -71,7 +72,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       </li>
       <li>
         <a href="bitacora-eventos.html">
-          <i class='bx bx-calendar-event'></i>
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
@@ -81,10 +82,10 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
@@ -97,12 +98,12 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+          <a href="./loggout.php">
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>
@@ -215,17 +216,19 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  
+  <script src="js\datatables\jquery.min.js"></script>
   <script type="text/javascript" charset="utf8"
-    src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    src="js\datatables\jquery.dataTables.js"></script>
+  <script src="js\datatables\jquery-3.5.1.js"></script>
+  <script src="js\datatables\jquery.dataTables.min.js"></script>
+  <script src="js\datatables\dataTables.buttons.min.js"></script>
+  <script src="js\datatables\jszip.min.js"></script>
+  <script src="js\datatables\pdfmake.min.js"></script>
+  <script src="js\datatables\vfs_fonts.js"></script>
+  <script src="js\datatables\buttons.html5.min.js"></script>
+  <script src="js\datatables\buttons.print.min.js"></script>
   <script src="js/export.js"></script>
 </body>
 

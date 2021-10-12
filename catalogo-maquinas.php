@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -17,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 
-    <title>Catalogo de familia calibre</title>
+    <title>Catalogo de máquinas</title>
 </head>
 
 <body>
@@ -110,7 +113,7 @@
     <section class="home-section">
         <div class="home-content">
             <i class='bx bx-menu' id="open_sidebar"></i>
-            <span class="text">CATALOGO DE FAMILIA CALIBRE</span>
+            <span class="text">CATALOGO DE MÁQUINAS</span>
         </div>
         <div class="container">
             <div class="row">
@@ -148,20 +151,20 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Familia calibre</th>
+                                            <th>Maquina</th>
                                             <th>Descripción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>01</td>
-                                            <td>FAMC01</td>
-                                            <td>Familia calibre 01</td>
+                                            <td>LAP601</td>
+                                            <td>Termo plástico 601</td>
                                         </tr>
                                         <tr>
                                             <td>02</td>
-                                            <td>FAMC02</td>
-                                            <td>Familia calibre 02</td>
+                                            <td>LAP602</td>
+                                            <td>Termo plástico 602</td>
                                         </tr>
                                     </tbody>
                                 </table>

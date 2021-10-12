@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'databaseconnect/conection.php';
 $selectParos = "SELECT * FROM TB_CAT_SHUTDOWN;";
 $queryParos = sqlsrv_query($conexion,$selectParos);
@@ -26,22 +27,21 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
 </head>
 
 <body>
-  <div class="sidebar" id="sidebar">
+ <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
-      <span class="logo_name text-center mt-3">CONDUMEX <br>
-        <h6>AUTOPARTES</h6>
-      </span>
+      <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
     <ul class="nav-links">
+
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -53,16 +53,17 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
       </li>
       <li>
         <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
+      
       <li>
         <a href="recetas.html">
-          <i class='bx bx-bookmark-alt'></i>
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
@@ -71,7 +72,7 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
       </li>
       <li>
         <a href="bitacora-eventos.html">
-          <i class='bx bx-calendar-event'></i>
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
@@ -81,10 +82,10 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
@@ -97,12 +98,12 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+          <a href="./loggout.php">
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>

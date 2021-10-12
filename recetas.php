@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -46,31 +47,31 @@
         </ul>
       </li>
       <li>
-        <a href="maestros.html">
+        <a href="maestros.php">
         <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.html">Maestros</a></li>
+          <li><a class="link_name" href="maestros.php">Maestros</a></li>
         </ul>
       </li>
       
       <li>
-        <a href="recetas.html">
+        <a href="recetas.php">
         <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="recetas.html">Recetas</a></li>
+          <li><a class="link_name" href="recetas.php">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="bitacora-eventos.html">
+        <a href="bitacora-eventos.php">
         <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="bitacora-eventos.php">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -83,8 +84,8 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="administracion-usuarios.html">Administración</a></li>
-          <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
+          <li><a href="administracion-usuarios.php">Administración</a></li>
+          <li><a href="roles-privilegios.php">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
@@ -115,7 +116,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="nueva-receta.html" class="btn btn-dark">Nueva receta</a>
+                        <a href="nueva-receta.php" class="btn btn-dark">Nueva receta</a>
                         <!-- <button type="button" class="btn btn-dark">Editar receta</button> -->
                         <!-- <button type="button" class="btn btn-dark">Eliminar receta</button> -->
                         <!-- <button type="button" class="btn btn-dark">Nueva receta</button> -->
@@ -214,7 +215,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.php5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
     <script src="js/export.js"></script>
 </body>

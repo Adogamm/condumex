@@ -54,30 +54,30 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
         </ul>
       </li>
       <li>
-        <a href="../maestros.html">
+        <a href="../maestros.php">
           <i class='bx bx-wrench'></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../maestros.html">Maestros</a></li>
+          <li><a class="link_name" href="../maestros.php">Maestros</a></li>
         </ul>
       </li>
       <li>
-        <a href="../recetas.html">
+        <a href="../recetas.php">
           <i class='bx bx-bookmark-alt'></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../recetas.html">Recetas</a></li>
+          <li><a class="link_name" href="../recetas.php">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="../bitacora-eventos.html">
+        <a href="../bitacora-eventos.php">
           <i class='bx bx-calendar-event'></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="../bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="../bitacora-eventos.php">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -90,8 +90,8 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="../administracion-usuarios.html">Administración</a></li>
-          <li><a href="../roles-privilegios.html">Roles y privilegios</a></li>
+          <li><a href="../administracion-usuarios.php">Administración</a></li>
+          <li><a href="../roles-privilegios.php">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
@@ -230,7 +230,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.php5.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
   <script src="../js/export.js"></script>
 </body>

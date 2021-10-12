@@ -52,31 +52,31 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
         </ul>
       </li>
       <li>
-        <a href="maestros.html">
+        <a href="maestros.php">
         <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.html">Maestros</a></li>
+          <li><a class="link_name" href="maestros.php">Maestros</a></li>
         </ul>
       </li>
       
       <li>
-        <a href="recetas.html">
+        <a href="recetas.php">
         <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="recetas.html">Recetas</a></li>
+          <li><a class="link_name" href="recetas.php">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="bitacora-eventos.html">
+        <a href="bitacora-eventos.php">
         <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="bitacora-eventos.php">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -89,8 +89,8 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="administracion-usuarios.html">Administración</a></li>
-          <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
+          <li><a href="administracion-usuarios.php">Administración</a></li>
+          <li><a href="roles-privilegios.php">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
@@ -227,7 +227,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <script src="js\datatables\jszip.min.js"></script>
   <script src="js\datatables\pdfmake.min.js"></script>
   <script src="js\datatables\vfs_fonts.js"></script>
-  <script src="js\datatables\buttons.html5.min.js"></script>
+  <script src="js\datatables\buttons.php5.min.js"></script>
   <script src="js\datatables\buttons.print.min.js"></script>
   <script src="js/export.js"></script>
 </body>

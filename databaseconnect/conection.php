@@ -8,11 +8,15 @@
 //     echo "Conexion fallida";
 // }
 
-$serverName = '10.68.181.79';
-$connectionInfo = array('Database'=>'CONDUMEX', 'UID' => 'UserDK', 'PWD' => 'iUx9090##Wer');
+$serverName = 'ADOGAMM-OMEN\CONDUMEX';
+$connectionInfo = array('Database'=>'CONDUMEX', 'UID' => 'pradiot', 'PWD' => 'pradiot');
 $conexion = sqlsrv_connect( $serverName, $connectionInfo);
 
-
+if(!$conexion) {
+    echo "Conexion fallida";
+} else {
+    echo "Conexion exitosa";
+}
 
 
 ?>

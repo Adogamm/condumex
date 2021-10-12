@@ -1,4 +1,5 @@
 <?php
+session_start();
     date_default_timezone_set("America/Mexico_City");
     include('databaseconnect/conection.php');
     $maquina = $_GET['maquina'];
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="styles/led.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/styles-monitor.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='styles/icons/all.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -46,10 +47,10 @@
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -61,7 +62,7 @@
       </li>
       <li>
         <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
@@ -71,7 +72,7 @@
       
       <li>
         <a href="recetas.html">
-          <i class='bx bx-bookmark-alt'></i>
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
@@ -80,7 +81,7 @@
       </li>
       <li>
         <a href="bitacora-eventos.html">
-          <i class='bx bx-calendar-event'></i>
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
@@ -90,10 +91,10 @@
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
@@ -106,12 +107,12 @@
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+          <a href="./loggout.php">
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>

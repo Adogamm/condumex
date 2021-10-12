@@ -1,5 +1,6 @@
 <!-- #TODO CALCULAR RENDIMIENTO POR AREA -->
 <?php
+session_start();
 include ("seguridad.php");
 header("Content-Type: text/html;charset=utf-8");
 include 'databaseconnect/conection.php';
@@ -20,7 +21,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
   <!-- <meta charset="UTF-8"> -->
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/sidebar.css">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link href='styles/icons/all.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -43,10 +44,10 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -58,7 +59,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       </li>
       <li>
         <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
@@ -68,7 +69,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       
       <li>
         <a href="recetas.html">
-          <i class='bx bx-bookmark-alt'></i>
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
@@ -77,7 +78,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       </li>
       <li>
         <a href="bitacora-eventos.html">
-          <i class='bx bx-calendar-event'></i>
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
@@ -87,10 +88,10 @@ $query1 = sqlsrv_query($conexion,$select_avg);
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
@@ -103,12 +104,12 @@ $query1 = sqlsrv_query($conexion,$select_avg);
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name"><?php echo $_SESSION['NOMBRE'];?></div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
           <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
           <a href="./loggout.php">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>
@@ -134,7 +135,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                 <div class="card my-2">
                   <div class="card-body my-2">
                     <h5 class="card-title text-center">
-                      <?php $final = $maquinas['NAME']; echo $final ?>
+                      <?php $final = $maquinas['NAME']; echo utf8_encode($final); ?>
                     </h5>
                     <canvas data-value="<?php echo $porcentaje['RENDIMIENTO'] ?>" data-type="radial-gauge"
                       data-width="150" data-height="150" data-units="%OEE" data-min-value="0" data-max-value="100"
@@ -147,7 +148,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
                       data-needle-type="arrow" data-needle-width="2" data-needle-circle-size="7"
                       data-needle-circle-outer="true" data-needle-circle-inner="false" data-animation-duration="750"
                       data-animation-rule="linear" class="d-block mx-auto"
-                      id="medidor<?php echo $maquinas['TIPO_MAQUINA_HIDDEN'] ?>"></canvas>
+                      id="medidor<?php echo $maquinas['DESCRIPTION'] ?>"></canvas>
                     <a href="monitor-piso-details.php?id_area=<?php echo $maquinas['CAT_AREA_ID'] ?>"
                       class="my-2 btn btn-dark text-white d-block mx-auto">Detalles</a>
                   </div>
@@ -200,6 +201,7 @@ $query1 = sqlsrv_query($conexion,$select_avg);
           </div>
         </div>
       </div>
+    </div>
   </section>
   <div id="link_wrapper"></div>
 

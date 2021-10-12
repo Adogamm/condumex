@@ -1,4 +1,5 @@
-<?php 
+<?php
+    session_start();
     include 'databaseconnect/conection.php';
     $maquina = $_GET['maquina'];
     setcookie('maquina',$maquina,time()+3600);
@@ -8,9 +9,9 @@
         $area = $rowNombres['AREA'];
         $linea = $rowNombres['LINEA'];
     }
-    $selectVariablesBool = "SELECT * FROM TB_MEASUREMENT_LIVE WHERE TYPE = 'BOOL' AND LINE = '$maquina';";
+    $selectVariablesBool = "SELECT * FROM TB_MEASUREMENT_LIVE WHERE TIPO_VARIABLE = 'BOOL' AND ID_MACHINE = '$maquina';";
     $bools = sqlsrv_query($conexion,$selectVariablesBool);
-    $selectVariables = "SELECT * FROM TB_MEASUREMENT_LIVE WHERE TYPE <> 'BOOL' AND LINE = '$maquina';";
+    $selectVariables = "SELECT * FROM TB_MEASUREMENT_LIVE WHERE TIPO_VARIABLE <> 'BOOL' AND ID_MACHINE = '$maquina';";
     $variables = sqlsrv_query($conexion,$selectVariables);
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='styles/icons/all.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
@@ -44,10 +45,10 @@
       <li>
         <div class="iocn-link">
           <a href="monitor.php">
-            <i class='bx bx-grid-alt'></i>
+          <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
@@ -59,7 +60,7 @@
       </li>
       <li>
         <a href="maestros.html">
-          <i class='bx bx-wrench'></i>
+        <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
@@ -69,7 +70,7 @@
       
       <li>
         <a href="recetas.html">
-          <i class='bx bx-bookmark-alt'></i>
+        <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
@@ -78,7 +79,7 @@
       </li>
       <li>
         <a href="bitacora-eventos.html">
-          <i class='bx bx-calendar-event'></i>
+        <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
@@ -88,10 +89,10 @@
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-user'></i>
+          <i class="far fa-user"></i>
             <span class="link_name">Usuarios</span>
           </a>
-          <i class='bx bxs-chevron-down arrow'></i>
+          <i class="fas fa-caret-down arrow"></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
@@ -104,12 +105,12 @@
           <img src="images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
-          <div class="profile_name">Prem Shahi</div>
-          <div class="job">Web Desginer</div>
+          <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>
+          <div class="job"><?php echo $_SESSION['ROL']; ?></div>
         </div>
         <div>
-          <a href="#">
-            <i class='bx bx-log-out mx-4' style="color: #fff;"></i>
+          <a href="./loggout.php">
+            <i class="fas fa-sign-out-alt" style="color: #fff; margin-right: 20px; font-size:25px"></i>
           </a>
         </div>
       </div>
@@ -191,9 +192,9 @@
                                             <div class="row">
                                             <?php while($rowsBool = sqlsrv_fetch_array($bools)){ ?>
                                                 <div class="col-lg-6 col-sm-12 mt-2">
-                                                    <div class="box green" id="led<?php echo $rowsBool['ID'] ?>"></div>
+                                                    <div class="box green" id="led<?php echo $rowsBool['ID_VARIABLE_SHOW'] ?>"></div>
                                                     <small>
-                                                        <?php echo $rowsBool['TAG'] ?>
+                                                        <?php echo $rowsBool['ID_VARIABLE_SHOW'] ?>
                                                     </small>
                                                 </div>
                                             <?php } ?>
@@ -213,7 +214,7 @@
                                             <div class="row">
                                                 <?php while($rowsVariables = sqlsrv_fetch_array($variables)){ ?>
                                                     <div class="col-lg-6 col-sm-2 my-2">
-                                                        <small id="variable<?php echo $rowsVariables['ID']; ?>"></small>
+                                                        <small id="variable<?php echo $rowsVariables['ID_VARIABLE_SHOW']; ?>"></small>
                                                     </div>
                                                 <?php } ?>
                                             </div>
@@ -228,8 +229,6 @@
         </div>
     </section>
     <div id="link_wrapper"></div>
-
-    <script src="js/sidebar.js"></script>
     <script src="js/monitor.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

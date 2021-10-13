@@ -31,7 +31,7 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
 <body>
 <div class="sidebar" id="sidebar">
     <div class="logo-details">
-      <img src="images/logo-sidebar.png" alt="logo condumex">
+      <img src="../images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
       <span><i class='' id="close_sidebar"></i></span>
     </div>
@@ -39,7 +39,7 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
 
       <li>
         <div class="iocn-link">
-          <a href="monitor.php">
+          <a href="../monitor.php">
           <i class="fas fa-border-all"></i>
             <span class="link_name">Monitor piso</span>
           </a>
@@ -47,38 +47,38 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Monitor piso</a></li>
-          <li><a href="monitor-piso-details.php?id_area=2">Irradiado</a></li>
-          <li><a href="monitor-piso-details.php?id_area=3">Retrabajo</a></li>
-          <li><a href="monitor-piso-details.php?id_area=4">Termo fijo</a></li>
-          <li><a href="monitor-piso-details.php?id_area=1">Termo plastico</a></li>
+          <li><a href="../monitor-piso-details.php?id_area=2">Irradiado</a></li>
+          <li><a href="../monitor-piso-details.php?id_area=3">Retrabajo</a></li>
+          <li><a href="../monitor-piso-details.php?id_area=4">Termo fijo</a></li>
+          <li><a href="../monitor-piso-details.php?id_area=1">Termo plastico</a></li>
         </ul>
       </li>
       <li>
-        <a href="maestros.php">
+        <a href="../maestros.php">
         <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.php">Maestros</a></li>
+          <li><a class="link_name" href="../maestros.php">Maestros</a></li>
         </ul>
       </li>
       
       <li>
-        <a href="recetas.php">
+        <a href="../recetas.php">
         <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="recetas.php">Recetas</a></li>
+          <li><a class="link_name" href="../recetas.php">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="bitacora-eventos.php">
+        <a href="../bitacora-eventos.php">
         <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.php">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="../bitacora-eventos.php">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -91,13 +91,13 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="administracion-usuarios.php">Administración</a></li>
-          <li><a href="roles-privilegios.php">Roles y privilegios</a></li>
+          <li><a href="../administracion-usuarios.php">Administración</a></li>
+          <li><a href="../roles-privilegios.php">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
         <div class="profile-content">
-          <img src="images/avatar.png" alt="profileImg">
+          <img src="../images/avatar.png" alt="profileImg">
         </div>
         <div class="name-job">
           <div class="profile_name"><?php echo $_SESSION['NOMBRE']; ?></div>

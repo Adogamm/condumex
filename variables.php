@@ -20,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js\charts\chart.js"></script>
     <link href='styles/icons/all.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles\bootstrap\bootstrap.min.css">
     <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
@@ -117,11 +117,11 @@
     </ul>
   </div>
 
+  <!-- CONTENIDO DE LA PÁGINA -->
 
-    <!-- CONTENIDO DE LA PÁGINA -->
-    <section class="home-section">
-        <div class="home-content">
-            <i class="fas fa-bars" id="open_sidebar"></i>
+  <section class="home-section">
+    <div class="home-content">
+      <i class="fas fa-bars" id="open_sidebar"></i>
             <span class="text"><?php echo $area ?>/<?php echo $linea ?></span>
         </div>
         <div class="container">
@@ -228,11 +228,13 @@
         </div>
     </section>
     <div id="link_wrapper"></div>
-    <script src="js/monitor.js"></script>
-      <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
-    <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/select.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/select.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/gauge.min.js"></script>
+  <script src="js/monitor.js"></script>
+  <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
 </body>
 <script src="js/live/live-variables.js"></script>
 

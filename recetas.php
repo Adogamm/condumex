@@ -210,7 +210,7 @@
   <script src="js\datatables\jszip.min.js"></script>
   <script src="js\datatables\pdfmake.min.js"></script>
   <script src="js\datatables\vfs_fonts.js"></script>
-  <script src="js\datatables\buttons.php5.min.js"></script>
+  <script src="js\datatables\buttons.html5.min.js"></script>
   <script src="js\datatables\buttons.print.min.js"></script>
 </body>
 

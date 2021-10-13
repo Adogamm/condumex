@@ -210,26 +210,21 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
   <script src="../js/sidebar.js"></script>
   <script src="../js/gauge.min.js"></script>
   <script src="../js/monitor.js"></script>
-  <script src="../js/delete-paro-from-search.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-  crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../js\sweetAlert\sweetAlert.js"></script>
+  <script src="../js/delete.js"></script>
+  <script src="../js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="../js\bootstrap\bootstrap.bundle.min.js"></script>
+  <script src="../js\datatables\jquery.min.js"></script>
+  <script type=../"text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
+  <script src="../js\datatables\jquery-3.5.1.js"></script>
+  <script src="../js\datatables\jquery.dataTables.min.js"></script>
+  <script src="../js\datatables\dataTables.buttons.min.js"></script>
+  <script src="../js\datatables\jszip.min.js"></script>
+  <script src="../js\datatables\pdfmake.min.js"></script>
+  <script src="../js\datatables\vfs_fonts.js"></script>
+  <script src="../js\datatables\buttons.html5.min.js"></script>
+  <script src="../js\datatables\buttons.print.min.js"></script>
   <script src="../js/export.js"></script>
-  <script type="text/javascript" charset="utf8"
-    src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.php5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 </body>
 
 </html>

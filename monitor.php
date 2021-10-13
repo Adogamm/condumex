@@ -57,31 +57,31 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </ul>
       </li>
       <li>
-        <a href="maestros.php">
+        <a href="maestros.html">
         <i class="fas fa-wrench"></i>
           <span class="link_name">Maestros</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="maestros.php">Maestros</a></li>
+          <li><a class="link_name" href="maestros.html">Maestros</a></li>
         </ul>
       </li>
       
       <li>
-        <a href="recetas.php">
+        <a href="recetas.html">
         <i class="far fa-bookmark"></i>
           <span class="link_name">Recetas</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="recetas.php">Recetas</a></li>
+          <li><a class="link_name" href="recetas.html">Recetas</a></li>
         </ul>
       </li>
       <li>
-        <a href="bitacora-eventos.php">
+        <a href="bitacora-eventos.html">
         <i class="far fa-calendar"></i>
           <span class="link_name">Bitacora de eventos</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="bitacora-eventos.php">Bitacora de eventos</a></li>
+          <li><a class="link_name" href="bitacora-eventos.html">Bitacora de eventos</a></li>
         </ul>
       </li>
       <li>
@@ -94,8 +94,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Usuarios</a></li>
-          <li><a href="administracion-usuarios.php">Administración</a></li>
-          <li><a href="roles-privilegios.php">Roles y privilegios</a></li>
+          <li><a href="administracion-usuarios.html">Administración</a></li>
+          <li><a href="roles-privilegios.html">Roles y privilegios</a></li>
         </ul>
       </li>
       <div class="profile-details">
@@ -208,12 +208,8 @@ $query1 = sqlsrv_query($conexion,$select_avg);
   <script src="js/sidebar.js"></script>
   <script src="js/gauge.min.js"></script>
   <script src="js/monitor.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
 </body>
 <script src="js/live/live-monitor.js"></script>
 

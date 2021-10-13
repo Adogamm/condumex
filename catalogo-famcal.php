@@ -1,30 +1,33 @@
 <?php
-  session_start();
+session_start();
+include 'databaseconnect/conection.php';
+$selectFamcal = "SELECT * FROM TB_CAT_FAM_CALIBER;";
+$queryFamcal = sqlsrv_query($conexion,$selectFamcal);
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/sidebar.css">
-    <link rel="stylesheet" href="styles/styles-monitor.css">
-    <link href='styles/icons/all.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles\bootstrap\bootstrap.min.css">
-    <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
-        sizes="16x16">
-    <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
-        sizes="32x32">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/styles-monitor.css">
+  <link href='styles/icons/all.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles\bootstrap\bootstrap.min.css">
+  <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
+    sizes="16x16">
+  <link rel="icon" href="https://www.condumex.com.mx/wp-content/uploads/2020/05/favicon.png" type="image/png"
+    sizes="32x32">
+  <link rel="stylesheet" type="text/css" href="styles\datatables\jquery.dataTables.css">
+  <link rel="stylesheet" href="styles\datatables\jquery.dataTables.min.css">
+  <link rel="stylesheet" href="styles\datatables\buttons.dataTables.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-
-    <title>Catalogo de familia calibre</title>
+  <title>Catalogo de familia calibre</title>
 </head>
 
 <body>
-    <div class="sidebar" id="sidebar">
+ <div class="sidebar" id="sidebar">
     <div class="logo-details">
       <img src="images/logo-sidebar.png" alt="logo condumex">
       <span class="logo_name text-center mt-3">CONDUMEX <br> <h6>AUTOPARTES</h6></span>
@@ -107,82 +110,109 @@
       </li>
     </ul>
   </div>
-
-    <!-- CONTENIDO DE LA PAGINA -->
-
-    <section class="home-section">
-        <div class="home-content">
-            <i class='bx bx-menu' id="open_sidebar"></i>
-            <span class="text">CATALOGO DE FAMILIA CALIBRE</span>
-        </div>
+  <!-- CONTENIDO DE LA PAGINA -->
+  <section class="home-section">
+    <div class="home-content">
+      <i class="fas fa-bars" id="open_sidebar"></i>
+      <span class="text">CATALOGO DE FAMILIA CALIBE</span>
+    </div>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Area</option>
-                        <option value="1">Estirado grueso</option>
-                        <option value="2">Estirado fino</option>
-                        <option value="3">Termo plasticos</option>
-                        <option value="4">Termo fijos</option>
-                        <option value="5">Irradiado</option>
-                        <option value="6">Reunido</option>
-                    </select>
+          <form action="maestros/search-famcal.php" method="GET">
+            <div class="row d-flex justify-content-beetween">
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="area">Area</label>
+                  </div>
+                  <select class="form-control" id="area" name="area" required>
+                    <option selected>Selecciona...</option>
+                    <option value="Termo plástico">Termo plástico</option>
+                    <option value="Termo fijo">Termo fijo</option>
+                    <option value="Irradiado">Irradiado</option>
+                    <option value="Retrabajo">Retrabajo</option>
+                  </select>
                 </div>
-                <div class="col-lg-2">
-
-                    
+              </div>
+              <div class="col-lg-4 col-sm-12 my-2">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="maquina">Maquina</label>
+                  </div>
+                  <select class="form-control" id="maquina" name="maquina" required>
+                  </select>
                 </div>
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <input class="mt-2 btn btn-dark d-block mx-auto" type="submit" value="Buscar">
+              </div>
+              <div class="col-lg-2 col-sm-12">
+                <a href="maestros/alta-compuesto.php" class="mt-2 btn btn-dark">Alta</a>
+              </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-lg-6">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-dark">Alta</button>
-                        <button type="button" class="btn btn-dark">Borrar</button>
-                        <button type="button" class="btn btn-dark">Modificar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="myTable" class="table table-hover mt-4">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Familia calibre</th>
-                                            <th>Descripción</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>01</td>
-                                            <td>FAMC01</td>
-                                            <td>Familia calibre 01</td>
-                                        </tr>
-                                        <tr>
-                                            <td>02</td>
-                                            <td>FAMC02</td>
-                                            <td>Familia calibre 02</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </form>
         </div>
-    </section>
-
-
-    <script src="js/sidebar.js"></script>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/monitor.js"></script>
-    <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
-    <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
-      <script src="js\datatables\jquery.min.js"></script>
+      </div>
+      <div class="row mt-4">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="myTable" class="table table-hover mt-4">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Familia Calibre</th>
+                      <th>Descripción</th>
+                      <th>Área</th>
+                      <th>Máquina</th>
+                      <th>Modificar</th>
+                      <th>ELiminar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($rows = sqlsrv_fetch_array($queryFamcal)) { ?>
+                    <tr>
+                      <td>
+                        <?php echo $rows['CAT_FAM_CALIBER_ID']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['NAME']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['DESCRIPTION']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['AREA']; ?>
+                      </td>
+                      <td>
+                        <?php echo $rows['MACHINE']; ?>
+                      </td>
+                      <td><a href="maestros/update-famcal.php?id=<?php echo $rows['CAT_FAM_CALIBER_ID']; ?>"
+                          class="btn btn-dark d-block mx-auto">Modificar</a></td>
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_FAM_CALIBER_ID'] ?>);"
+                          class="btn btn-danger d-block mx-auto">Eliminar</a></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/select.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/gauge.min.js"></script>
+  <script src="js/monitor.js"></script>
+  <script src="js\sweetAlert\sweetAlert.js"></script>
+  <script src="js/delete.js"></script>
+  <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
+  <script src="js\datatables\jquery.min.js"></script>
   <script type="text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
   <script src="js\datatables\jquery-3.5.1.js"></script>
   <script src="js\datatables\jquery.dataTables.min.js"></script>
@@ -192,6 +222,7 @@
   <script src="js\datatables\vfs_fonts.js"></script>
   <script src="js\datatables\buttons.html5.min.js"></script>
   <script src="js\datatables\buttons.print.min.js"></script>
+  <script src="js/export.js"></script>
 </body>
 
 </html>

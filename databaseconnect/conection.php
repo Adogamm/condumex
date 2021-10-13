@@ -4,11 +4,11 @@ $connectionInfo = array('Database'=>'CONDUMEX', 'UID' => 'pradiot', 'PWD' => 'pr
 $conexion = sqlsrv_connect( $serverName, $connectionInfo); //Conexion a SQL Server
 
 //Pruebas de conexion
-if(!$conexion) {
-    echo "Conexion fallida";
-} else {
-    echo "Conexion exitosa";
-}
+// if(!$conexion) {
+//     echo "Conexion fallida";
+// } else {
+//     echo "Conexion exitosa";
+// }
 
 
 ?>

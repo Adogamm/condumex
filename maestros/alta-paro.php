@@ -106,7 +106,7 @@
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' id="open_sidebar"></i>
+      <i class="fas fa-bars" id="open_sidebar"></i>
       <span class="text">REGISTRAR PARO</span>
     </div>
     <div class="container">

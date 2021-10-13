@@ -109,7 +109,7 @@
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' id="open_sidebar"></i>
+      <i class="fas fa-bars" id="open_sidebar"></i>
       <span class="text">BITACORA DE EVENTOS</span>
     </div>
     <div class="container">
@@ -226,7 +226,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.php5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
   <script src="js/export.js"></script>
 </body>

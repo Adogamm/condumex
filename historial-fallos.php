@@ -112,7 +112,7 @@
   <!-- CONTENIDO DE LA PÁGINA -->
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' id="open_sidebar"></i>
+      <i class="fas fa-bars" id="open_sidebar"></i>
       <span class="text">HISTORIAL DE FALLOS</span>
     </div>
     <div class="container">

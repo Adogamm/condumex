@@ -1,13 +1,4 @@
-<?php
-session_start();
-include '../databaseconnect/conection.php';
-$id = intval($_GET['id']);
-$selectAreas = "SELECT * FROM TB_CAT_AREA;";
-$selectMachine = "SELECT * FROM TB_CAT_MADE_UP WHERE CAT_MADE_UP_ID = $id;";
-$queryAreas = sqlsrv_query($conexion,$selectAreas);
-$queryMachine = sqlsrv_query($conexion,$selectMachine);
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -24,7 +15,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-  <title>Actualizar compuesto</title>
+  <title>Nueva familia calibre</title>
 </head>
 
 <body>
@@ -112,38 +103,34 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
     </ul>
   </div>
 
-
   <!-- CONTENIDO DE LA PAGINA -->
   <section class="home-section">
     <div class="home-content">
       <i class="fas fa-bars" id="open_sidebar"></i>
-      <span class="text">ACTUALIZAR COMPUESTO</span>
+      <span class="text">NUEVA FAMILIA CALIBRE</span>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <div class="card">
             <div class="card-body mx-5 my-2">
-              <h4 class="text-center">ACTUALIZAR COMPUESTO</h4>
-              <form action="update-maestros/update-compuesto.php" method="POST">
-                <?php while($rowsCompuesto = sqlsrv_fetch_array($queryMachine)) { ?>
+              <h4 class="text-center">AGREGAR NUEVA FAMILIA CALIBRE</h4>
+              <form action="insert-maestros/insert-famcal.php" method="POST">
                 <div class="form-group my-2">
-                  <input type="text" class="form-control" id="id" name="id"
-                    value="<?php echo $rowsCompuesto['CAT_MADE_UP_ID']; ?>" hidden>
+                  <label for="ID">ID</label>
+                  <input type="number" class="form-control" id="id" name="id" placeholder="ID de la nueva familia calibre"
+                    required>
                 </div>
                 <div class="form-group my-2">
-                  <label for="Compuestp">Compuesto</label>
-                  <input type="text" class="form-control" id="compuesto" name="compuesto"
-                    value="<?php echo $rowsCompuesto['NAME']; ?>">
+                  <label for="Compuestp">Familia Calibre</label>
+                  <input type="text" class="form-control" id="famcal" name="famcal" placeholder="Familia calibre"
+                    required>
                 </div>
                 <div class="form-group my-2">
                   <label for="Descripcion">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion"
-                    value="<?php echo $rowsCompuesto['DESCRIPTION']; ?>">
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion"
+                    required>
                 </div>
-                <?php } ?>
-
-
                 <div class="input-group my-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="area">Area</label>
@@ -163,8 +150,6 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                   <select class="form-control" id="maquina" name="maquina" required>
                   </select>
                 </div>
-
-
                 <input class=" mt-3 d-block mx-auto btn btn-dark" type="submit" value="Enviar">
               </form>
             </div>
@@ -172,12 +157,10 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
         </div>
       </div>
     </div>
-
-    <script src="../js/select.js"></script>
-    <script src="../js/sidebar.js"></script>
+  <script src="../js/select.js"></script>
+  <script src="../js/sidebar.js"></script>
   <script src="../js\bootstrap\jquery-3.5.1.slim.min.js"></script>
   <script src="../js\bootstrap\bootstrap.bundle.min.js"></script>
-    <script src="../js\datatables\jquery.min.js"></script>
+  <script src="../js\datatables\jquery.min.js"></script>
 </body>
-
 </html>

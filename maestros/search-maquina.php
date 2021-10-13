@@ -1,7 +1,9 @@
 <?php
 session_start();
-include 'databaseconnect/conection.php';
-$selectMachine = "SELECT * FROM TB_CAT_MACHINE;";
+include '../databaseconnect/conection.php';
+$area = $_GET['area'];
+$maquina = $_GET['maquina'];
+$selectMachine = "SELECT * FROM TB_CAT_MACHINE WHERE AREA = '$area' AND MACHINE = '$maquina';";
 $queryMachine = sqlsrv_query($conexion,$selectMachine);
 ?>
 
@@ -204,25 +206,25 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       </div>
     </div>
   </section>
-  <script src="js/select.js"></script>
-  <script src="js/sidebar.js"></script>
-  <script src="js/gauge.min.js"></script>
-  <script src="js/monitor.js"></script>
-  <script src="js\sweetAlert\sweetAlert.js"></script>
-  <script src="js/delete.js"></script>
-  <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
-  <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
-  <script src="js\datatables\jquery.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
-  <script src="js\datatables\jquery-3.5.1.js"></script>
-  <script src="js\datatables\jquery.dataTables.min.js"></script>
-  <script src="js\datatables\dataTables.buttons.min.js"></script>
-  <script src="js\datatables\jszip.min.js"></script>
-  <script src="js\datatables\pdfmake.min.js"></script>
-  <script src="js\datatables\vfs_fonts.js"></script>
-  <script src="js\datatables\buttons.html5.min.js"></script>
-  <script src="js\datatables\buttons.print.min.js"></script>
-  <script src="js/export.js"></script>
+  <script src="../js/select.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/gauge.min.js"></script>
+  <script src="../js/monitor.js"></script>
+  <script src="../js\sweetAlert\sweetAlert.js"></script>
+  <script src="../js/delete.js"></script>
+  <script src="../js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="../js\bootstrap\bootstrap.bundle.min.js"></script>
+  <script src="../js\datatables\jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="../js\datatables\jquery.dataTables.js"></script>
+  <script src="../js\datatables\jquery-3.5.1.js"></script>
+  <script src="../js\datatables\jquery.dataTables.min.js"></script>
+  <script src="../js\datatables\dataTables.buttons.min.js"></script>
+  <script src="../js\datatables\jszip.min.js"></script>
+  <script src="../js\datatables\pdfmake.min.js"></script>
+  <script src="../js\datatables\vfs_fonts.js"></script>
+  <script src="../js\datatables\buttons.html5.min.js"></script>
+  <script src="../js\datatables\buttons.print.min.js"></script>
+  <script src="../js/export.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,10 @@
 <?php
 session_start();
-include 'databaseconnect/conection.php';
-$selectMachine = "SELECT * FROM TB_CAT_MACHINE;";
-$queryMachine = sqlsrv_query($conexion,$selectMachine);
+include '../databaseconnect/conection.php';
+$area = $_GET['area'];
+$maquina = $_GET['maquina'];
+$selectFamcal = "SELECT * FROM TB_CAT_FAM_CALIBER WHERE AREA = '$area' AND MACHINE = '$maquina';";
+$queryFamcal = sqlsrv_query($conexion,$selectFamcal);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <link rel="stylesheet" href="styles\datatables\jquery.dataTables.min.css">
   <link rel="stylesheet" href="styles\datatables\buttons.dataTables.min.css">
 
-  <title>Catalogo de maquinas</title>
+  <title>Catalogo de familia calibre</title>
 </head>
 
 <body>
@@ -114,12 +116,12 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
   <section class="home-section">
     <div class="home-content">
       <i class="fas fa-bars" id="open_sidebar"></i>
-      <span class="text">CATALOGO DE MAQUINAS</span>
+      <span class="text">CATALOGO DE FAMILIA CALIBE</span>
     </div>
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="container">
-          <form action="maestros/search-maquina.php" method="GET">
+          <form action="maestros/search-famcal.php" method="GET">
             <div class="row d-flex justify-content-beetween">
               <div class="col-lg-4 col-sm-12 my-2">
                 <div class="input-group mb-3">
@@ -148,7 +150,7 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                 <input class="mt-2 btn btn-dark d-block mx-auto" type="submit" value="Buscar">
               </div>
               <div class="col-lg-2 col-sm-12">
-                <a href="maestros/alta-maquinas.php" class="mt-2 btn btn-dark">Alta</a>
+                <a href="maestros/alta-compuesto.php" class="mt-2 btn btn-dark">Alta</a>
               </div>
             </div>
           </form>
@@ -172,10 +174,10 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                     </tr>
                   </thead>
                   <tbody>
-                    <?php while($rows = sqlsrv_fetch_array($queryMachine)) { ?>
+                    <?php while($rows = sqlsrv_fetch_array($queryFamcal)) { ?>
                     <tr>
                       <td>
-                        <?php echo $rows['MACHINE_ID']; ?>
+                        <?php echo $rows['CAT_FAM_CALIBER_ID']; ?>
                       </td>
                       <td>
                         <?php echo $rows['NAME']; ?>
@@ -189,9 +191,9 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
                       <td>
                         <?php echo $rows['MACHINE']; ?>
                       </td>
-                      <td><a href="maestros/update-famcal.php?id=<?php echo $rows['MACHINE_ID']; ?>"
+                      <td><a href="maestros/update-famcal.php?id=<?php echo $rows['CAT_FAM_CALIBER_ID']; ?>"
                           class="btn btn-dark d-block mx-auto">Modificar</a></td>
-                      <td><a onclick="confirmar(<?php echo $rows['MACHINE_ID'] ?>);"
+                      <td><a onclick="confirmar(<?php echo $rows['CAT_FAM_CALIBER_ID'] ?>);"
                           class="btn btn-danger d-block mx-auto">Eliminar</a></td>
                     </tr>
                     <?php } ?>
@@ -204,25 +206,25 @@ $queryMachine = sqlsrv_query($conexion,$selectMachine);
       </div>
     </div>
   </section>
-  <script src="js/select.js"></script>
-  <script src="js/sidebar.js"></script>
-  <script src="js/gauge.min.js"></script>
-  <script src="js/monitor.js"></script>
-  <script src="js\sweetAlert\sweetAlert.js"></script>
-  <script src="js/delete.js"></script>
-  <script src="js\bootstrap\jquery-3.5.1.slim.min.js"></script>
-  <script src="js\bootstrap\bootstrap.bundle.min.js"></script>
-  <script src="js\datatables\jquery.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
-  <script src="js\datatables\jquery-3.5.1.js"></script>
-  <script src="js\datatables\jquery.dataTables.min.js"></script>
-  <script src="js\datatables\dataTables.buttons.min.js"></script>
-  <script src="js\datatables\jszip.min.js"></script>
-  <script src="js\datatables\pdfmake.min.js"></script>
-  <script src="js\datatables\vfs_fonts.js"></script>
-  <script src="js\datatables\buttons.html5.min.js"></script>
-  <script src="js\datatables\buttons.print.min.js"></script>
-  <script src="js/export.js"></script>
+  <script src="../js/select.js"></script>
+  <script src="../js/sidebar.js"></script>
+  <script src="../js/gauge.min.js"></script>
+  <script src="../js/monitor.js"></script>
+  <script src="../js\sweetAlert\sweetAlert.js"></script>
+  <script src="../js/delete.js"></script>
+  <script src="../js\bootstrap\jquery-3.5.1.slim.min.js"></script>
+  <script src="../js\bootstrap\bootstrap.bundle.min.js"></script>
+  <script src="../js\datatables\jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="../js\datatables\jquery.dataTables.js"></script>
+  <script src="../js\datatables\jquery-3.5.1.js"></script>
+  <script src="../js\datatables\jquery.dataTables.min.js"></script>
+  <script src="../js\datatables\dataTables.buttons.min.js"></script>
+  <script src="../js\datatables\jszip.min.js"></script>
+  <script src="../js\datatables\pdfmake.min.js"></script>
+  <script src="../js\datatables\vfs_fonts.js"></script>
+  <script src="../js\datatables\buttons.html5.min.js"></script>
+  <script src="../js\datatables\buttons.print.min.js"></script>
+  <script src="../js/export.js"></script>
 </body>
 
 </html>

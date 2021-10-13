@@ -215,7 +215,7 @@ $queryParos = sqlsrv_query($conexion,$selectParos);
   <script src="../js\bootstrap\jquery-3.5.1.slim.min.js"></script>
   <script src="../js\bootstrap\bootstrap.bundle.min.js"></script>
   <script src="../js\datatables\jquery.min.js"></script>
-  <script type=../"text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
+  <script type="../text/javascript" charset="utf8" src="js\datatables\jquery.dataTables.js"></script>
   <script src="../js\datatables\jquery-3.5.1.js"></script>
   <script src="../js\datatables\jquery.dataTables.min.js"></script>
   <script src="../js\datatables\dataTables.buttons.min.js"></script>

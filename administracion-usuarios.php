@@ -113,9 +113,7 @@
       <span class="text">ADMINISTRACIÓN DE USUARIOS</span>
     </div>
     <div class="btn-group my-4 mx-4" role="group" aria-label="Basic example">
-      <a href="nuevo-usuario.php" class="btn btn-dark border">Nuevo</a>
-      <button type="button" class="btn btn-dark border">Eliminar</button>
-      <button type="button" class="btn btn-dark border">Modificar</button>
+      <a href="sign_in.php" class="btn btn-dark border">Nuevo</a>
     </div>
     <div class="container">
       <div class="row">

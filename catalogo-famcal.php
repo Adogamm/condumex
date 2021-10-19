@@ -168,7 +168,7 @@ $queryFamcal = sqlsrv_query($conexion,$selectFamcal);
                       <th>Área</th>
                       <th>Máquina</th>
                       <th>Modificar</th>
-                      <th>ELiminar</th>
+                      <th>Eliminar</th>
                     </tr>
                   </thead>
                   <tbody>

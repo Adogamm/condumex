@@ -223,6 +223,7 @@ $queryCompuestos = sqlsrv_query($conexion,$selectCompuestos);
   <script src="js\datatables\buttons.html5.min.js"></script>
   <script src="js\datatables\buttons.print.min.js"></script>
   <script src="js/export.js"></script>
+  <script src="js\datatables\traslate.js"></script>
 </body>
 
 </html>

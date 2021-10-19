@@ -3,12 +3,13 @@ $serverName = 'ADOGAMM-OMEN\CONDUMEX'; //Seleccionar el servidor
 $connectionInfo = array('Database'=>'CONDUMEX', 'UID' => 'pradiot', 'PWD' => 'pradiot'); //Cadena de conexión
 $conexion = sqlsrv_connect( $serverName, $connectionInfo); //Conexion a SQL Server
 
-//Pruebas de conexion
-// if(!$conexion) {
-//     echo "Conexion fallida";
-// } else {
-//     echo "Conexion exitosa";
-// }
+// Pruebas de conexion
+if(!$conexion) {
+    echo "Conexión no se pudo establecer.<br />";
+    die( print_r( sqlsrv_errors(), true));
+} else {
+    echo "Conexion exitosa";
+}
 
 
 ?>
